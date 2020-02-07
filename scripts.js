@@ -166,18 +166,18 @@ function checkboxStorage(item_id, force_uncheck = false){
 function selectAll(course){
   if (course=="bach"){
   	for (i = 0; i < bach_disciplinas.length; i++){
-  		document.getElementById(bach_disciplinas[i]).checked = true
-  		document.getElementById(bach_disciplinas[i]).disabled = false
-  		localStorage.setItem(bach_disciplinas[i], "true")
+  		document.getElementById(bach_disciplinas[i]).checked = true;
+  		document.getElementById(bach_disciplinas[i]).disabled = false;
+  		localStorage.setItem(bach_disciplinas[i], "true");
   	}
-  	totalIt()
+  	totalIt();
   }else{
     	for (i = 0; i < lic_disciplinas.length; i++){
   		document.getElementById(lic_disciplinas[i]).checked = true;
   		document.getElementById(lic_disciplinas[i]).disabled = false;
   		localStorage.setItem(lic_disciplinas[i], "true");
   	}
-	totalIt_lic()
+	  totalIt_lic();
 }}
 
 function unselectAll(course){
