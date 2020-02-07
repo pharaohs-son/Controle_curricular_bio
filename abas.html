@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<!--
+Projeto controle curricular
+
+colocar double_list para as disciplinas que precisam de 2 pre requisitos
+e triple para as que precisa de 3
+
+colocar off_other para todas as disciplinas que forma uma cascata de pre requisitos
+
+off other so desativa
+list ativa e desativa
+
+
+
+ex 
+
+
+bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other na bot 1 => id da bot3 e list para bot2
+
+-->
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="scripts.js"></script>
+<meta charset="UTF-8"  http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale = 1.0" />
+
+<header>
+<h1>Controle curricular do curso de Ciências Biológicas da UFSC - Diurno</h1>
+</header>
+<nav class="nav_tabs">
+	<ul>
+		<li>
+			<input type="radio" id="tab1" class="rd_tab" name="tabs" checked />
+				<label for="tab1" class="btn_head">Bacharel</label>
+				<div class="tab-content">
+						<div class="horas">
+							</br>
+							Total de Horas obrigatórias:
+							<input value="0" readonly="readonly" type="text" name="total" />
+							<br>
+						</div>
+					<fieldset class="Fases_left">
+							<fieldset class="Fases" id="primeira">Primeira Fase</br>
+								<label class="checkbox">   <!-- BIO7003 - Introdução a Ciência - PCC 10 horas -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox" type="checkbox" id="BIO7003" onchange='
+											double_determined_list(
+											"BIO7003", 
+											"BIO7240", 
+											"BIO7011"
+											); 
+											off_other(
+											"BIO7003", 
+											"BIO7011", 
+											"BIO7013", 
+											"BIO7004", 
+											"BIO7015", 
+											"BIO7016", 
+											"BIO7012"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="36" />
+											<div class="state p-success-o">
+												<label>BIO7003 - Introdução a Ciência - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BIO7003 - Introdução a Ciência - PCC 10 horas</label>
+											</div>
+											
+										
+										</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BIO7240 - Ciências Biológicas: Formação e Profissão -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox" type="checkbox" id="BIO7240" onchange='
+											double_determined_list(
+											"BIO7240", 
+											"BIO7003", 
+											"BIO7011"	
+											); 
+											off_other(
+											"BIO7240", 
+											"BIO7011", 
+											"BIO7013", 
+											"BIO7004", 
+											"BIO7015", 
+											"BIO7016", 
+											"BIO7012"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="54"
+											/>
+											<div class="state p-success-o">
+												<label>BIO7240 - Ciências Biológicas: Formação e Profissão</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BIO7240 - Ciências Biológicas: Formação e Profissão</label>
+											</div>										
+										
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- CFS7001 - Biofísica Instrumental -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox" type="checkbox" id="CFS7001" onchange='
+											double_determined_list(
+											"CFS7001", 
+											"QMC5235", 
+											"BQA7002"
+											); 
+											off_other(
+											"CFS7001", 
+											"BQA7002", 
+											"BEG7013", 
+											"BEG7225", 
+											"MIP7013", 
+											"MIP7003", 
+											"CFS7006", 
+											"ECZ7036", 
+											"FMC7008", 
+											"BEG7034", 
+											"BEG7017", 
+											"MIP7035"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="36"
+											/>
+											<div class="state p-success-o">
+												<label>CFS7001 - Biofísica Instrumental</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>CFS7001 - Biofísica Instrumental</label>
+											</div>
+										
+									</div>
+									</p>	
+								</label>
+								<label class="checkbox">   <!-- ECZ7011 - Zoologia de Invertebrados I - PCC 06 horas -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox" type="checkbox" id="ECZ7011" onchange='
+											double_determined_list(
+											"ECZ7011", 
+											"INE7003", 
+											"ECZ7024"
+											); 
+											determined_list(
+											"ECZ7011", 
+											"ECZ7012", 
+											"ECZ7025"
+											); 
+											off_other(
+											"ECZ7011", 
+											"ECZ7024", 
+											"ECZ7012", 
+											"ECZ7025", 
+											"ECZ7013", 
+											"MIP7003", 
+											"ECZ7028"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="90"
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7011 - Zoologia de Invertebrados I - PCC 06 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7011 - Zoologia de Invertebrados I - PCC 06 horas</label>
+											</div>
+										
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- ECZ7021 - Introdução à Ecologia -->	
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox" type="checkbox" id="ECZ7021" onchange="
+										totalIt();
+										checkboxStorage(id);"
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7021 - Introdução à Ecologia - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7021 - Introdução à Ecologia - PCC 10 horas</label>
+											</div>
+										
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MIP7011 - Tópicos de Biossegurança - PCC 05 horas -->	
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox" type="checkbox" id="MIP7011" onchange="
+										totalIt();
+										checkboxStorage(id);"
+											value="36"
+											/>
+											<div class="state p-success-o">
+												<label>MIP7011 - Tópicos de Biossegurança - PCC 05 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MIP7011 - Tópicos de Biossegurança - PCC 05 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MOR7001 - Anatomia Aplicada a Ciências Biológicas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox" type="checkbox" id="MOR7001" onchange='
+											double_determined_list(
+											"MOR7001", 
+											"MIP7013", 
+											"MIP7035"
+											); 
+											off_other(
+											"MOR7001", 
+											"MIP7035"
+											);
+											totalIt();'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MOR7001 - Anatomia Aplicada a Ciências Biológicas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MOR7001 - Anatomia Aplicada a Ciências Biológicas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- QMC5235 - Fundamentos de Química Geral e Orgânica -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" class="styled-checkbox"type="checkbox" id="QMC5235" onchange='
+											double_determined_list(
+											"QMC5235", 
+											"CFS7001", 
+											"BQA7002"
+											); 
+											off_other(
+											"QMC5235", 
+											"BQA7002", 
+											"BEG7013", 
+											"BEG7225", 
+											"MIP7013", 
+											"MIP7003", 
+											"CFS7006", 
+											"ECZ7036", 
+											"FMC7008", 
+											"BEG7034", 
+											"BEG7017", 
+											"MIP7035",
+											"BOT7015",
+											"BOT7017"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>QMC5235 - Fundamentos de Química Geral e Orgânica</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>QMC5235 - Fundamentos de Química Geral e Orgânica</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>									
+							</fieldset>
+							<fieldset class="Fases">Segunda Fase</br>
+								<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 horas/aula) -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BEG7012" onchange='
+											determined_list("BEG7012", "MOR7003", "BEG7024"); 
+											determined_list("BEG7012", "BOT7013");   
+											double_determined_list(
+											"BQA7002", 
+											"BEG7012", 
+											"BEG7013", 
+											"BEG7225", 
+											"MIP7013", 
+											"ECZ7036", 
+											"BOT7015",
+											);
+											off_other(
+												"BEG7012", 
+												"BEG7227", 
+												"BEG7024", 
+												"BEG7225", 
+												"MIP7013", 
+												"ECZ7036", 
+												"BEG7013", 
+												"MIP7035", 
+												"MOR7003", 
+												"BEG7017", 
+												"BEG7025", 
+												"BEG7226", 
+												"BEG7034", 
+												"BOT7014", 
+												"BOT7015", 
+												"CFS7006",
+												"DGL7007"
+												);
+												checkboxStorage(id);
+											totalIt();'
+											value="108"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BQA7002 - Bioquímica Básica - PCC 18 Horas  -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BQA7002" disabled onchange='
+											double_determined_list(
+											"BQA7002", 
+											"MOR7003", 
+											"CFS7006"
+											); 
+											double_determined_list(
+											"BQA7002", 
+											"CFS7006", 
+											"FMC7008"
+											); 
+											double_determined_list(
+											"BQA7002", 
+											"ECZ7012", 
+											"MIP7003"
+											); 
+											double_determined_list(
+											"BQA7002", 
+											"BEG7012", 
+											"BEG7013", 
+											"BEG7225", 
+											"MIP7013", 
+											"ECZ7036", 
+											"BOT7015",
+											); 
+											off_other(
+											"BQA7002", 
+											"BEG7013", 
+											"BEG7225", 
+											"MIP7013", 
+											"MIP7003", 
+											"CFS7006", 
+											"ECZ7036", 
+											"FMC7008", 
+											"BEG7034", 
+											"MIP7035",
+											"BEG7017"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="108"
+											/>
+											<div class="state p-success-o">
+												<label>BQA7002 - Bioquímica Básica - PCC 18 Horas </label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BQA7002 - Bioquímica Básica - PCC 18 Horas </label>
+											</div>
+										 	
+									</div>
+									</p>	
+								</label>
+								<label class="checkbox">   <!-- CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="CFS7002" onchange='totalIt();checkboxStorage(id);'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- ECZ7012 - Zoologia de Invertebrados II - PCC 06 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="ECZ7012" disabled onchange='
+											double_determined_list(
+											"ECZ7012", 
+											"BQA7002", 
+											"MIP7003"
+											); 
+											determined_list(
+											"ECZ7012", 
+											"ECZ7013", 
+											"ECZ7015", 
+											); 
+											off_other(
+											"ECZ7012", 
+											"ECZ7013", 
+											"ECZ7015", 
+											"ECZ7016", 
+											"MIP7003", 
+											"DGL7007"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="90"
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7012 - Zoologia de Invertebrados II - PCC 06 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7012 - Zoologia de Invertebrados II - PCC 06 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MTM3100 - Pré-Cálculo -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="MTM3100" onchange='
+											determined_list(
+											"MTM3100", 
+											"INE7003", 
+											"BIO7006"
+											); 
+											off_other(
+											"MTM3100", 
+											"INE7003", 
+											"BIO7006", 
+											"ECZ7025", 
+											"ECZ7028",
+											"ECZ7024"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MTM3100 - Pré-Cálculo</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MTM3100 - Pré-Cálculo</label>
+											</div>										
+										 	
+									</div>
+									</p>	
+								</label>		
+							</fieldset>
+							<fieldset class="Fases">Terceira Fase</br>
+								<label class="checkbox">   <!-- BEG7013 - Biologia Molecular I - PCC 04 horas -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BEG7013" disabled onchange=
+											'determined_list(
+											"BEG7013", 
+											"BEG7017", 
+											"BEG7034"
+											); 
+											off_other(
+											"BEG7013", 
+											"BEG7034", 
+											"BEG7227", 
+											"BEG7226", 
+											"BEG7017"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="54"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7013 - Biologia Molecular I - PCC 04 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7013 - Biologia Molecular I - PCC 04 horas</label>
+											</div>										
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BEG7225 - Evolução (PCC 9 horas)  -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BEG7225" disabled onchange='totalIt();checkboxStorage(id);'
+											value="36"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7225 - Evolução (PCC 9 horas) </label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7225 - Evolução (PCC 9 horas) </label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BOT7013 - Biologia e Sistemática de Algas, Fungos e Briófitas - PCC 15 horas-->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BOT7013" onchange='
+											determined_list(
+											"BOT7013", 
+											"BOT7014"
+											); 
+											off_other(
+											"BOT7013", 
+											"BOT7015",
+											"DGL7007"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="126"
+											/>
+											<div class="state p-success-o">
+												<label>BOT7013 - Biologia e Sistemática de Algas, Fungos e Briófitas - PCC 15 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BOT7013 - Biologia e Sistemática de Algas, Fungos e Briófitas - PCC 15 horas</label>
+											</div>										
+										 	
+									</div>
+									</p>	
+								</label>
+								<label class="checkbox">   <!-- ECZ7013 - Zoologia de Invertebrados III - PPCC 20 horas-->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="ECZ7013" onchange=
+											'determined_list(
+											"ECZ7013", 
+											"ECZ7015", 
+											"ECZ7016"
+											); 
+											off_other(
+											"ECZ7013",
+											"ECZ7015", 
+											"ECZ7016",
+											"DGL7007",
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="90"
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7013 - Zoologia de Invertebrados III - PPCC 20 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7013 - Zoologia de Invertebrados III - PPCC 20 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- INE7003 - Bioestatística -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="INE7003" onchange=
+											'double_determined_list(
+											"INE7003",
+											"ECZ7011", 
+											"ECZ7024"
+											);
+											determined_list(
+											"INE7003",
+											"BIO7006", 
+											"ECZ7024"
+											); 
+											off_other(
+											"INE7003", 
+											"BIO7006", 
+											"ECZ7025", 
+											"ECZ7028"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="54"
+											disabled
+											/>
+											<div class="state p-success-o">
+												<label>INE7003 - Bioestatística</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>INE7003 - Bioestatística</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MIP7013 - Microbiologia Geral - PCC 14 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="MIP7013" disabled onchange=
+											'double_determined_list(
+											"MIP7013", 
+											"MOR7001", 
+											"MIP7035"); 
+											off_other(
+											"MIP7013", 
+											"MIP7035"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MIP7013 - Microbiologia Geral - PCC 14 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MIP7013 - Microbiologia Geral - PCC 14 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MOR7003 - Histologia Aplicada às Ciências Biológicas - PCC 10 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="MOR7003" onchange=
+											'double_determined_list(
+											"MOR7003", 
+											"BQA7002", 
+											"CFS7006"); 
+											off_other(
+											"MOR7003", 
+											"CFS7006", 
+											"FMC7008"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MOR7003 - Histologia Aplicada às Ciências Biológicas - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MOR7003 - Histologia Aplicada às Ciências Biológicas - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>	
+									</label>		
+							</fieldset>
+							<fieldset class="Fases">Quarta Fase</br>
+								<label class="checkbox">   <!-- BEG7024 - Embriologia Animal - PCC 10 horas-->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BEG7024" onchange=
+											'determined_list(
+											"BEG7024", 
+											"BEG7025"
+											); 
+											off_other(
+											"BEG7024", 
+											"BEG7025"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7024 - Embriologia Animal - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7024 - Embriologia Animal - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BEG7034 - Citogenética - PCC 12 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BEG7034" disabled onchange=
+											'determined_list(
+											"BEG7034", 
+											"BEG7227"
+											); 
+											off_other(
+											"BEG7034", 
+											"BEG7227", 
+											"BEG7226"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7034 - Citogenética - PCC 12 horas </label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7034 - Citogenética - PCC 12 horas </label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BIO7011 - Vivência em Pesquisa I -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BIO7011" disabled onchange=
+											'determined_list(
+											"BIO7011",
+											"BIO7012"
+											); 
+											off_other(
+											"BIO7011", 
+											"BIO7013", 
+											"BIO7004", 
+											"BIO7015", 
+											"BIO7016", 
+											"BIO7012"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="36"
+											/>
+											<div class="state p-success-o">
+												<label>BIO7011 - Vivência em Pesquisa I</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>Pré-Requisito de 1300 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BOT7014 - Sistemática de Plantas Vasculares - PCC 10 horas-->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="BOT7014" disabled onchange=
+											'triple_determined_list(
+											"BOT7014", 
+											"ECZ7015", 
+											"DGL7006", 
+											"DGL7007"
+											); 
+											double_determined_list(
+											"BOT7014", 
+											"BEG7012", 
+											"BOT7015"
+											); 
+											off_other(
+											"BOT7014", 
+											"DGL7007", 
+											"BOT7015", 
+											"BOT7017");
+											checkboxStorage(id);
+											totalIt();'
+											value="126"
+											/>
+											<div class="state p-success-o">
+												<label>BOT7014 - Sistemática de Plantas Vasculares - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BOT7014 - Sistemática de Plantas Vasculares - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- ECZ7024 - Ecologia de Populações  - PCC 18 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="ECZ7024" onchange=
+											'determined_list(
+											"ECZ7024", 
+											"ECZ7025"
+											); 
+											off_other(
+											"ECZ7024", 
+											"ECZ7025", 
+											"ECZ7028"
+											);
+											checkboxStorage(id);
+											totalIt();'
+											value="90"
+											disabled
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7024 - Ecologia de Populações - PCC 18 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7024 - Ecologia de Populações - PCC 18 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MEN7004 - Tópicos em Biologia e Educação  - PCC 18 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="MEN7004" onchange='totalIt();checkboxStorage(id);'
+											value="36" />
+											<div class="state p-success-o">
+												<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MIP7003 - Biologia Parasitária - PCC 10 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="MIP7003" disabled onchange='totalIt();checkboxStorage(id);'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MIP7003 - Biologia Parasitária - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MIP7003 - Biologia Parasitária - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>	
+								</label>		
+							</fieldset>
+					</fieldset>
+					<fieldset class="Fases_rigth">
+					<div> 
+					 <button name="btn_select" class="button" type="button" onclick="selectAll('bach')">Marcar tudo</button>
+           <button name="btn_select" class="button" type="button" onclick="unselectAll('bach')">Desmarcar tudo</button>
+           </div> 
+						<fieldset class="Fases">Quinta Fase</br>
+							<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BEG7025" disabled onchange='
+									totalIt();
+									(id);'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BEG7227 - Genética Clássica  (PCC 12 horas) -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BEG7227" disabled onchange=
+										'determined_list(
+										"BEG7227", 
+										"BEG7226"
+										); 
+										off_other(
+										"BEG7227", 
+										"BEG7226"
+										);
+										checkboxStorage(id);
+										totalIt();'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BIO7012 - Vivência em Pesquisa II -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BIO7012" disabled onchange=
+										'determined_list(
+										"BIO7012", 
+										"BIO7013", 
+										"BIO7004"
+										); 
+										off_other(
+										"BIO7012", 
+										"BIO7013", 
+										"BIO7004", 
+										"BIO7015", 
+										"BIO7016"
+										);
+										checkboxStorage(id);
+										totalIt();'
+										value="36"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7012 - Vivência em Pesquisa II</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7012 - Vivência em Pesquisa II</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BOT7015 - Anatomia e Embriologia Vegetal  - PCC 10 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BOT7015" disabled onchange=
+										'determined_list(
+										"BOT7015", 
+										"BOT7017"
+										); 
+										off_other(
+										"BOT7015", 
+										"BOT7017"
+										);
+										checkboxStorage(id);
+										totalIt();'
+										value="90"
+										/>
+										<div class="state p-success-o">
+											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="ECZ7015" onchange=
+										'triple_determined_list(
+										"BOT7014", 
+										"ECZ7015", 
+										"DGL7006", 
+										"DGL7007"
+										); 
+										determined_list(
+										"ECZ7015", 
+										"ECZ7016"
+										); 
+										off_other(
+										"BOT7014", 
+										"DGL7007"
+										);
+										checkboxStorage(id);
+										totalIt();'
+										value="72" disabled
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7025 - Ecologia de Comunidades  - PCC 18 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="ECZ7025" onchange=
+										'determined_list(
+										"ECZ7025", 
+										"ECZ7028"
+										); 
+										off_other(
+										"ECZ7025", 
+										"ECZ7028"
+										);
+										checkboxStorage(id);
+										totalIt();'
+										value="90" disabled
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- MIP7035 - Imunologia - PCC 04 horas  -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="MIP7035" disabled onchange='totalIt();checkboxStorage(id);'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>MIP7035 - Imunologia - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>MIP7035 - Imunologia - PCC 04 horas</label>
+										</div>
+									 	
+								</div>
+								</p>	
+							</label>		
+						</fieldset>
+						<fieldset class="Fases2">Sexta Fase</br>
+							<label class="checkbox">   <!-- CFS7006 - Fisiologia Humana - PCC 20 horas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="CFS7006" disabled onchange=
+										'double_determined_list(
+										"CFS7006", 
+										"BQA7002", 
+										"FMC7008"); 
+										off_other(
+										"CFS7006", 
+										"FMC7008"
+										);
+										checkboxStorage(id);
+										totalIt();'
+										value="108"
+										/>
+										<div class="state p-success-o">
+											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7016 - Zoologia de Vertebrados II  - PCC 04 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="ECZ7016"	disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7036 - Fisiologia Animal Comparada -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="ECZ7036" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="90"
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7036 - Fisiologia Animal Comparada</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7036 - Fisiologia Animal Comparada</label>
+										</div>
+									
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- DGL7006 - Geologia  - PCC 08 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="DGL7006" onchange=
+										'totalIt();
+										triple_determined_list(
+										"BOT7014", 
+										"ECZ7015", 
+										"DGL7006", 
+										"DGL7007"); 
+										off_other(
+										"DGL7006", 
+										"DGL7007"
+										)
+										checkboxStorage(id);'
+										 value="72" 
+										 />
+										<div class="state p-success-o">
+											<label>DGL7006 - Geologia - PCC 08 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1000 horas</label>
+										</div>										
+									 	
+								</div>
+								</p>	
+							</label>		
+						</fieldset>
+						<fieldset class="Fases2">Sétima Fase</br>
+							<label class="checkbox">   <!-- BEG7017 - Biologia Molecular II -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BEG7017" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="36"
+										/>
+										<div class="state p-success-o">
+											<label>BEG7017 - Biologia Molecular II</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7017 - Biologia Molecular II</label>
+										</div>										
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BEG7226 - Genética Evolutiva -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BEG7226" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="54" />
+										<div class="state p-success-o">
+											<label>BEG7226 - Genética Evolutiva</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7226 - Genética Evolutiva</label>
+										</div>										
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BIO7004 - Metodologia de Pesquisa  - PCC 10 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BIO7004" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="36"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC) -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BIO7013" disabled onchange=
+										'determined_list(
+										"BIO7013", 
+										"BIO7015"); 
+										off_other(
+										"BIO7013", 
+										"BIO7016"
+										);totalIt();
+										checkboxStorage(id);'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BOT7017 - Fisiologia Vegetal  - PCC 10 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BOT7017" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="90"
+										/>
+										<div class="state p-success-o">
+											<label>BOT7017 - Fisiologia Vegetal - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BOT7017 - Fisiologia Vegetal - PCC 10 horas</label>
+										</div>										
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="ECZ7050" onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="36"
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1400 horas</label>
+										</div>										
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- FIL7007 - Filosofia da Ciência -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="FIL7007" onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>FIL7007 - Filosofia da Ciência</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1980 horas</label>
+										</div>										
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- DGL7007 - Paleontologia - PCC 03 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="DGL7007" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="54"
+										/>
+										<div class="state p-success-o">
+											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
+										</div>
+									 	
+								</div>
+								</p>									
+							</label>		
+						</fieldset>
+						<fieldset class="Fases2">Oitava Fase</br>
+						
+							<label class="checkbox">   <!-- BIO7006 - Informática Aplicada às Ciências Biológicas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BIO7006" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="36"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7006 - Informática Aplicada às Ciências Biológicas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7006 - Informática Aplicada às Ciências Biológicas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BIO7015 - Trabalho de Conclusão de Curso I (TCC) -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BIO7015" onchange=
+										'determined_list(
+										"BIO7015", 
+										"BIO7016"); 
+										off_other(
+										"BIO7015", 
+										"BIO7016"
+										);totalIt();
+										checkboxStorage(id);'
+										value="90" disabled
+										/>
+										<div class="state p-success-o">
+											<label>BIO7015 - Trabalho de Conclusão de Curso I (TCC)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7015 - Trabalho de Conclusão de Curso I (TCC)</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7028 - Conservação Biológica  - PCC 10 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="ECZ7028" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7028 - Conservação Biológica - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7028 - Conservação Biológica - PCC 10 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7038 - Introdução ao Estudo de Impacto Ambiental e ao Rel. de Imp. Amb. -->		
+							
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="ECZ7038" onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="54"
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7038 - Introdução ao Estudo de Impacto Ambiental e ao Rel. de Imp. Amb.</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7038 - Introdução ao Estudo de Impacto Ambiental e ao Rel. de Imp. Amb.</label>
+										</div>											
+									 	
+								</div>
+								
+							</label>
+							<label class="checkbox">   <!-- FMC7008 - Farmacologia -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="FMC7008" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="72">
+										<div class="state p-success-o">
+											<label>FMC7008 - Farmacologia</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>FMC7008 - Farmacologia</label>
+										</div>	
+									 	
+								</div>
+																	
+							</label>						
+						</fieldset>
+						<fieldset class="Fases2">Nona Fase</br>
+							<label class="checkbox">   <!-- BIO7009 - Legislação Profissional Aplicada  - PCC 04 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BIO7009" onchange='
+									totalIt()
+									checkboxStorage(id);'
+										value="36">
+										<div class="state p-success-o">
+											<label>BIO7009 - Legislação Profissional Aplicada - PCC 04 horas</label>
+										</div>	
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1800 horas</label>
+										</div>		
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BIO7016 - Trabalho de Conclusão de Curso II (TCC) -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product" type="checkbox" id="BIO7016" disabled onchange='
+									totalIt();
+									checkboxStorage(id);'
+										value="90">
+										<div class="state p-success-o">
+											<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
+										</div>
+									 	
+									
+								</div>
+								</p>
+							</label>		
+						</fieldset>
+							
+					</fieldset>
+				</div>
+		</li>
+		<li>
+		
+			<input type="radio" name="tabs" class="rd_tab" id="tab2">
+				<label for="tab2" class="btn_head">Licenciatura</label>
+					<div class="tab-content">
+						<div class="horas">
+							</br>
+							Total de Horas obrigatórias:
+							<input value="0" readonly="readonly" type="text" name="total_lic"/>
+							<br>
+						</div>
+					
+					<fieldset class="Fases_left">
+							<fieldset class="Fases" id="primeira">Primeira Fase</br>
+								<label class="checkbox">   <!-- BIO7003 - Introdução a Ciência - PCC 10 horas -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LBIO7003" onchange='
+											double_determined_list(
+											"LBIO7003", 
+											"LBIO7240", 
+											"LBIO7011"
+											); 
+											off_other(
+											"LBIO7003", 
+											"LBIO7011", 
+											"LBIO7013", 
+											"LBIO7004", 
+											"LBIO7015", 
+											"LBIO7016", 
+											"LBIO7012"
+											);
+											totalIt_lic()'
+											value="36" />
+											<div class="state p-success-o">
+												<label>BIO7003 - Introdução a Ciência - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BIO7003 - Introdução a Ciência - PCC 10 horas</label>
+											</div>
+										
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">  <!-- BIO7240 - Ciências Biológicas: Formação e Profissão -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LBIO7240" onchange='
+											double_determined_list(
+											"LBIO7240", 
+											"LBIO7003", 
+											"LBIO7011"	
+											); 
+											off_other(
+											"LBIO7240", 
+											"LBIO7011", 
+											"LBIO7013", 
+											"LBIO7004", 
+											"LBIO7015", 
+											"LBIO7016", 
+											"LBIO7012"
+											);
+											totalIt_lic()'
+											value="54" />
+											<div class="state p-success-o">
+												<label>BIO7240 - Ciências Biológicas: Formação e Profissão</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BIO7240 - Ciências Biológicas: Formação e Profissão</label>
+											</div>										
+										
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- CFS7001 - Biofísica Instrumental -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LCFS7001" onchange='
+											totalIt_lic();
+											double_determined_list(
+											"LCFS7001", 
+											"LQMC5235", 
+											"LBQA7002"
+											); 
+											off_other(
+											"LCFS7001", 
+											"LBQA7002", 
+											"LBEG7013", 
+											"LBEG7225", 
+											"LMIP7013", 
+											"LMIP7003", 
+											"LCFS7006", 
+											"LECZ7036", 
+											"LBEG7034", 
+											"LMIP7035"
+											)
+											'
+											value="36"
+											/>
+											<div class="state p-success-o">
+												<label>CFS7001 - Biofísica Instrumental</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>CFS7001 - Biofísica Instrumental</label>
+											</div>
+										
+									</div>
+									</p>	
+								</label>
+								<label class="checkbox">   <!-- ECZ7011 - Zoologia de Invertebrados I - PCC 06 horas -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LECZ7011" onchange='
+											totalIt_lic();
+											determined_list(
+											"LECZ7011", 
+											"LECZ7012", 
+											"LECZ7025"
+											); 
+											double_determined_list(
+											"LECZ7011", 
+											"LINE7003", 
+											"LECZ7024"
+											); 
+											off_other(
+											"LECZ7011", 
+											"LECZ7024", 
+											"LECZ7012", 
+											"LECZ7025", 
+											"LECZ7013", 
+											"LMIP7003", 
+											)'
+											value="90"
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7011 - Zoologia de Invertebrados I - PCC 06 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7011 - Zoologia de Invertebrados I - PCC 06 horas</label>
+											</div>
+										
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- ECZ7021 - Introdução à Ecologia -->	
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LECZ7021" onchange='totalIt_lic()'
+											value="72" />
+											<div class="state p-success-o">
+												<label>ECZ7021 - Introdução à Ecologia - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7021 - Introdução à Ecologia - PCC 10 horas</label>
+											</div>
+										
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MIP7011 - Tópicos de Biossegurança - PCC 05 horas -->	
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LMIP7011" onchange='totalIt_lic()'
+											value="36" />
+											<div class="state p-success-o">
+												<label>MIP7011 - Tópicos de Biossegurança - PCC 05 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MIP7011 - Tópicos de Biossegurança - PCC 05 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MOR7001 - Anatomia Aplicada a Ciências Biológicas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LMOR7001" onchange='
+											double_determined_list(
+											"LMOR7001", 
+											"LMIP7013", 
+											"LMIP7035"
+											); 
+											off_other(
+											"LMOR7001", 
+											"LMIP7035"
+											);
+											totalIt_lic()'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MOR7001 - Anatomia Aplicada a Ciências Biológicas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MOR7001 - Anatomia Aplicada a Ciências Biológicas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- QMC5235 - Fundamentos de Química Geral e Orgânica -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" class="styled-checkbox"type="checkbox" id="LQMC5235" onchange='
+											totalIt_lic();
+											double_determined_list(
+											"LQMC5235", 
+											"LCFS7001",
+											"LBQA7002"
+											); 
+											off_other(
+											"LQMC5235", 
+											"LBQA7002", 
+											"LBEG7013", 
+											"LBEG7225", 
+											"LMIP7013", 
+											"LMIP7003", 
+											"LCFS7006", 
+											"LECZ7036", 
+											"LBEG7034", 
+											"LMIP7035",
+											"LBOT7015",
+											"LBOT7017"
+											)' 
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>QMC5235 - Fundamentos de Química Geral e Orgânica</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>QMC5235 - Fundamentos de Química Geral e Orgânica</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>									
+							</fieldset>
+							<fieldset class="Fases">Segunda Fase</br>
+								<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 horas/aula) -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBEG7012" onchange='
+											totalIt_lic();
+											determined_list(
+											"LBEG7012",
+											"LMOR7003",
+											"LBEG7024"
+											); 
+											determined_list(
+											"LBEG7012",
+											"LBOT7013"
+											);   
+											double_determined_list(
+											"LBQA7002", 
+											"LBEG7012", 
+											"LBEG7013", 
+											"LBEG7225", 
+											"LMIP7013", 
+											"LECZ7036", 
+											"LBOT7015", 
+											);
+											off_other(
+											"LBEG7012", 
+											"LBEG7227", 
+											"LBEG7024", 
+											"LBEG7225", 
+											"LMIP7013", 
+											"LECZ7036", 
+											"LBEG7013", 
+											"LMIP7035", 
+											"LMOR7003", 
+											"LBEG7025", 
+											"LBEG7034", 
+											"LBOT7014", 
+											"LBOT7015", 
+											"LCFS7006",
+											"LDGL7007"
+											)' 
+											value="108"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BQA7002 - Bioquímica Básica - PCC 18 Horas  -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBQA7002" disabled onchange='
+											totalIt_lic(); 
+											double_determined_list(
+											"LBQA7002", 
+											"LMOR7003", 
+											"LCFS7006"
+											); 
+											double_determined_list(
+											"LBQA7002", 
+											"LECZ7012", 
+											"LMIP7003"
+											); 
+											double_determined_list(
+											"LBQA7002", 
+											"LBEG7012", 
+											"LBEG7013", 
+											"LBEG7225", 
+											"LMIP7013", 
+											"LECZ7036", 
+											"LBOT7015", 
+											); 
+											off_other(
+											"LBQA7002", 
+											"LBEG7013", 
+											"LBEG7225", 
+											"LMIP7013", 
+											"LMIP7003", 
+											"LCFS7006", 
+											"LECZ7036", 
+											"LBEG7034", 
+											"LMIP7035"
+											)' 
+											value="108"
+											/>
+											<div class="state p-success-o">
+												<label>BQA7002 - Bioquímica Básica - PCC 18 Horas </label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BQA7002 - Bioquímica Básica - PCC 18 Horas </label>
+											</div>
+										 	
+									</div>
+									</p>	
+								</label>
+								<label class="checkbox">   <!-- CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LCFS7002" onchange='totalIt_lic()'
+											value="72" />
+											<div class="state p-success-o">
+												<label>CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- ECZ7012 - Zoologia de Invertebrados II - PCC 06 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LECZ7012" disabled onchange='
+											totalIt_lic(); 
+											double_determined_list(
+											"LECZ7012", 
+											"LBQA7002", 
+											"LMIP7003"
+											); 
+											determined_list(
+											"LECZ7012", 
+											"LECZ7013", 
+											"LECZ7015", 
+											); 
+											off_other(
+											"LECZ7012", 
+											"LECZ7013", 
+											"LECZ7015", 
+											"LECZ7016", 
+											"LMIP7003", 
+											"LDGL7007"
+											);' 
+											value="90"
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7012 - Zoologia de Invertebrados II - PCC 06 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7012 - Zoologia de Invertebrados II - PCC 06 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MTM3100 - Pré-Cálculo -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LMTM3100" onchange='
+											totalIt_lic(); 
+											determined_list(
+											"LMTM3100", 
+											"LINE7003", 
+											); 
+											off_other(
+											"LMTM3100", 
+											"LINE7003", 
+											"LECZ7025", 
+											"LECZ7024"
+											);' 
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MTM3100 - Pré-Cálculo</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MTM3100 - Pré-Cálculo</label>
+											</div>										
+										 	
+									</div>
+									</p>	
+								</label>		
+							</fieldset>
+							<fieldset class="Fases">Terceira Fase</br>
+								<label class="checkbox">   <!-- BEG7013 - Biologia Molecular I - PCC 04 horas -->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBEG7013" disabled onchange=
+											'determined_list(
+											"LBEG7013", 
+											"LBEG7034"
+											); 
+											off_other(
+											"LBEG7013", 
+											"LBEG7034", 
+											"LBEG7227", 
+											);
+											totalIt_lic()'
+											value="54" />
+											<div class="state p-success-o">
+												<label>BEG7013 - Biologia Molecular I - PCC 04 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7013 - Biologia Molecular I - PCC 04 horas</label>
+											</div>										
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BEG7225 - Evolução (PCC 9 horas)  -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBEG7225" disabled onchange='totalIt_lic()'
+											value="36" />
+											<div class="state p-success-o">
+												<label>BEG7225 - Evolução (PCC 9 horas) </label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7225 - Evolução (PCC 9 horas) </label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BOT7013 - Biologia e Sistemática de Algas, Fungos e Briófitas - PCC 15 horas-->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBOT7013" onchange='
+											determined_list(
+											"LBOT7013", 
+											"LBOT7014"
+											); 
+											off_other(
+											"LBOT7013", 
+											"LBOT7015",
+											"LDGL7007"
+											);
+											totalIt_lic()'
+											value="126"
+											/>
+											<div class="state p-success-o">
+												<label>BOT7013 - Biologia e Sistemática de Algas, Fungos e Briófitas - PCC 15 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BOT7013 - Biologia e Sistemática de Algas, Fungos e Briófitas - PCC 15 horas</label>
+											</div>										
+										 	
+									</div>
+									</p>	
+								</label>
+								<label class="checkbox">   <!-- ECZ7013 - Zoologia de Invertebrados III - PPCC 20 horas-->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LECZ7013" onchange=
+											'determined_list(
+											"LECZ7013", 
+											"LECZ7015", 
+											"LECZ7016"
+											); 
+											off_other(
+											"LECZ7013",
+											"LECZ7015", 
+											"LECZ7016",
+											"LDGL7007",
+											);
+											totalIt_lic()'
+											value="90"
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7013 - Zoologia de Invertebrados III - PPCC 20 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7013 - Zoologia de Invertebrados III - PPCC 20 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- INE7003 - Bioestatística -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product" type="checkbox" id="LINE7003" onchange=
+											'double_determined_list(
+											"LINE7003",
+											"LECZ7011", 
+											"LECZ7024"
+											);
+											determined_list(
+											"LINE7003",
+											"LECZ7024"
+											); 
+											off_other(
+											"LINE7003", 
+											"LECZ7025",
+											);
+											totalIt_lic()'
+											value="54"
+											disabled
+											/>
+											<div class="state p-success-o">
+												<label>INE7003 - Bioestatística</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>INE7003 - Bioestatística</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MIP7013 - Microbiologia Geral - PCC 14 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LMIP7013" disabled onchange=
+											'double_determined_list(
+											"LMIP7013", 
+											"LMOR7001", 
+											"LMIP7035"
+											); 
+											off_other(
+											"LMIP7013", 
+											"LMIP7035"
+											);
+											totalIt_lic()'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MIP7013 - Microbiologia Geral - PCC 14 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MIP7013 - Microbiologia Geral - PCC 14 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MOR7003 - Histologia Aplicada às Ciências Biológicas - PCC 10 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LMOR7003" onchange=
+											'double_determined_list(
+											"LMOR7003", 
+											"LBQA7002", 
+											"LCFS7006");
+											off_other(
+											"LMOR7003", 
+											"LCFS7006", 
+											);
+											totalIt_lic()'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>MOR7003 - Histologia Aplicada às Ciências Biológicas - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MOR7003 - Histologia Aplicada às Ciências Biológicas - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>	
+							</label>		
+							</fieldset>
+							<fieldset class="Fases">Quarta Fase</br>
+								<label class="checkbox">   <!-- BEG7024 - Embriologia Animal - PCC 10 horas-->
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBEG7024" onchange=
+											'determined_list(
+											"LBEG7024", 
+											"LBEG7025"
+											); 
+											off_other(
+											"LBEG7024", 
+											"LBEG7025"
+											);
+											totalIt_lic()'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7024 - Embriologia Animal - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7024 - Embriologia Animal - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BEG7034 - Citogenética - PCC 12 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBEG7034" disabled onchange=
+											'determined_list(
+											"LBEG7034", 
+											"LBEG7227");											
+											off_other(
+											"LBEG7034", 
+											"LBEG7227", 
+											);
+											totalIt_lic()'
+											value="72"
+											/>
+											<div class="state p-success-o">
+												<label>BEG7034 - Citogenética - PCC 12 horas </label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BEG7034 - Citogenética - PCC 12 horas </label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BIO7011 - Vivência em Pesquisa I -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBIO7011" disabled onchange=
+											'determined_list(
+											"LBIO7011",
+											"LBIO7012"
+											); 
+											off_other(
+											"LBIO7011", 
+											"LBIO7013", 
+											"LBIO7004", 
+											"LBIO7015", 
+											"LBIO7016", 
+											"LBIO7012"
+											);
+											totalIt_lic()'
+											value="36"
+											/>
+											<div class="state p-success-o">
+												<label>BIO7011 - Vivência em Pesquisa I</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>Pré-Requisito de 1300 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- BOT7014 - Sistemática de Plantas Vasculares - PCC 10 horas-->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LBOT7014" disabled onchange=
+											'triple_determined_list(
+											"LBOT7014", 
+											"LECZ7015", 
+											"LDGL7006", 
+											"LDGL7007"); 
+											double_determined_list(
+											"LBOT7014", 
+											"LBEG7012", 
+											"LBOT7015"); 
+											off_other(
+											"LBOT7014", 
+											"LDGL7007", 
+											"LBOT7015", 
+											"LBOT7017");
+											totalIt_lic()'
+											value="126"
+											/>
+											<div class="state p-success-o">
+												<label>BOT7014 - Sistemática de Plantas Vasculares - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>BOT7014 - Sistemática de Plantas Vasculares - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- ECZ7024 - Ecologia de Populações  - PCC 18 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LECZ7024" onchange=
+											'totalIt_lic();
+											determined_list(
+											"LECZ7024", 
+											"LECZ7025"
+											); 
+											off_other(
+											"LECZ7024", 
+											"LECZ7025",
+											)
+											'
+											value="108"
+											disabled
+											/>
+											<div class="state p-success-o">
+												<label>ECZ7024 - Ecologia de Populações - PCC 18 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>ECZ7024 - Ecologia de Populações - PCC 18 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MEN7004 - Tópicos em Biologia e Educação  - PCC 18 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LMEN7004" onchange='totalIt_lic()'
+											value="36" />
+											<div class="state p-success-o">
+												<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18 horas</label>
+											</div>
+										 	
+									</div>
+									</p>
+								</label>
+								<label class="checkbox">   <!-- MIP7003 - Biologia Parasitária - PCC 10 horas -->								
+									<p><div class="pretty p-default p-curve p-has-hover">
+										<input name="product_lic" type="checkbox" id="LMIP7003" disabled onchange='totalIt_lic()'
+											value="72" />
+											<div class="state p-success-o">
+												<label>MIP7003 - Biologia Parasitária - PCC 10 horas</label>
+											</div>
+											<div class="state p-success-o p-is-hover">
+												<label>MIP7003 - Biologia Parasitária - PCC 10 horas</label>
+											</div>
+										 	
+									</div>
+									</p>	
+								</label>		
+							</fieldset>
+					</fieldset>
+					<fieldset class="Fases_rigth">
+					<div>
+					 <button name="btn_select" class="button" type="button" onclick="selectAll('lic')">Marcar tudo</button>
+           <button name="btn_select" class="button" type="button" onclick="unselectAll('lic')">Desmarcar tudo</button>
+          </div>
+						<fieldset class="Fases">Quinta Fase</br>
+							<label class="checkbox">   <!-- BIO7012 - Vivência em Pesquisa II -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7012" disabled onchange=
+										'determined_list(
+										"LBIO7012", 
+										"LBIO7013", 
+										"LBIO7004"); 
+										off_other(
+										"LBIO7012", 
+										"LBIO7013", 
+										"LBIO7004", 
+										"LBIO7015", 
+										"LBIO7016"
+										);
+										totalIt_lic()'
+										value="36"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7012 - Vivência em Pesquisa II</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7012 - Vivência em Pesquisa II</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BOT7015 - Anatomia e Embriologia Vegetal  - PCC 10 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBOT7015" disabled onchange=
+										'determined_list(
+										"LBOT7015", 
+										"LBOT7017"
+										); 
+										off_other(
+										"LBOT7015", 
+										"LBOT7017"
+										);
+										totalIt_lic()'
+										value="90"
+										/>
+										<div class="state p-success-o">
+											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7015" onchange=
+										'triple_determined_list(
+										"LBOT7014", 
+										"LECZ7015", 
+										"LDGL7006", 
+										"LDGL7007"); 
+										determined_list(
+										"LECZ7015", 
+										"LECZ7016"); 
+										off_other(
+										"LBOT7014", 
+										"LDGL7007"
+										);
+										totalIt_lic()'
+										value="72" disabled
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7025 - Ecologia de Comunidades  - PCC 18 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7025" onchange='totalIt_lic()'
+										value="90" disabled
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- EED5331 Teorias da Educação -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="EED5331" onchange='totalIt_lic()'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>EED5331 Teorias da Educação</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>EED5331 Teorias da Educação</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- MIP7035 - Imunologia - PCC 04 horas  -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LMIP7035" disabled onchange='totalIt_lic()'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>MIP7035 - Imunologia - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>MIP7035 - Imunologia - PCC 04 horas</label>
+										</div>
+									 	
+								</div>
+								</p>	
+							</label>
+							<label class="checkbox">   <!-- PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem (PCC 12h-a)  -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="PSI5137" onchange='totalIt_lic()
+										triple_determined_list(
+										"EED5186",
+										"MEN7008",
+										"PSI5137",
+										"MEN7009");
+										off_other(
+										"PSI5137", 
+										"MEN7010")'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem (PCC 12h-a)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem (PCC 12h-a)</label>
+										</div>
+									 	
+								</div>
+								</p>	
+							</label>
+						</fieldset>
+						<fieldset class="Fases2">Sexta Fase</br>
+							<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBEG7025" disabled onchange='totalIt_lic()'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BEG7227 - Genética Clássica  (PCC 12 horas) -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBEG7227" disabled onchange='totalIt_lic()'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- CFS7006 - Fisiologia Humana - PCC 20 horas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LCFS7006" disabled onchange=
+										'double_determined_list(
+										"LCFS7006", 
+										"LBQA7002", 
+										); 
+										totalIt_lic()'
+										value="128"
+										/>
+										<div class="state p-success-o">
+											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7016 - Zoologia de Vertebrados II  - PCC 04 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7016"	disabled onchange='totalIt_lic()'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- DGL7006 - Geologia  - PCC 08 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LDGL7006" onchange=
+										'totalIt_lic();
+										triple_determined_list(
+										"LBOT7014", 
+										"LECZ7015", 
+										"LDGL7006", 
+										"LDGL7007"); 
+										off_other(
+										"LDGL7006", 
+										"LDGL7007"
+										)
+										'
+										value="72" 
+										 />
+										<div class="state p-success-o">
+											<label>DGL7006 - Geologia - PCC 08 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1000 horas</label>
+										</div>										
+									 	
+								</div>
+								</p>	
+							</label>
+							<label class="checkbox">   <!-- MEN5601 Didática A - PCC 12 horas-aula -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="MEN5601" onchange='totalIt_lic();
+									determined_list(
+									"MEN5601", 
+									"MEN7008");
+									off_other(
+									"MEN5601",
+									"MEN7009",
+									"MEN7010"
+									)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>MEN5601 Didática A - PCC 12 horas-aula</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1200 horas</label>
+										</div>
+									
+								</div>
+								</p>
+							</label>							
+						</fieldset>
+						<fieldset class="Fases2">Sétima Fase</br>
+							<label class="checkbox">   <!-- BIO7004 - Metodologia de Pesquisa  - PCC 10 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7004" disabled onchange='totalIt_lic()'
+										value="36" />
+										<div class="state p-success-o">
+											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC) -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7013" disabled onchange=
+										'determined_list(
+										"LBIO7013", 
+										"LBIO7015"); 
+										off_other(
+										"LBIO7013", 
+										"LBIO7016"
+										);
+										totalIt_lic()'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7036 - Fisiologia Animal Comparada -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7036" disabled onchange='totalIt_lic()'
+										value="90" />
+										<div class="state p-success-o">
+											<label>ECZ7036 - Fisiologia Animal Comparada</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7036 - Fisiologia Animal Comparada</label>
+										</div>
+									
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="ECZ7050" onchange='totalIt_lic()'
+										value="40" />
+										<div class="state p-success-o">
+											<label>ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1400 horas</label>
+										</div>										
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- EED5185 Organização Escolar I-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="EED5185" onchange='totalIt_lic();
+										determined_list("EED5185", 
+										"EED5186"
+										);
+										off_other(
+										"EED5185", 
+										"MEN7009",
+										"EED5186",
+										"MEN7010")'
+										value="72" />
+										<div class="state p-success-o">
+											<label>EED5185 Organização Escolar I</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>EED5185 Organização Escolar I</label>
+										</div>
+									 	
+								</div>
+								</p>								
+							</label>
+							<label class="checkbox">   <!-- FIL7007 - Filosofia da Ciência -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LFIL7007" onchange='totalIt_lic()'
+										value="72" />
+										<div class="state p-success-o">
+											<label>FIL7007 - Filosofia da Ciência</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1980 horas</label>
+										</div>										
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- DGL7007 - Paleontologia - PCC 03 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LDGL7007" disabled onchange='totalIt_lic()'
+										value="54" />
+										<div class="state p-success-o">
+											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
+										</div>
+									 	
+								</div>
+								</p>									
+							</label>		
+						</fieldset>
+						<fieldset class="Fases2">Oitava Fase</br>
+							<label class="checkbox">   <!-- BIO7015 - Trabalho de Conclusão de Curso I (TCC) -->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7015" onchange=
+										'determined_list(
+										"LBIO7015", 
+										"LBIO7016"); 
+										off_other(
+										"LBIO7015", 
+										"LBIO7016"
+										);
+										totalIt_lic()'
+										value="90" disabled
+										/>
+										<div class="state p-success-o">
+											<label>BIO7015 - Trabalho de Conclusão de Curso I (TCC)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7015 - Trabalho de Conclusão de Curso I (TCC)</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- BOT7017 - Fisiologia Vegetal  - PCC 10 horas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBOT7017" disabled onchange='totalIt_lic()'
+										value="90" />
+										<div class="state p-success-o">
+											<label>BOT7017 - Fisiologia Vegetal - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BOT7017 - Fisiologia Vegetal - PCC 10 horas</label>
+										</div>										
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- EED5186 Organização Escolar II (PCC - 18 horas)-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="EED5186" disabled onchange='totalIt_lic();
+										triple_determined_list(
+										"EED5186",
+										"MEN7008",
+										"PSI5137",
+										"MEN7009"
+										);
+										off_other(
+										"MEN7008", 
+										"MEN7010")'
+										value="72" />
+										<div class="state p-success-o">
+											<label>EED5186 Organização Escolar II - PCC - 18 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>EED5186 Organização Escolar II PCC - 18 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- LSB7904 Língua Brasileira de Sinais I (PCC 18 horas-aula)-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LSB7904" onchange='totalIt_lic()'
+										value="72" />
+										<div class="state p-success-o">
+											<label>LSB7904 Língua Brasileira de Sinais I (PCC 18 horas-aula)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>LSB7904 Língua Brasileira de Sinais I (PCC 18 horas-aula)</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 horas/aula-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="MEN7008" disabled onchange='totalIt_lic();
+										triple_determined_list(
+										"EED5186",
+										"MEN7008",
+										"PSI5137",
+										"MEN7009");
+										off_other(
+										"EED5186", 
+										"MEN7010")
+										'
+										value="108" />
+										<div class="state p-success-o">
+											<label>MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 horas/aula</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 horas/aula</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- MEN7341 Física para o Ensino de Ciências Biológiicas-->								
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="MEN7341" onchange='totalIt_lic()'
+										value="72" />
+										<div class="state p-success-o">
+											<label>MEN7341 Física para o Ensino de Ciências Biológiicas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1800 horas</label>
+										</div>
+									 	
+								</div>
+								</p>
+							</label>
+						</fieldset>
+						<fieldset class="Fases2">Nona Fase</br>
+							<label class="checkbox">   <!-- BIO7016 - Trabalho de Conclusão de Curso II (TCC) -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7016" disabled onchange='totalIt_lic()'
+										value="90" />
+										<div class="state p-success-o">
+											<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
+										</div>
+									
+								</div>
+								</p>
+							</label>
+							<label class="checkbox">   <!-- MEN7009 Estágio Supervisionado no Ensino de Ciências -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="MEN7009" disabled onchange='totalIt_lic();
+									determined_list("MEN7009", "MEN7010")'
+										value="252" />
+										<div class="state p-success-o">
+											<label>MEN7009 Estágio Supervisionado no Ensino de Ciências</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>MEN7009 Estágio Supervisionado no Ensino de Ciências</label>
+										</div>
+									
+								</div>
+								</p>
+							</label>							
+						</fieldset>
+						<fieldset class="Fases2">Décima Fase</br>
+							<label class="checkbox">   <!-- BIO7009 - Legislação Profissional Aplicada  - PCC 04 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7009" onchange='totalIt_lic()'
+										value="36" />
+										<div class="state p-success-o">
+											<label>BIO7009 - Legislação Profissional Aplicada - PCC 04 horas</label>
+										</div>	
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1800 horas</label>
+										</div>		
+									 	
+								</div>
+								
+							</label>
+							<label class="checkbox">   <!-- MEN7010 Estágio Supervisionado no Ensino de Biologia -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="MEN7010" disabled onchange='totalIt_lic()'
+										value="252" />
+										<div class="state p-success-o">
+											<label>MEN7010 Estágio Supervisionado no Ensino de Biologia</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>MEN7010 Estágio Supervisionado no Ensino de Biologia</label>
+										</div>
+									
+								</div>
+								
+							</label>							
+						</fieldset>
+					</fieldset>
+				</fieldset>
+		</li>
+		<li>
+			<input type="radio" name="tabs" class="rd_tab" id="tab3">
+				<label for="tab3" class="btn_head">Sobre</label>
+					<div class="tab-content">
+						<label></br>Powered by Gods</label>
+						</br>
+						</br>
+						<p>Blessed are those who have a bioinformatic friend.
+						</p>
+						</br></br>
+						This tool was created based on: <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_20061.pdf.PDF">Currículo Ciências Biológicas</a>
+						</div>
+		</li>
+					
+	</ul>
+</nav>
+</html>
