@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <!--
 Projeto controle curricular
 
@@ -20,10 +20,171 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 -->
 <html>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src="scripts.js"></script>
-<meta charset="UTF-8"  http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="initial-scale = 1.0" />
+  <meta charset="UTF-8"  http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="initial-scale = 1.0" />
+  
+<script type="text/javascript">		<!-- Liberar checkbox com 2 argumento -->
+function double_determined_list(requisito1, requisito2, ...materias) {
+	// Get your checkbox who determine the condition
+	var determine = document.getElementById(requisito1);
+	var determine2 = document.getElementById(requisito2);
+	// Make a function who disabled or enabled your conditioned checkbox
+	var disableCheckboxConditioned = function () {
+		if (determine.checked == true && determine2.checked == true){
+		  for (i=0; i<materias.length; i++){
+				document.getElementById(materias[i]).disabled = false;
+			}
+		}
+		else {
+		  for (i=0; i<materias.length; i++) {
+				document.getElementById(materias[i]).disabled = true;
+				document.getElementById(materias[i]).checked = false;
+			}
+		}
+	}
+determine.onclick = disableCheckboxConditioned;
+disableCheckboxConditioned();
+}
+</script>
 
+
+<script type="text/javascript"> <!-- desativar checkboxes -->
+function off_other(...materias) {
+	// Get your checkbox who determine the condition
+	var determine = document.getElementById(materias[0]);
+	// Make a function who disabled or enabled your conditioned checkbox
+	var disableCheckboxConditioned = function () {
+		if(determine.checked == false || determine.disabled == true) {
+		  for (i=1; i<materias.length; i++){
+		  		document.getElementById(materias[i]).checked = false;
+				document.getElementById(materias[i]).disabled = true;
+			}
+		}
+	}
+determine.onclick = disableCheckboxConditioned;
+disableCheckboxConditioned();
+}
+</script>
+
+<script type="text/javascript"> <!-- Liberar checkbox com 3 argumento -->
+function triple_determined_list(requisito1, requisito2, requisito3, ...materias) {
+	// Get your checkbox who determine the condition
+	var determine = document.getElementById(requisito1);
+	var determine2 = document.getElementById(requisito2);
+	var determine3 = document.getElementById(requisito3);
+	// Make a function who disabled or enabled your conditioned checkbox
+	var disableCheckboxConditioned = function () {
+		if (determine.checked == true && determine2.checked == true && determine3.checked == true){
+		  for (i=0; i<materias.length; i++){
+				document.getElementById(materias[i]).disabled = false;
+			}
+		}
+		else {
+		  for (i=0; i<materias.length; i++) {
+				document.getElementById(materias[i]).disabled = true;
+				document.getElementById(materias[i]).checked = false;
+			}
+		}
+	}
+determine.onclick = disableCheckboxConditioned;
+disableCheckboxConditioned();
+}
+</script>
+
+
+
+<script type="text/javascript">  <!-- Liberar checkbox com 1 argumento -->
+function determined_list(...materias) { 
+	// Get your checkbox who determine the condition
+	var determine = document.getElementById(materias[0]);
+	// Make a function who disabled or enabled your conditioned checkbox
+	var disableCheckboxConditioned = function () {
+		if(determine.checked == false) {
+		  for (i=1; i<materias.length; i++){
+				document.getElementById(materias[i]).disabled = true;
+				document.getElementById(materias[i]).checked = false;
+			}
+		}
+		else {
+		  for (i=1; i<materias.length; i++) {
+			document.getElementById(materias[i]).disabled = false;
+			}
+		}
+	}
+determine.onclick = disableCheckboxConditioned;
+disableCheckboxConditioned();
+}
+</script>
+
+
+<script>   <!-- Somar checkboxes -->
+function totalIt() {
+  var input = document.getElementsByName("product");
+  var total = 0;
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].checked) {
+      total += parseFloat(input[i].value);
+    }
+  }
+  document.getElementsByName("total")[0].value = + total.toFixed(2);
+}
+</script>
+
+<script>   <!-- Somar checkboxes lic -->
+function totalIt_lic() {  
+  var input = document.getElementsByName("product_lic");
+  var total_lic = 0;
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].checked) {
+      total_lic += parseFloat(input[i].value);
+    }
+  }
+  document.getElementsByName("total_lic")[0].value = + total_lic.toFixed(2);
+}
+
+////////////////////////////////////////////////
+////////////ARMAZENAMENTO EM BROWSER////////////
+////////////////////////////////////////////////
+
+
+
+
+const bach_disciplinas = ["BIO7003","BIO7240","CFS7001","ECZ7011","ECZ7021","MIP7011","MOR7001","QMC5235","BEG7012","BQA7002","CFS7002","ECZ7012","MTM3100","BEG7013","BEG7225","BOT7013", "ECZ7013","INE7003","MIP7013","MOR7003","BEG7024","BEG7034","BIO7011","BOT7014","ECZ7024","MEN7004","MIP7003","BEG7025","BEG7227","BIO7012","BOT7015","ECZ7015","ECZ7025","MIP7035","CFS7006","ECZ7016","ECZ7036","DGL7006","BEG7017","BEG7226","BIO7004","BIO7013","BOT7017","ECZ7050","FIL7007","DGL7007","BIO7006","BIO7015","ECZ7028","ECZ7038","FMC7008","BIO7009","BIO7016"];
+
+
+const lic_disciplinas = ["LBIO7003","LBIO7240","LCFS7001","LECZ7011","LECZ7021","LMIP7011","LMOR7001","LQMC5235","LBEG7012","LBQA7002","LCFS7002","LECZ7012","LMTM3100","LBEG7013","LBEG7225","LBOT7013", "LECZ7013","LINE7003","LMIP7013","LMOR7003","LBEG7024","LBEG7034","LBIO7011","LBOT7014","LECZ7024","LMEN7004","LMIP7003", "LBEG7025","LBEG7227","LBIO7012","LBOT7015","LECZ7015","LECZ7025","EED5331","LMIP7035","PSI5137","LCFS7006","LECZ7016","MEN5601","LECZ7036","LDGL7006","LBIO7004","LBIO7013","LBOT7017","LECZ7050","LFIL7007","LDGL7007","LBIO7015","LBIO7016", "MEN7009", "MEN7341", "MEN7008", "LSB7904", "EED5186", "EED5185", "LBIO7009", "MEN7010"];
+
+const disciplinas = bach_disciplinas.concat(lic_disciplinas);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	for (i = 0; i < disciplinas.length; i++){
+		if (localStorage.getItem(disciplinas[i]) == "true"){
+			document.getElementById(disciplinas[i]).disabled = false;
+			document.getElementById(disciplinas[i]).checked = true;
+		}
+	}
+	totalIt();
+}, false);
+
+
+function checkboxStorage(item_id, force_uncheck = false){
+	if (force_uncheck){
+		localStorage.setItem(item_id, "false");}
+	else if (document.getElementById(item_id).checked){
+		localStorage.setItem(item_id, "true");
+	}
+	else{
+		localStorage.setItem(item_id,"false");
+	}
+}
+
+////////////////////////////////////////////////
+////////////ARMAZENAMENTO EM BROWSER////////////
+////////////////////////////////////////////////
+
+
+</script>
 <header>
 <h1>Controle curricular do curso de Ciências Biológicas da UFSC - Diurno</h1>
 </header>
@@ -31,7 +192,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 	<ul>
 		<li>
 			<input type="radio" id="tab1" class="rd_tab" name="tabs" checked />
-				<label for="tab1" class="btn_head">Bacharel</label>
+				<label for="tab1" class="tab_label">Bacharel</label>
 				<div class="tab-content">
 						<div class="horas">
 							</br>
@@ -58,8 +219,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BIO7016", 
 											"BIO7012"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="36" />
 											<div class="state p-success-o">
 												<label>BIO7003 - Introdução a Ciência - PCC 10 horas</label>
@@ -89,8 +250,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BIO7016", 
 											"BIO7012"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="54"
 											/>
 											<div class="state p-success-o">
@@ -125,8 +286,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BEG7017", 
 											"MIP7035"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt()/
+											checkboxStorage(id)'
 											value="36"
 											/>
 											<div class="state p-success-o">
@@ -161,8 +322,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"MIP7003", 
 											"ECZ7028"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="90"
 											/>
 											<div class="state p-success-o">
@@ -177,9 +338,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- ECZ7021 - Introdução à Ecologia -->	
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product" class="styled-checkbox" type="checkbox" id="ECZ7021" onchange="
-										totalIt();
-										checkboxStorage(id);"
+										<input name="product" class="styled-checkbox" type="checkbox" id="ECZ7021" onchange='totalIt();
+										checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -194,9 +354,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- MIP7011 - Tópicos de Biossegurança - PCC 05 horas -->	
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product" class="styled-checkbox" type="checkbox" id="MIP7011" onchange="
-										totalIt();
-										checkboxStorage(id);"
+										<input name="product" class="styled-checkbox" type="checkbox" id="MIP7011" onchange='totalIt();
+										checkboxStorage(id)'
 											value="36"
 											/>
 											<div class="state p-success-o">
@@ -221,7 +380,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"MOR7001", 
 											"MIP7035"
 											);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -258,8 +418,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BOT7015",
 											"BOT7017"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -307,8 +467,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 												"CFS7006",
 												"DGL7007"
 												);
-												checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="108"
 											/>
 											<div class="state p-success-o">
@@ -361,8 +521,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"MIP7035",
 											"BEG7017"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="108"
 											/>
 											<div class="state p-success-o">
@@ -377,7 +537,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product" type="checkbox" id="CFS7002" onchange='totalIt();checkboxStorage(id);'
+										<input name="product" type="checkbox" id="CFS7002" onchange='totalIt();
+										checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -411,8 +572,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"MIP7003", 
 											"DGL7007"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="90"
 											/>
 											<div class="state p-success-o">
@@ -441,8 +602,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"ECZ7028",
 											"ECZ7024"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -472,8 +633,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BEG7226", 
 											"BEG7017"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="54"
 											/>
 											<div class="state p-success-o">
@@ -488,7 +649,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- BEG7225 - Evolução (PCC 9 horas)  -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product" type="checkbox" id="BEG7225" disabled onchange='totalIt();checkboxStorage(id);'
+										<input name="product" type="checkbox" id="BEG7225" disabled onchange='totalIt();
+										checkboxStorage(id)'
 											value="36"
 											/>
 											<div class="state p-success-o">
@@ -513,8 +675,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BOT7015",
 											"DGL7007"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="126"
 											/>
 											<div class="state p-success-o">
@@ -541,8 +703,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"ECZ7016",
 											"DGL7007",
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="90"
 											/>
 											<div class="state p-success-o">
@@ -574,8 +736,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"ECZ7025", 
 											"ECZ7028"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="54"
 											disabled
 											/>
@@ -600,8 +762,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"MIP7013", 
 											"MIP7035"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -626,8 +788,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"CFS7006", 
 											"FMC7008"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -653,8 +815,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BEG7024", 
 											"BEG7025"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -679,8 +841,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BEG7227", 
 											"BEG7226"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -708,8 +870,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"BIO7016", 
 											"BIO7012"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="36"
 											/>
 											<div class="state p-success-o">
@@ -741,8 +903,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"DGL7007", 
 											"BOT7015", 
 											"BOT7017");
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="126"
 											/>
 											<div class="state p-success-o">
@@ -767,8 +929,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"ECZ7025", 
 											"ECZ7028"
 											);
-											checkboxStorage(id);
-											totalIt();'
+											totalIt();
+											checkboxStorage(id)'
 											value="90"
 											disabled
 											/>
@@ -784,7 +946,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- MEN7004 - Tópicos em Biologia e Educação  - PCC 18 horas -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product" type="checkbox" id="MEN7004" onchange='totalIt();checkboxStorage(id);'
+										<input name="product" type="checkbox" id="MEN7004" onchange='totalIt();
+										checkboxStorage(id)'
 											value="36" />
 											<div class="state p-success-o">
 												<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18 horas</label>
@@ -798,7 +961,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- MIP7003 - Biologia Parasitária - PCC 10 horas -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product" type="checkbox" id="MIP7003" disabled onchange='totalIt();checkboxStorage(id);'
+										<input name="product" type="checkbox" id="MIP7003" disabled onchange='totalIt();
+										checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -814,16 +978,12 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</fieldset>
 					</fieldset>
 					<fieldset class="Fases_rigth">
-					<div> 
-					 <button name="btn_select" class="button" type="button" onclick="selectAll('bach')">Marcar tudo</button>
-           <button name="btn_select" class="button" type="button" onclick="unselectAll('bach')">Desmarcar tudo</button>
-           </div> 
+					
 						<fieldset class="Fases">Quinta Fase</br>
 							<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BEG7025" disabled onchange='
-									totalIt();
-									(id);'
+									<input name="product" type="checkbox" id="BEG7025" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -847,8 +1007,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"BEG7227", 
 										"BEG7226"
 										);
-										checkboxStorage(id);
-										totalIt();'
+										totalIt();
+										checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -876,8 +1036,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"BIO7015", 
 										"BIO7016"
 										);
-										checkboxStorage(id);
-										totalIt();'
+										totalIt();
+										checkboxStorage(id)'
 										value="36"
 										/>
 										<div class="state p-success-o">
@@ -901,8 +1061,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"BOT7015", 
 										"BOT7017"
 										);
-										checkboxStorage(id);
-										totalIt();'
+										totalIt();
+										checkboxStorage(id)'
 										value="90"
 										/>
 										<div class="state p-success-o">
@@ -932,8 +1092,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"BOT7014", 
 										"DGL7007"
 										);
-										checkboxStorage(id);
-										totalIt();'
+										totalIt();
+										checkboxStorage(id)'
 										value="72" disabled
 										/>
 										<div class="state p-success-o">
@@ -957,8 +1117,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"ECZ7025", 
 										"ECZ7028"
 										);
-										checkboxStorage(id);
-										totalIt();'
+										totalIt();
+										checkboxStorage(id)'
 										value="90" disabled
 										/>
 										<div class="state p-success-o">
@@ -973,7 +1133,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- MIP7035 - Imunologia - PCC 04 horas  -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="MIP7035" disabled onchange='totalIt();checkboxStorage(id);'
+									<input name="product" type="checkbox" id="MIP7035" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -999,8 +1160,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"CFS7006", 
 										"FMC7008"
 										);
-										checkboxStorage(id);
-										totalIt();'
+										totalIt();
+										checkboxStorage(id)'
 										value="108"
 										/>
 										<div class="state p-success-o">
@@ -1015,9 +1176,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7016 - Zoologia de Vertebrados II  - PCC 04 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="ECZ7016"	disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="ECZ7016"	disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -1032,9 +1192,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7036 - Fisiologia Animal Comparada -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="ECZ7036" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="ECZ7036" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="90"
 										/>
 										<div class="state p-success-o">
@@ -1059,8 +1218,9 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										off_other(
 										"DGL7006", 
 										"DGL7007"
-										)
-										checkboxStorage(id);'
+										);
+										checkboxStorage(id)
+										'
 										 value="72" 
 										 />
 										<div class="state p-success-o">
@@ -1077,9 +1237,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 						<fieldset class="Fases2">Sétima Fase</br>
 							<label class="checkbox">   <!-- BEG7017 - Biologia Molecular II -->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BEG7017" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="BEG7017" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="36"
 										/>
 										<div class="state p-success-o">
@@ -1094,9 +1253,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- BEG7226 - Genética Evolutiva -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BEG7226" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="BEG7226" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="54" />
 										<div class="state p-success-o">
 											<label>BEG7226 - Genética Evolutiva</label>
@@ -1110,9 +1268,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- BIO7004 - Metodologia de Pesquisa  - PCC 10 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BIO7004" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="BIO7004" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="36"
 										/>
 										<div class="state p-success-o">
@@ -1135,7 +1292,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"BIO7013", 
 										"BIO7016"
 										);totalIt();
-										checkboxStorage(id);'
+										checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -1150,9 +1307,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- BOT7017 - Fisiologia Vegetal  - PCC 10 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BOT7017" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="BOT7017" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="90"
 										/>
 										<div class="state p-success-o">
@@ -1167,9 +1323,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="ECZ7050" onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="ECZ7050" onchange='totalIt();
+									checkboxStorage(id)'
 										value="36"
 										/>
 										<div class="state p-success-o">
@@ -1184,9 +1339,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- FIL7007 - Filosofia da Ciência -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="FIL7007" onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="FIL7007" onchange='totalIt();
+									checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -1201,9 +1355,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- DGL7007 - Paleontologia - PCC 03 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="DGL7007" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="DGL7007" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="54"
 										/>
 										<div class="state p-success-o">
@@ -1221,9 +1374,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 						
 							<label class="checkbox">   <!-- BIO7006 - Informática Aplicada às Ciências Biológicas -->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BIO7006" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="BIO7006" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="36"
 										/>
 										<div class="state p-success-o">
@@ -1245,8 +1397,9 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										off_other(
 										"BIO7015", 
 										"BIO7016"
-										);totalIt();
-										checkboxStorage(id);'
+										);
+										totalIt();
+										checkboxStorage(id)'
 										value="90" disabled
 										/>
 										<div class="state p-success-o">
@@ -1261,9 +1414,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7028 - Conservação Biológica  - PCC 10 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="ECZ7028" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="ECZ7028" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -1279,9 +1431,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							<label class="checkbox">   <!-- ECZ7038 - Introdução ao Estudo de Impacto Ambiental e ao Rel. de Imp. Amb. -->		
 							
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="ECZ7038" onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="ECZ7038" onchange='totalIt();
+									checkboxStorage(id)'
 										value="54"
 										/>
 										<div class="state p-success-o">
@@ -1296,9 +1447,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- FMC7008 - Farmacologia -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="FMC7008" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="FMC7008" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="72">
 										<div class="state p-success-o">
 											<label>FMC7008 - Farmacologia</label>
@@ -1314,9 +1464,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 						<fieldset class="Fases2">Nona Fase</br>
 							<label class="checkbox">   <!-- BIO7009 - Legislação Profissional Aplicada  - PCC 04 horas-->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BIO7009" onchange='
-									totalIt()
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="BIO7009" onchange='totalIt();
+									checkboxStorage(id)'
 										value="36">
 										<div class="state p-success-o">
 											<label>BIO7009 - Legislação Profissional Aplicada - PCC 04 horas</label>
@@ -1330,9 +1479,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- BIO7016 - Trabalho de Conclusão de Curso II (TCC) -->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product" type="checkbox" id="BIO7016" disabled onchange='
-									totalIt();
-									checkboxStorage(id);'
+									<input name="product" type="checkbox" id="BIO7016" disabled onchange='totalIt();
+									checkboxStorage(id)'
 										value="90">
 										<div class="state p-success-o">
 											<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
@@ -1353,7 +1501,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 		<li>
 		
 			<input type="radio" name="tabs" class="rd_tab" id="tab2">
-				<label for="tab2" class="btn_head">Licenciatura</label>
+				<label for="tab2" class="tab_label">Licenciatura</label>
 					<div class="tab-content">
 						<div class="horas">
 							</br>
@@ -1381,7 +1529,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBIO7016", 
 											"LBIO7012"
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="36" />
 											<div class="state p-success-o">
 												<label>BIO7003 - Introdução a Ciência - PCC 10 horas</label>
@@ -1410,7 +1558,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBIO7016", 
 											"LBIO7012"
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="54" />
 											<div class="state p-success-o">
 												<label>BIO7240 - Ciências Biológicas: Formação e Profissão</label>
@@ -1442,7 +1590,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LECZ7036", 
 											"LBEG7034", 
 											"LMIP7035"
-											)
+											); checkboxStorage(id)
 											'
 											value="36"
 											/>
@@ -1477,7 +1625,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LECZ7025", 
 											"LECZ7013", 
 											"LMIP7003", 
-											)'
+											); checkboxStorage(id)'
 											value="90"
 											/>
 											<div class="state p-success-o">
@@ -1492,7 +1640,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- ECZ7021 - Introdução à Ecologia -->	
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LECZ7021" onchange='totalIt_lic()'
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LECZ7021" onchange='totalIt_lic(); checkboxStorage(id)'
 											value="72" />
 											<div class="state p-success-o">
 												<label>ECZ7021 - Introdução à Ecologia - PCC 10 horas</label>
@@ -1506,7 +1654,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- MIP7011 - Tópicos de Biossegurança - PCC 05 horas -->	
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LMIP7011" onchange='totalIt_lic()'
+										<input name="product_lic" class="styled-checkbox" type="checkbox" id="LMIP7011" onchange='totalIt_lic(); checkboxStorage(id)'
 											value="36" />
 											<div class="state p-success-o">
 												<label>MIP7011 - Tópicos de Biossegurança - PCC 05 horas</label>
@@ -1530,7 +1678,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LMOR7001", 
 											"LMIP7035"
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -1565,7 +1713,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LMIP7035",
 											"LBOT7015",
 											"LBOT7017"
-											)' 
+											); checkboxStorage(id)' 
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -1618,7 +1766,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBOT7015", 
 											"LCFS7006",
 											"LDGL7007"
-											)' 
+											); checkboxStorage(id)' 
 											value="108"
 											/>
 											<div class="state p-success-o">
@@ -1664,7 +1812,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LECZ7036", 
 											"LBEG7034", 
 											"LMIP7035"
-											)' 
+											); checkboxStorage(id)' 
 											value="108"
 											/>
 											<div class="state p-success-o">
@@ -1679,7 +1827,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product_lic" type="checkbox" id="LCFS7002" onchange='totalIt_lic()'
+										<input name="product_lic" type="checkbox" id="LCFS7002" onchange='totalIt_lic(); checkboxStorage(id)'
 											value="72" />
 											<div class="state p-success-o">
 												<label>CFS7002 - Biofísica Celular e das Radiações - PCC 18 horas</label>
@@ -1712,7 +1860,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LECZ7016", 
 											"LMIP7003", 
 											"LDGL7007"
-											);' 
+											); checkboxStorage(id)' 
 											value="90"
 											/>
 											<div class="state p-success-o">
@@ -1738,7 +1886,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LINE7003", 
 											"LECZ7025", 
 											"LECZ7024"
-											);' 
+											); checkboxStorage(id)' 
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -1765,7 +1913,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBEG7034", 
 											"LBEG7227", 
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="54" />
 											<div class="state p-success-o">
 												<label>BEG7013 - Biologia Molecular I - PCC 04 horas</label>
@@ -1779,7 +1927,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- BEG7225 - Evolução (PCC 9 horas)  -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product_lic" type="checkbox" id="LBEG7225" disabled onchange='totalIt_lic()'
+										<input name="product_lic" type="checkbox" id="LBEG7225" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 											value="36" />
 											<div class="state p-success-o">
 												<label>BEG7225 - Evolução (PCC 9 horas) </label>
@@ -1803,7 +1951,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBOT7015",
 											"LDGL7007"
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="126"
 											/>
 											<div class="state p-success-o">
@@ -1830,7 +1978,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LECZ7016",
 											"LDGL7007",
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="90"
 											/>
 											<div class="state p-success-o">
@@ -1859,7 +2007,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LINE7003", 
 											"LECZ7025",
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="54"
 											disabled
 											/>
@@ -1885,7 +2033,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LMIP7013", 
 											"LMIP7035"
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -1909,7 +2057,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LMOR7003", 
 											"LCFS7006", 
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -1935,7 +2083,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBEG7024", 
 											"LBEG7025"
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -1958,7 +2106,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBEG7034", 
 											"LBEG7227", 
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="72"
 											/>
 											<div class="state p-success-o">
@@ -1986,7 +2134,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LBIO7016", 
 											"LBIO7012"
 											);
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="36"
 											/>
 											<div class="state p-success-o">
@@ -2016,7 +2164,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											"LDGL7007", 
 											"LBOT7015", 
 											"LBOT7017");
-											totalIt_lic()'
+											totalIt_lic(); checkboxStorage(id)'
 											value="126"
 											/>
 											<div class="state p-success-o">
@@ -2040,7 +2188,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 											off_other(
 											"LECZ7024", 
 											"LECZ7025",
-											)
+											); checkboxStorage(id)
 											'
 											value="108"
 											disabled
@@ -2057,7 +2205,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- MEN7004 - Tópicos em Biologia e Educação  - PCC 18 horas -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product_lic" type="checkbox" id="LMEN7004" onchange='totalIt_lic()'
+										<input name="product_lic" type="checkbox" id="LMEN7004" onchange='totalIt_lic(); checkboxStorage(id)'
 											value="36" />
 											<div class="state p-success-o">
 												<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18 horas</label>
@@ -2071,7 +2219,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 								</label>
 								<label class="checkbox">   <!-- MIP7003 - Biologia Parasitária - PCC 10 horas -->								
 									<p><div class="pretty p-default p-curve p-has-hover">
-										<input name="product_lic" type="checkbox" id="LMIP7003" disabled onchange='totalIt_lic()'
+										<input name="product_lic" type="checkbox" id="LMIP7003" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 											value="72" />
 											<div class="state p-success-o">
 												<label>MIP7003 - Biologia Parasitária - PCC 10 horas</label>
@@ -2086,10 +2234,6 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</fieldset>
 					</fieldset>
 					<fieldset class="Fases_rigth">
-					<div>
-					 <button name="btn_select" class="button" type="button" onclick="selectAll('lic')">Marcar tudo</button>
-           <button name="btn_select" class="button" type="button" onclick="unselectAll('lic')">Desmarcar tudo</button>
-          </div>
 						<fieldset class="Fases">Quinta Fase</br>
 							<label class="checkbox">   <!-- BIO7012 - Vivência em Pesquisa II -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
@@ -2105,7 +2249,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"LBIO7015", 
 										"LBIO7016"
 										);
-										totalIt_lic()'
+										totalIt_lic(); checkboxStorage(id)'
 										value="36"
 										/>
 										<div class="state p-success-o">
@@ -2129,7 +2273,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"LBOT7015", 
 										"LBOT7017"
 										);
-										totalIt_lic()'
+										totalIt_lic(); checkboxStorage(id)'
 										value="90"
 										/>
 										<div class="state p-success-o">
@@ -2157,7 +2301,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"LBOT7014", 
 										"LDGL7007"
 										);
-										totalIt_lic()'
+										totalIt_lic(); checkboxStorage(id)'
 										value="72" disabled
 										/>
 										<div class="state p-success-o">
@@ -2172,7 +2316,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7025 - Ecologia de Comunidades  - PCC 18 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7025" onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LECZ7025" onchange='totalIt_lic(); checkboxStorage(id)'
 										value="90" disabled
 										/>
 										<div class="state p-success-o">
@@ -2187,7 +2331,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- EED5331 Teorias da Educação -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="EED5331" onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="EED5331" onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2202,7 +2346,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- MIP7035 - Imunologia - PCC 04 horas  -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LMIP7035" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LMIP7035" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2225,7 +2369,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"MEN7009");
 										off_other(
 										"PSI5137", 
-										"MEN7010")'
+										"MEN7010"); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2242,7 +2386,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 						<fieldset class="Fases2">Sexta Fase</br>
 							<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBEG7025" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LBEG7025" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2257,7 +2401,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- BEG7227 - Genética Clássica  (PCC 12 horas) -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBEG7227" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LBEG7227" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2277,7 +2421,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"LCFS7006", 
 										"LBQA7002", 
 										); 
-										totalIt_lic()'
+										totalIt_lic(); checkboxStorage(id)'
 										value="128"
 										/>
 										<div class="state p-success-o">
@@ -2292,7 +2436,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7016 - Zoologia de Vertebrados II  - PCC 04 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7016"	disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LECZ7016"	disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2317,7 +2461,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										off_other(
 										"LDGL7006", 
 										"LDGL7007"
-										)
+										); checkboxStorage(id)
 										'
 										value="72" 
 										 />
@@ -2341,7 +2485,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 									"MEN5601",
 									"MEN7009",
 									"MEN7010"
-									)'
+									); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2358,7 +2502,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 						<fieldset class="Fases2">Sétima Fase</br>
 							<label class="checkbox">   <!-- BIO7004 - Metodologia de Pesquisa  - PCC 10 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBIO7004" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LBIO7004" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="36" />
 										<div class="state p-success-o">
 											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
@@ -2380,7 +2524,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"LBIO7013", 
 										"LBIO7016"
 										);
-										totalIt_lic()'
+										totalIt_lic(); checkboxStorage(id)'
 										value="72"
 										/>
 										<div class="state p-success-o">
@@ -2395,7 +2539,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7036 - Fisiologia Animal Comparada -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7036" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LECZ7036" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="90" />
 										<div class="state p-success-o">
 											<label>ECZ7036 - Fisiologia Animal Comparada</label>
@@ -2409,7 +2553,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="ECZ7050" onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LECZ7050" onchange='totalIt_lic(); checkboxStorage(id)'
 										value="40" />
 										<div class="state p-success-o">
 											<label>ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas</label>
@@ -2431,7 +2575,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"EED5185", 
 										"MEN7009",
 										"EED5186",
-										"MEN7010")'
+										"MEN7010"); checkboxStorage(id)'
 										value="72" />
 										<div class="state p-success-o">
 											<label>EED5185 Organização Escolar I</label>
@@ -2445,7 +2589,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- FIL7007 - Filosofia da Ciência -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LFIL7007" onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LFIL7007" onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72" />
 										<div class="state p-success-o">
 											<label>FIL7007 - Filosofia da Ciência</label>
@@ -2458,7 +2602,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- DGL7007 - Paleontologia - PCC 03 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LDGL7007" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LDGL7007" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="54" />
 										<div class="state p-success-o">
 											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
@@ -2482,7 +2626,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"LBIO7015", 
 										"LBIO7016"
 										);
-										totalIt_lic()'
+										totalIt_lic(); checkboxStorage(id)'
 										value="90" disabled
 										/>
 										<div class="state p-success-o">
@@ -2497,7 +2641,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- BOT7017 - Fisiologia Vegetal  - PCC 10 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBOT7017" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LBOT7017" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="90" />
 										<div class="state p-success-o">
 											<label>BOT7017 - Fisiologia Vegetal - PCC 10 horas</label>
@@ -2520,7 +2664,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										);
 										off_other(
 										"MEN7008", 
-										"MEN7010")'
+										"MEN7010"); checkboxStorage(id)'
 										value="72" />
 										<div class="state p-success-o">
 											<label>EED5186 Organização Escolar II - PCC - 18 horas</label>
@@ -2534,7 +2678,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- LSB7904 Língua Brasileira de Sinais I (PCC 18 horas-aula)-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LSB7904" onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LSB7904" onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72" />
 										<div class="state p-success-o">
 											<label>LSB7904 Língua Brasileira de Sinais I (PCC 18 horas-aula)</label>
@@ -2556,7 +2700,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										"MEN7009");
 										off_other(
 										"EED5186", 
-										"MEN7010")
+										"MEN7010"); checkboxStorage(id)
 										'
 										value="108" />
 										<div class="state p-success-o">
@@ -2571,7 +2715,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							</label>
 							<label class="checkbox">   <!-- MEN7341 Física para o Ensino de Ciências Biológiicas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="MEN7341" onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="MEN7341" onchange='totalIt_lic(); checkboxStorage(id)'
 										value="72" />
 										<div class="state p-success-o">
 											<label>MEN7341 Física para o Ensino de Ciências Biológiicas</label>
@@ -2587,7 +2731,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 						<fieldset class="Fases2">Nona Fase</br>
 							<label class="checkbox">   <!-- BIO7016 - Trabalho de Conclusão de Curso II (TCC) -->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBIO7016" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LBIO7016" disabled onchange='totalIt_lic(); checkboxStorage(id)'
 										value="90" />
 										<div class="state p-success-o">
 											<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
@@ -2602,7 +2746,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 							<label class="checkbox">   <!-- MEN7009 Estágio Supervisionado no Ensino de Ciências -->
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="MEN7009" disabled onchange='totalIt_lic();
-									determined_list("MEN7009", "MEN7010")'
+									determined_list("MEN7009", "MEN7010"); checkboxStorage(id)'
 										value="252" />
 										<div class="state p-success-o">
 											<label>MEN7009 Estágio Supervisionado no Ensino de Ciências</label>
@@ -2618,7 +2762,8 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 						<fieldset class="Fases2">Décima Fase</br>
 							<label class="checkbox">   <!-- BIO7009 - Legislação Profissional Aplicada  - PCC 04 horas-->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBIO7009" onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="LBIO7009" onchange='totalIt_lic();
+									checkboxStorage(id)'
 										value="36" />
 										<div class="state p-success-o">
 											<label>BIO7009 - Legislação Profissional Aplicada - PCC 04 horas</label>
@@ -2626,13 +2771,13 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 										<div class="state p-success-o p-is-hover">
 											<label>Pré-Requisito de 1800 horas</label>
 										</div>		
-									 	
 								</div>
 								
 							</label>
 							<label class="checkbox">   <!-- MEN7010 Estágio Supervisionado no Ensino de Biologia -->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="MEN7010" disabled onchange='totalIt_lic()'
+									<input name="product_lic" type="checkbox" id="MEN7010" disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
 										value="252" />
 										<div class="state p-success-o">
 											<label>MEN7010 Estágio Supervisionado no Ensino de Biologia</label>
@@ -2650,7 +2795,7 @@ bot 1 pre requisito pra bot2 que é pre requisito para bot3 > colocar off_other 
 		</li>
 		<li>
 			<input type="radio" name="tabs" class="rd_tab" id="tab3">
-				<label for="tab3" class="btn_head">Sobre</label>
+				<label for="tab3" class="tab_label">Sobre</label>
 					<div class="tab-content">
 						<label></br>Powered by Gods</label>
 						</br>
