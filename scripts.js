@@ -118,6 +118,59 @@ function totalIt_lic() {
   document.getElementsByName("total_lic")[0].value = + total_lic.toFixed(2);
 }
 
+
+//selecionar todos
+function check_all(...materias) {
+	// Get your checkbox who determine the condition
+	var determine = document.getElementById(materias[0]);
+	// Make a function who disabled or enabled your conditioned checkbox
+	var enableCheckboxConditioned = function () {
+		if(determine.checked == true) {
+		  for (i=1; i<materias.length; i++){
+				if (document.getElementById(materias[i]).disabled == false){
+		  		document.getElementById(materias[i]).checked = true;
+				document.getElementById(materias[i]).onchange();
+				// Precisa fazer disparar o onclick de cada matéria
+		  }
+		 }
+			
+		}
+		else {
+			for (i=1; i<materias.length; i++){
+		  		document.getElementById(materias[i]).checked = false;
+				document.getElementById(materias[i]).onchange();
+
+			}
+		}
+	}
+	
+determine.onclick = enableCheckboxConditioned;
+enableCheckboxConditioned();
+}
+
+function all_check(...materias) {
+	// Get your checkbox who determine the condition
+	var determine = document.getElementById(materias[0]);
+	// Make a function who disabled or enabled your conditioned checkbox
+	var enableCheckboxConditioned = function () {
+		if (determine.checked == true) {
+			for (i=1; i<materias.length; i++){
+		  		document.getElementById(materias[i]).checked = true;
+			}
+		}
+		else {
+		    for (i=0; i<materias.length; i++){
+		  		document.getElementById(materias[i]).checked = false;
+			}
+		}
+	}
+determine.onclick = enableCheckboxConditioned;
+enableCheckboxConditioned();
+}
+
+
+
+
 ////////////////////////////////////////////////
 ////////////ARMAZENAMENTO EM BROWSER////////////
 ////////////////////////////////////////////////
