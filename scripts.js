@@ -6,7 +6,7 @@ function double_determined_list(requisito1, requisito2, ...materias) {
 	var determine2 = document.getElementById(requisito2);
 	// Make a function who disabled or enabled your conditioned checkbox
 	var disableCheckboxConditioned = function () {
-		if (determine.checked == true && determine2.checked == true){
+		if (determine.checked === true && determine2.checked === true){
 		  for (i=0; i<materias.length; i++){
 				document.getElementById(materias[i]).disabled = false;
 			}
@@ -17,7 +17,7 @@ function double_determined_list(requisito1, requisito2, ...materias) {
 				document.getElementById(materias[i]).checked = false;
 			}
 		}
-	}
+	};
 determine.onclick = disableCheckboxConditioned;
 disableCheckboxConditioned();
 }
@@ -30,13 +30,13 @@ function off_other(...materias) {
 	var determine = document.getElementById(materias[0]);
 	// Make a function who disabled or enabled your conditioned checkbox
 	var disableCheckboxConditioned = function () {
-		if(determine.checked == false || determine.disabled == true) {
+		if(determine.checked === false || determine.disabled === true) {
 		  for (i=1; i<materias.length; i++){
 		  		document.getElementById(materias[i]).checked = false;
 				document.getElementById(materias[i]).disabled = true;
 			}
 		}
-	}
+	};
 determine.onclick = disableCheckboxConditioned;
 disableCheckboxConditioned();
 }
@@ -50,7 +50,7 @@ function triple_determined_list(requisito1, requisito2, requisito3, ...materias)
 	var determine3 = document.getElementById(requisito3);
 	// Make a function who disabled or enabled your conditioned checkbox
 	var disableCheckboxConditioned = function () {
-		if (determine.checked == true && determine2.checked == true && determine3.checked == true){
+		if (determine.checked === true && determine2.checked === true && determine3.checked === true){
 		  for (i=0; i<materias.length; i++){
 				document.getElementById(materias[i]).disabled = false;
 			}
@@ -61,7 +61,7 @@ function triple_determined_list(requisito1, requisito2, requisito3, ...materias)
 				document.getElementById(materias[i]).checked = false;
 			}
 		}
-	}
+	};
 determine.onclick = disableCheckboxConditioned;
 disableCheckboxConditioned();
 }
@@ -75,7 +75,7 @@ function determined_list(...materias) {
 	var determine = document.getElementById(materias[0]);
 	// Make a function who disabled or enabled your conditioned checkbox
 	var disableCheckboxConditioned = function () {
-		if(determine.checked == false) {
+		if(determine.checked === false) {
 		  for (i=1; i<materias.length; i++){
 				document.getElementById(materias[i]).disabled = true;
 				document.getElementById(materias[i]).checked = false;
@@ -86,7 +86,7 @@ function determined_list(...materias) {
 			document.getElementById(materias[i]).disabled = false;
 			}
 		}
-	}
+	};
 determine.onclick = disableCheckboxConditioned;
 disableCheckboxConditioned();
 }
@@ -118,59 +118,6 @@ function totalIt_lic() {
   document.getElementsByName("total_lic")[0].value = + total_lic.toFixed(2);
 }
 
-
-//selecionar todos
-function check_all(...materias) {
-	// Get your checkbox who determine the condition
-	var determine = document.getElementById(materias[0]);
-	// Make a function who disabled or enabled your conditioned checkbox
-	var enableCheckboxConditioned = function () {
-		if(determine.checked == true) {
-		  for (i=1; i<materias.length; i++){
-				if (document.getElementById(materias[i]).disabled == false){
-		  		document.getElementById(materias[i]).checked = true;
-				document.getElementById(materias[i]).onchange();
-				// Precisa fazer disparar o onclick de cada matéria
-		  }
-		 }
-			
-		}
-		else {
-			for (i=1; i<materias.length; i++){
-		  		document.getElementById(materias[i]).checked = false;
-				document.getElementById(materias[i]).onchange();
-
-			}
-		}
-	}
-	
-determine.onclick = enableCheckboxConditioned;
-enableCheckboxConditioned();
-}
-
-function all_check(...materias) {
-	// Get your checkbox who determine the condition
-	var determine = document.getElementById(materias[0]);
-	// Make a function who disabled or enabled your conditioned checkbox
-	var enableCheckboxConditioned = function () {
-		if (determine.checked == true) {
-			for (i=1; i<materias.length; i++){
-		  		document.getElementById(materias[i]).checked = true;
-			}
-		}
-		else {
-		    for (i=0; i<materias.length; i++){
-		  		document.getElementById(materias[i]).checked = false;
-			}
-		}
-	}
-determine.onclick = enableCheckboxConditioned;
-enableCheckboxConditioned();
-}
-
-
-
-
 ////////////////////////////////////////////////
 ////////////ARMAZENAMENTO EM BROWSER////////////
 ////////////////////////////////////////////////
@@ -185,10 +132,10 @@ const disciplinas = bach_disciplinas.concat(lic_disciplinas);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-	for (i = 0; i < disciplinas.length; i++){
+	for (var i = 0; i < disciplinas.length; i++){
 		if (localStorage.getItem(disciplinas[i]) == "true"){
 			document.getElementById(disciplinas[i]).disabled = false;
-			document.getElementById(disciplinas[i]).checked = true;
+			document.getElementById(disciplinas[i]).click();
 		}
 	}
 	totalIt();
@@ -213,27 +160,24 @@ function checkboxStorage(item_id, force_uncheck = false){
 
 
 ////////////////////////////////////////////////
-////////////////BOTÕES DE SELEÇÃO///////////////
+////////////////BOT?ES DE SELE??O///////////////
 ////////////////////////////////////////////////
-/*
-//Controle dos botÃµes de seleÃ§Ã£o
-function selectAll(course){
-  if (course=="bach"){
-  	for (i = 0; i < bach_disciplinas.length; i++){
-  		document.getElementById(bach_disciplinas[i]).checked = true;
-  		document.getElementById(bach_disciplinas[i]).disabled = false;
-  		localStorage.setItem(bach_disciplinas[i], "true");
-  	}
-  	totalIt();
-  }else{
-    	for (i = 0; i < lic_disciplinas.length; i++){
-  		document.getElementById(lic_disciplinas[i]).checked = true;
-  		document.getElementById(lic_disciplinas[i]).disabled = false;
-  		localStorage.setItem(lic_disciplinas[i], "true");
-  	}
-	  totalIt_lic();
-}}
 
+//Controle dos botÃµes de seleÃ§Ã£o
+function selectAll(id,...materias){
+  for (var i=0;i<materias.length;i++){
+    let materia = document.getElementById(materias[i]);
+    if (document.getElementById(id).checked && materia.checked){
+      continue;
+    }else if (!document.getElementById(id).checked && !materia.checked){
+      continue;
+    }else{
+      document.getElementById(materias[i]).click();
+    }
+    }
+}
+
+/*
 function unselectAll(course){
   if (course=="bach"){
   	for (i = 0; i < bach_disciplinas.length; i++){
@@ -250,5 +194,34 @@ function unselectAll(course){
   }}
 */
 ////////////////////////////////////////////////
-////////////////BOTÕES DE SELEÇÃO///////////////
+////////////////BOT?ES DE SELE??O///////////////
+////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////
+////////////////GERENCIAMENTO DE TABS///////////
+////////////////////////////////////////////////
+function openTab(evt, tabName) {
+  //Dechalando variÃ¡veis
+  var i, tabcontent, tablinks;
+
+  //Esconder todos os elementos com class="tab_content"
+  tabcontent = document.getElementsByClassName("tab_content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  /*//Remover classe "active" dos elementos class="tab_content"
+  tablinks = document.getElementsByClassName("tab_button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "tab_button");
+  }*/
+
+  //Mostrar a tab selecionada e adicionar uma classe "active" no botÃ£o que abriu a tab
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+////////////////////////////////////////////////
+////////////////GERENCIAMENTO DE TABS///////////
 ////////////////////////////////////////////////
