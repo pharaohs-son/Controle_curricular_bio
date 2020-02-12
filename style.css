@@ -34,6 +34,8 @@
 
 @import 'pretty-checkbox/scss/states/indeterminate';
 
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
 .pretty *{box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}
@@ -103,9 +105,105 @@
 .pretty .state label:before,
 .pretty .state:before{color-adjust:exact;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 
+* {
+  background-color: white;
+
+}
+
+body{
+  margin-left:auto;
+  margin-right:auto;
+	min-width:800px;
+	font-family: 'Roboto Condensed'; /*Definindo a família para toda a página evitando redundância, trocar apenas nas classes específicas*/
+	margin-bottom: 20px;
+}
+
+
+
+
+nav .tab {
+  overflow: hidden;
+  margin-bottom: 20px;
+  
+}
+
+
+/*Botões de navegação*/
+.tab button{
+  float: left;
+  display: block;
+	width: 250px;
+	height: 30px;
+	background-color: #424857;/*Azul escuro*/
+	padding: 5px 10px;
+	font-size: 25;
+	font-weight: bold;
+	border-radius: 10px 10px 0px 0px;
+	color: white;
+	cursor: pointer;
+	border-style: outset;
+	text-align: center;
+	-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
+}
+
+.tab button:hover {
+	background-color: #2c303a;/*Azul escuro mais escuro*/
+	text-shadow: none;
+} 
+
+
+
+
+.total_board_count {
+  width:100%;
+  border-top-width: 3;
+  border-bottom-width: 3;
+  border-left-width:0;
+  border-right-width: 0;
+}
+
+.local_board {
+  width:40%;
+  float:left;
+  margin-left:3vw;
+}
+
+
+
+/*Contagem de horas*/
+.local_count{
+  font-weight:bold;
+}
+
+/*Checkboxes que selecionam uma fase inteira*/
+.select_all {
+  float:left;
+}
+
+
+/*Todas as fases do curso*/
+.fases_curso {
+  float: left;
+  width:40%;
+}
+
+.optativas_curso {
+  float:left;
+  width:20%;
+}
+
+.atividades_curso {
+  float:left;
+  width:20%;
+}
+
+.fase {
+    border: 0;
+}
+/*
 *{
 	margin: 0;
 	padding: 00;
@@ -137,12 +235,12 @@ h1{
 	height: 100%;
 }
 
-.nav_tabs ul li{
+.tab_button ul li{
 	float: left;
 }
 	
 
-.btn_head{
+.tab_button{
 	display: block;
 	width: 250px;
 	height: 20px;
@@ -155,11 +253,11 @@ h1{
 	cursor: pointer;
 	font-family: Franklin Gothic Book;
 	text-align: center;
-	-webkit-transition-duration: 0.4s; /* Safari */
+	-webkit-transition-duration: 0.4s; /* Safari
 	transition-duration: 0.4s;
 }
   
-.tab_label:hover {
+.tab_button:hover {
 	background-color: white;
 	color: #363b48; 
 	text-shadow: none;
@@ -167,14 +265,7 @@ h1{
 
 
 
-
-.nav_tabs .rd_tab { 
-	display:none;
-	position: relative;
-	
-}
-
-.nav_tabs .rd_tab:checked ~ label { 
+.tab_button:active { 
 	background-color: #e54e43;
 	color:#fff;
 	
@@ -248,7 +339,7 @@ h1{
 	
 .horas{
 	position: relative;
-	float: top-center;
+	float: inherit;
 	margin-left: 1vw;
 	padding:1;
 	padding-bottom: 1.5vw;
@@ -258,11 +349,7 @@ h1{
 	
 
 
-.rd_tab:checked ~ .tab-content{
-	display: block;
-	background-color: #ddd;
-	
-}
+
 .tab-content h2{
 	color: #87d3b7;
 }
@@ -286,7 +373,7 @@ h1{
 }
 
 .button {
-  background-color: #cc0000; /* vermelho*/
+  background-color: #cc0000; /* vermelho
   border: none;
   width: 160px;
   color: white;
@@ -297,20 +384,21 @@ h1{
   font-size: 13px;
   font-family: Franklin Gothic Book;
   border-radius: 6px;
-  border: 0px solid #4CAF50; /* Verde */
+  border: 0px solid #4CAF50; /* Verde 
   margin: 5px 10px;
   font-weight: bold;
   text-shadow: 2px 1px black;
   cursor: pointer;
   
-  -webkit-transition-duration: 0.05s; /* Safari */
+  -webkit-transition-duration: 0.05s; /* Safari 
   transition-duration: 0.05s;
 }
   
 .button:hover {
-	background-color: #800000; /* vermelho escuro*/
+	background-color: #800000; /* vermelho escuro
 	color: white; 
 	text-shadow: none;
 } 
 
 .headbutton {}
+*/

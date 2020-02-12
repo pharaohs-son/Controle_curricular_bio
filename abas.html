@@ -2,11 +2,11 @@
 <html>
 
 <head>
-<title>Title</title>
+<title>Controle Curricular Ciências Biológicas</title>
 
 <meta charset="UTF-8"  http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="initial-scale = 1.0" />
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style.css"/>
 <script src="scripts.js"></script>
 </head>
 
@@ -22,20 +22,53 @@
     <button class="tab_button" onclick="openTab(event, 'Licenciatura')">Licenciatura</button>
     <button class="tab_button" onclick="openTab(event, 'Sobre')">Sobre</button>
   </div>
-</nav>
+</nav> <!--Botões de navegação-->
 
   
 <!--Bacharel-->
 <div class="tab_content" id="Bacharel">
-  <div class="horas">
-		Total de Horas obrigatórias:
-		<input value="0" readonly="readonly" type="text" name="total" />
-  </div>
-	<section class="Fases_left">
-			<fieldset class="Fases" id="primeira">Primeira Fase
-			  	<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_1" class="all_button" type="checkbox" id="all_1" onchange="selectAll(id,'BIO7003','BIO7240','CFS7001','ECZ7011','ECZ7021','MIP7011','MOR7001','QMC5235');">Todos
-					</div> 
+  
+  <!--Contagem de horas-->
+  <fieldset class="total_board_count"> 
+    <section class="local_board">
+    <p class="local_count">
+		  Total de Horas Obrigatórias:
+		  <span value="0" readonly="readonly" type="text" id="mandatory_total"></span>
+		</p>
+		<p class="local_count">
+		  Total de Horas Optativas:
+		  <span value="0" readonly="readonly" type="text" id="op_total"></span>
+		</p>
+		</section>
+		
+		<section class="local_board">
+		<p class="local_count">
+		  Total de Atividades de Extensão (AE):
+		  <span value="0" readonly="readonly" type="text" name="ae_total"></span>
+		</p>
+		<p class="local_count">
+		  Total de Atividades Científico-Culturais (ACC):
+		  <span value="0" readonly="readonly" type="text" name="total"></span>
+		</p>
+		</section>
+  </fieldset>
+  
+  <!--Fases-->
+  <div>
+	<section class="fases_curso">
+			<fieldset class="fase" id="primeira">Primeira Fase
+			
+			  <div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_1" class="styled-checkbox" type="checkbox" id="all_1" onchange="selectAll(id,'BIO7003','BIO7240','CFS7001','ECZ7011','ECZ7021','MIP7011','MOR7001','QMC5235');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+			  
 				<label class="checkbox">   <!-- BIO7003 - Introdução a Ciência - PCC 10 horas -->
 					<p><div class="pretty p-default p-curve p-has-hover">
 						<input name="product" class="styled-checkbox" type="checkbox" id="BIO7003" onchange='
@@ -252,11 +285,19 @@
 					</div>
 				</label>									
 			</fieldset>
-			<fieldset class="Fases">Segunda Fase
-			  	<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_2" class="all_button" type="checkbox" id="all_2" 
-							onchange="selectAll(id,'BEG7012','BQA7002','CFS7002','ECZ7012','MTM3100');">Todos
-					</div> 
+			<fieldset class="fase">Segunda Fase
+			
+			  <div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_2" class="styled-checkbox" type="checkbox" id="all_2" onchange="selectAll(id,'BEG7012','BQA7002','CFS7002','ECZ7012','MTM3100');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+
 				<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 horas/aula) -->
 					<p><div class="pretty p-default p-curve p-has-hover">
 						<input name="product" type="checkbox" id="BEG7012" onchange='
@@ -430,12 +471,19 @@
 					</div>
 				</label>		
 			</fieldset>
-			<fieldset class="Fases">Terceira Fase
-			  	<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_3" class="all_button" type="checkbox" id="all_3" 
-							onchange="selectAll(id,'BEG7013','BEG7225','BOT7013','ECZ7013',
-							'INE7003','MIP7013','MOR7003');">Todos
-					</div> 
+			<fieldset class="fase">Terceira Fase
+			
+			  <div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_3" class="styled-checkbox" type="checkbox" id="all_3" onchange="selectAll(id,'BEG7013','BEG7225','BOT7013','ECZ7013','INE7003','MIP7013','MOR7003');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+
 				<label class="checkbox">   <!-- BEG7013 - Biologia Molecular I - PCC 04 horas -->
 					<p><div class="pretty p-default p-curve p-has-hover">
 						<input name="product" type="checkbox" id="BEG7013" disabled onchange=
@@ -607,11 +655,19 @@
 					</div>
 					</label>		
 			</fieldset>
-			<fieldset class="Fases">Quarta Fase
-			  	<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_4" class="all_button" type="checkbox" id="all_4"
-							onchange="selectAll(id,'BEG7024','BEG7034','BIO7011','BOT7014','ECZ7024','MEN7004','MIP7003');">Todos
-					</div> 
+			<fieldset class="fase">Quarta Fase
+			
+				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_4" class="styled-checkbox" type="checkbox" id="all_4" onchange="selectAll(id,'BEG7024','BEG7034','BIO7011','BOT7014','ECZ7024','MEN7004','MIP7003');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+
 				<label class="checkbox">   <!-- BEG7024 - Embriologia Animal - PCC 10 horas-->
 					<p><div class="pretty p-default p-curve p-has-hover">
 						<input name="product" type="checkbox" id="BEG7024" onchange=
@@ -772,12 +828,21 @@
 			</fieldset>
 	</section>
 	
-	<section class="Fases_rigth">
+	<section class="fases_curso">
 	
-		<fieldset class="Fases">Quinta Fase
-		    <div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_5" class="all_button" type="checkbox" id="all_5" onchange="selectAll(id,'BEG7025','BEG7227','BIO7012','BOT7015','ECZ7015','ECZ7025','MIP7035');">Todos
-				</div> 
+		<fieldset class="fase">Quinta Fase
+
+				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_5" class="styled-checkbox" type="checkbox" id="all_5" onchange="selectAll(id,'BEG7025','BEG7227','BIO7012','BOT7015','ECZ7015','ECZ7025','MIP7035');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+
 			<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
 				<p><div class="pretty p-default p-curve p-has-hover">
 					<input name="product" type="checkbox" id="BEG7025" disabled onchange='totalIt();
@@ -932,11 +997,19 @@
 				</div>
 			</label>		
 		</fieldset>
-		<fieldset class="Fases2">Sexta Fase<br>
-				<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_6" class="all_button" type="checkbox" id="all_6"
-							onchange="selectAll(id,'CFS7006','ECZ7016','ECZ7036','DGL7006');">Todos
-				</div> 
+		<fieldset class="fase">Sexta Fase<br>
+		
+				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_6" class="styled-checkbox" type="checkbox" id="all_6" onchange="selectAll(id,'CFS7006','ECZ7016','ECZ7036','DGL7006');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+
 			<label class="checkbox">   <!-- CFS7006 - Fisiologia Humana - PCC 20 horas -->
 				<p><div class="pretty p-default p-curve p-has-hover">
 					<input name="product" type="checkbox" id="CFS7006" disabled onchange=
@@ -1014,12 +1087,19 @@
 				</div>
 			</label>		
 		</fieldset>
-		<fieldset class="Fases2">Sétima Fase<br>
-				<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_7" class="all_button" type="checkbox" id="all_7"
-							onchange="selectAll(id,'BEG7017','BEG7226','BIO7004','BIO7013', 'BOT7017', 
-							'ECZ7050', 'FIL7007', 'DGL7007');">Todos
-				</div> 
+		<fieldset class="fase">Sétima Fase<br>
+		
+				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_7" class="styled-checkbox" type="checkbox" id="all_7" onchange="selectAll(id,'BEG7017','BEG7226','BIO7004','BIO7013', 'BOT7017', 'ECZ7050', 'FIL7007', 'DGL7007');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+		
 			<label class="checkbox">   <!-- BEG7017 - Biologia Molecular II -->
 				<p><div class="pretty p-default p-curve p-has-hover">
 					<input name="product" type="checkbox" id="BEG7017" disabled onchange='totalIt();
@@ -1139,11 +1219,19 @@
 				</div>
 			</label>		
 		</fieldset>
-		<fieldset class="Fases2">Oitava Fase<br>
-		    <div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_8" class="all_button" type="checkbox" id="all_8"
-							onchange="selectAll(id,'BIO7006','BIO7015', 'ECZ7028', 'ECZ7038', 'FMC7008');">Todos
-				</div> 
+		<fieldset class="fase">Oitava Fase
+		
+				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_8" class="styled-checkbox" type="checkbox" id="all_8" onchange="selectAll(id,'BIO7006','BIO7015', 'ECZ7028', 'ECZ7038', 'FMC7008');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+
 			<label class="checkbox">   <!-- BIO7006 - Informática Aplicada às Ciências Biológicas -->
 				<p><div class="pretty p-default p-curve p-has-hover">
 					<input name="product" type="checkbox" id="BIO7006" disabled onchange='totalIt();
@@ -1222,11 +1310,19 @@
 				</div>
 			</label>						
 		</fieldset>
-		<fieldset class="Fases2">Nona Fase<br>
-		    <div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							<input name="all_9" class="all_button" type="checkbox" id="all_9"
-							onchange="selectAll(id,'BIO7009','BIO7016');">Todos
-				</div> 
+		<fieldset class="fase">Nona Fase<br>
+		
+				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+			  	  <label class="checkbox"> 
+			  	    <div class="pretty p-default">
+			  	      	<input name="all_9" class="styled-checkbox" type="checkbox" id="all_9" onchange="selectAll(id,'BIO7009','BIO7016');"/>
+  			  	    <div class="state">
+  								<label></label>
+  							</div>
+			  	    </div>
+			  	  </label>
+			  </div>
+
 			<label class="checkbox">   <!-- BIO7009 - Legislação Profissional Aplicada  - PCC 04 horas-->
 				<p><div class="pretty p-default p-curve p-has-hover">
 					<input name="product" type="checkbox" id="BIO7009" onchange='totalIt();
@@ -1255,7 +1351,15 @@
 			</label>		
 		</fieldset>
 	</section>
+	</div>
+	
+	<!--Disciplinas optativas-->
+	<div class="optativas_curso">CONTAGEM DE OPTATIVAS</div>
+	
+	<!--Atividades complementares-->
+	<div class="atividades_curso">CONTAGEM DE ATIVIDADES</div>
 </div>
+
 
 <!--Licenciatura-->
 <div class="tab_content" id="Licenciatura">
@@ -1263,11 +1367,20 @@
 	  <input value="0" readonly="readonly" type="text" name="total_lic"/>
   </div>
   <section>
-			<fieldset class="Fases_left">
-					<fieldset class="Fases" id="primeira">Primeira Fase
-	            <div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							    <input name="all_lic_1" class="all_button" type="checkbox" id="all_lic_1" onchange="selectAll(id,'LBIO7003','LBIO7240','LCFS7001','LECZ7011','LECZ7021','LMIP7011','LMOR7001','LQMC5235');">Todos
-					    </div> 
+			<fieldset class="fases_curso">
+					<fieldset class="fase" id="primeira">Primeira Fase
+		
+    				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+    			  	  <label class="checkbox"> 
+    			  	    <div class="pretty p-default">
+    			  	      	<input name="all_lic_1" class="styled-checkbox" type="checkbox" id="all_lic_1" onchange="selectAll(id,'LBIO7003','LBIO7240','LCFS7001','LECZ7011','LECZ7021','LMIP7011','LMOR7001','LQMC5235');"/>
+      			  	    <div class="state">
+      								<label></label>
+      							</div>
+    			  	    </div>
+    			  	  </label>
+    			  </div>
+
 						<label class="checkbox">   <!-- BIO7003 - Introdução a Ciência - PCC 10 horas -->
 							<p><div class="pretty p-default p-curve p-has-hover">
 								<input name="product_lic" class="styled-checkbox" type="checkbox" id="LBIO7003" onchange='
@@ -1469,11 +1582,19 @@
 							</div>
 						</label>									
 					</fieldset>
-					<fieldset class="Fases">Segunda Fase
-    			  	<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-    							<input name="all_lic_2" class="all_button" type="checkbox" id="all_lic_2" 
-    							onchange="selectAll(id,'LBEG7012','LBQA7002','LCFS7002','LECZ7012','LMTM3100');">Todos
-    					</div> 
+					<fieldset class="fase">Segunda Fase
+					
+    				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+    			  	  <label class="checkbox"> 
+    			  	    <div class="pretty p-default">
+    			  	      	<input name="all_lic_2" class="styled-checkbox" type="checkbox" id="all_lic_2" onchange="selectAll(id,'LBEG7012','LBQA7002','LCFS7002','LECZ7012','LMTM3100');"/>
+      			  	    <div class="state">
+      								<label></label>
+      							</div>
+    			  	    </div>
+    			  	  </label>
+    			  </div>
+
 						<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 horas/aula) -->
 							<p><div class="pretty p-default p-curve p-has-hover">
 								<input name="product_lic" type="checkbox" id="LBEG7012" onchange='
@@ -1636,7 +1757,21 @@
 							</div>
 						</label>		
 					</fieldset>
-					<fieldset class="Fases">Terceira Fase
+					<fieldset class="fase">Terceira Fase
+					
+    				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+    			  	  <label class="checkbox"> 
+    			  	    <div class="pretty p-default">
+    			  	      	<input name="all_lic_3" class="styled-checkbox" type="checkbox" id="all_lic_3" 
+							    onchange="selectAll(id,'LBEG7013','LBEG7225','LBOT7013','LECZ7013',
+						    	'LINE7003','LMIP7013','LMOR7003');"/>
+      			  	    <div class="state">
+      								<label></label>
+      							</div>
+    			  	    </div>
+    			  	  </label>
+    			  </div>
+					
 							<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
 							    <input name="all_lic_3" class="all_button" type="checkbox" id="all_lic_3" 
 							    onchange="selectAll(id,'LBEG7013','LBEG7225','LBOT7013','LECZ7013',
@@ -1798,11 +1933,20 @@
 							</div>
 					</label>		
 					</fieldset>
-					<fieldset class="Fases">Quarta Fase
-							<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							    <input name="all_lic_4" class="all_button" type="checkbox" id="all_lic_4"
-						    	onchange="selectAll(id,'LBEG7024','LBEG7034','LBIO7011','LBOT7014','LECZ7024','LMEN7004','LMIP7003');">Todos
-					    </div> 
+					<fieldset class="fase">Quarta Fase
+					
+    				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+    			  	  <label class="checkbox"> 
+    			  	    <div class="pretty p-default">
+    			  	      	<input name="all_lic_4" class="styled-checkbox" type="checkbox" id="all_lic_4" 
+							    onchange="selectAll(id,'LBEG7024','LBEG7034','LBIO7011','LBOT7014','LECZ7024','LMEN7004','LMIP7003');"/>
+      			  	    <div class="state">
+      								<label></label>
+      							</div>
+    			  	    </div>
+    			  	  </label>
+    			  </div>
+					
 						<label class="checkbox">   <!-- BEG7024 - Embriologia Animal - PCC 10 horas-->
 							<p><div class="pretty p-default p-curve p-has-hover">
 								<input name="product_lic" type="checkbox" id="LBEG7024" onchange=
@@ -1952,12 +2096,21 @@
 			</fieldset>
   </section>
   <section>
-			<fieldset class="Fases_rigth">
-						<fieldset class="Fases">Quinta Fase
-						    <div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-						    	<input name="all_lic_5" class="all_button" type="checkbox" id="all_lic_5"
-						    	onchange="selectAll(id,'PSI5137','LMIP7035','LBIO7012','LBOT7015','LECZ7015','LECZ7025','EED5331');">Todos
-			        	</div> 
+			<fieldset class="fases_curso">
+						<fieldset class="fase">Quinta Fase
+						
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox"> 
+      			  	    <div class="pretty p-default">
+      			  	      	<input name="all_lic_5" class="styled-checkbox" type="checkbox" id="all_lic_5" 
+    						    onchange="selectAll(id,'PSI5137','LMIP7035','LBIO7012','LBOT7015','LECZ7015','LECZ7025','EED5331');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+						
 							<label class="checkbox">   <!-- BIO7012 - Vivência em Pesquisa II -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="LBIO7012" disabled onchange=
@@ -2092,12 +2245,21 @@
 										</div>
 								</div>
 							</label>
-						</fieldset>
-						<fieldset class="Fases2">Sexta Fase
-								<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-      							<input name="all_lic_6" class="all_button" type="checkbox" id="all_lic_6"
-      							onchange="selectAll(id,'LBEG7025','LBEG7227','LCFS7006','LECZ7016', 'LDGL7006', 'LDGL7006', 'MEN5601');">Todos
-      				  </div> 
+						</fieldset><!--Quinta fase-->
+						<fieldset class="fase">Sexta Fase
+						
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox"> 
+      			  	    <div class="pretty p-default">
+      			  	      	<input name="all_lic_6" class="styled-checkbox" type="checkbox" id="all_lic_6" 
+    						    onchange="selectAll(id,'LBEG7025','LBEG7227','LCFS7006','LECZ7016', 'LDGL7006', 'LDGL7006', 'MEN5601');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+						
 							<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="LBEG7025" disabled onchange='totalIt_lic(); 
@@ -2204,12 +2366,21 @@
 								</div>
 							</label>							
 						</fieldset>
-						<fieldset class="Fases2">Sétima Fase
-								<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-        							<input name="all_lic_7" class="all_button" type="checkbox" id="all_lic_7"
-        							onchange="selectAll(id,'LECZ7036','EED5185','LBIO7004','LBIO7013', 
-        							'LECZ7050', 'LFIL7007', 'LDGL7007');">Todos
-        				</div> 
+						<fieldset class="fase">Sétima Fase
+						
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox"> 
+      			  	    <div class="pretty p-default">
+      			  	      	<input name="all_lic_7" class="styled-checkbox" type="checkbox" id="all_lic_7" 
+    						    onchange="selectAll(id,'LECZ7036','EED5185','LBIO7004','LBIO7013', 
+        							'LECZ7050', 'LFIL7007', 'LDGL7007');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+						
 							<label class="checkbox">   <!-- BIO7004 - Metodologia de Pesquisa  - PCC 10 horas-->								
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="LBIO7004" disabled onchange='totalIt_lic(); 
@@ -2315,11 +2486,20 @@
 								</div>
 							</label>		
 						</fieldset>
-						<fieldset class="Fases2">Oitava Fase
-								  <div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-          							<input name="all_lic_8" class="all_button" type="checkbox" id="all_lic_8"
-          							onchange="selectAll(id,'LBOT7017','LBIO7015', 'EED5186', 'LSB7904', 'MEN7008', 'MEN7341');">Todos
-          				</div> 
+						<fieldset class="fase">Oitava Fase
+						
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox"> 
+      			  	    <div class="pretty p-default">
+      			  	      	<input name="all_lic_8" class="styled-checkbox" type="checkbox" id="all_lic_8" 
+    						    onchange="selectAll(id,'LBOT7017','LBIO7015', 'EED5186', 'LSB7904', 'MEN7008', 'MEN7341');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+						
 							<label class="checkbox">   <!-- BIO7015 - Trabalho de Conclusão de Curso I (TCC) -->								
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="LBIO7015" onchange=
@@ -2421,11 +2601,20 @@
 								</div>
 							</label>
 						</fieldset>
-						<fieldset class="Fases2">Nona Fase
-							  <div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-        							<input name="all_lic_9" class="all_button" type="checkbox" id="all_lic_9"
-        							onchange="selectAll(id,'LBIO7016','MEN7009');">Todos
-        				</div> 
+						<fieldset class="fase">Nona Fase
+						
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox"> 
+      			  	    <div class="pretty p-default">
+      			  	      	<input name="all_lic_9" class="styled-checkbox" type="checkbox" id="all_lic_9" 
+    						    onchange="selectAll(id,'LBIO7016','MEN7009');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+						
 							<label class="checkbox">   <!-- BIO7016 - Trabalho de Conclusão de Curso II (TCC) -->
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="LBIO7016" disabled onchange='totalIt_lic(); 
@@ -2453,11 +2642,20 @@
 								</div>
 							</label>							
 						</fieldset>
-						<fieldset class="Fases2">Décima Fase
-								<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-        							<input name="all_lic_10" class="all_button" type="checkbox" id="all_lic_10"
-        							onchange="selectAll(id,'LBIO7009','MEN7010');">Todos
-        				</div> 
+						<fieldset class="fase">Décima Fase
+						
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox"> 
+      			  	    <div class="pretty p-default">
+      			  	      	<input name="all_lic_10" class="styled-checkbox" type="checkbox" id="all_lic_10" 
+    						    onchange="selectAll(id,'LBIO7009','MEN7010');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+						
 							<label class="checkbox">   <!-- BIO7009 - Legislação Profissional Aplicada  - PCC 04 horas-->
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="LBIO7009" onchange='totalIt_lic();

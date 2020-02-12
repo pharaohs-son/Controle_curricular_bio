@@ -102,7 +102,7 @@ function totalIt() {
       total += parseFloat(input[i].value);
     }
   }
-  document.getElementsByName("total")[0].value = + total.toFixed(2);
+  document.getElementById("mandatory_total").textContent = + total.toFixed(2);
 }
 
 
@@ -115,7 +115,7 @@ function totalIt_lic() {
       total_lic += parseFloat(input[i].value);
     }
   }
-  document.getElementsByName("total_lic")[0].value = + total_lic.toFixed(2);
+  document.getElementsByName("total_lic")[0].value = + total_lic.toFixed(2).toString();
 }
 
 ////////////////////////////////////////////////
@@ -211,15 +211,21 @@ function openTab(evt, tabName) {
     tabcontent[i].style.display = "none";
   }
 
+  buttons = document.getElementsByClassName("tab_button")
+  for(var i=0; i<buttons.length; i++){
+    buttons[i].style.background = "" //Voltando a cor de todos os botões para o valor padrão
+  }
+  
   /*//Remover classe "active" dos elementos class="tab_content"
   tablinks = document.getElementsByClassName("tab_button");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "tab_button");
   }*/
 
-  //Mostrar a tab selecionada e adicionar uma classe "active" no botão que abriu a tab
+  //Mostrar a tab selecionada, aplicar a cor de botão ativo e adicionar uma classe "active" no botão que abriu a tab
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+  evt.currentTarget.style.background = " #e54e43";
 }
 
 ////////////////////////////////////////////////
