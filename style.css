@@ -125,8 +125,6 @@ body{
 
 nav .tab {
   overflow: hidden;
-  margin-bottom: 20px;
-  
 }
 
 
@@ -144,6 +142,8 @@ nav .tab {
 	color: white;
 	cursor: pointer;
 	border-style: outset;
+	border: none;
+  outline:none;
 	text-align: center;
 	-webkit-transition-duration: 0.1s; /* Safari*/
 	transition-duration: 0.1s;
@@ -159,10 +159,13 @@ nav .tab {
 
 .total_board_count {
   width:100%;
-  border-top-width: 3;
-  border-bottom-width: 3;
+  border-top-width: 10px;
+  border-top-color: #e54e43; /*vermelho*/
+  border-top-style: solid;
+  border-bottom-width: 3px;
   border-left-width:0;
   border-right-width: 0;
+  outline:none;
 }
 
 .local_board {
