@@ -27,6 +27,7 @@
 @import 'pretty-checkbox/scss/states/focus';
 @import 'pretty-checkbox/scss/states/indeterminate';
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
 .pretty select_all {
 	box-sizing:border-box
 }
@@ -818,19 +819,20 @@ nav .tab {
 } 
 
 
-
-
-.total_board_count {
+.tab_content {
   width:100%;
+  margin-left: 2px;
   border-top-width: 10px;
   border-top-color: #e54e43; /*vermelho*/
   border-top-style: solid;
-  border-bottom-width: 3px;
+  border-bottom-width: 0;
   border-left-width:0;
   border-right-width: 0;
   outline:none;
-
 }
+
+
+
 
 .local_board {
   width:40%;
