@@ -779,7 +779,8 @@ body{
   margin-right:auto;
   min-width:800px;
   font-family: 'Roboto Condensed'; /*Definindo a família para toda a página evitando redundância, trocar apenas nas classes específicas*/
-  margin-bottom: 20px;
+  font-size: 0.85em;
+    margin-bottom: 20px;
 }
 
 
@@ -858,8 +859,6 @@ nav .tab {
   display: block;
   font-weight: bold;
   float: left;
-  width:40%;
-  resize: both;
   
 }
 
@@ -879,56 +878,66 @@ nav .tab {
 */
 
 .first_fases {					/*Compreende a primeira fase e a quinta*/
-	align-content: center;
-	height: 310px;
-	border-bottom-width: 2px;
-	border-bottom-color: white;
-	outline:none;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 280px;
+    align-content: center;
 	border-left-width:0;
 	border-right-width: 0;
 	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
 }
 
 .second_fases {					/*Compreende a segunda fase e a sexta*/
-	align-content: center;
-	height: 210px;
-	border-bottom-width: 2px;
-	border-bottom-color: white;
-	outline:none;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 200px;
+    align-content: center;
 	border-left-width:0;
 	border-right-width: 0;
 	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
 }
 
 .third_fases {					/*Compreende a terceira fase e a sétima*/
-	align-content: center;
-	height: 310px;
-	border-bottom-width: 2px;
-	border-bottom-color: white;
-	outline:none;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 280px;
+    align-content: center;
 	border-left-width:0;
 	border-right-width: 0;
 	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
 }
 
 .fourth_fases {					/*Compreende a quarta fase, a oitava e a nona*/
-	align-content: center;
-	height: 320px;
-	border-bottom-width: 2px;
-	border-bottom-color: white;
-	outline:none;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 350px;
+    align-content: center;
 	border-left-width:0;
 	border-right-width: 0;
 	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
 }
 
 .fase {
-	border-bottom-width: 0;
-	border-bottom-color: white;
-	outline:none;
-	border-left-width:0;
-	border-right-width: 0;
-	border-top-width: 0;
+    display: inline-block;
+    padding-bottom: 10px;
+    width: 450px;
+    float:left;
 }
 /*
 *{
