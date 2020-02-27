@@ -821,7 +821,7 @@ nav .tab {
 
 
 .tab_content {
-  width:100%;
+  width:99%;
   margin-left: 2px;
   border-top-width: 10px;
   border-top-color: #e54e43; /*vermelho*/
@@ -1039,6 +1039,12 @@ nav .tab {
   display: inline-block;
   text-shadow: 1px 1px gray;
 }
+
+.contador {
+	margin-right: 30px;
+	margin-top: 500px;
+}
+
 
 /*
 *{
