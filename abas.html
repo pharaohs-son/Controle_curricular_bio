@@ -54,7 +54,7 @@
   </fieldset>
 
   <!--Fases-->
-  <div>
+
 	<section class="fases_curso">
 			<div class="first_fases">
 				<div class="fase" id="primeira">&nbsp;&nbsp;Primeira Fase
@@ -287,7 +287,7 @@
 					</div>
 				</label>
 			</div>
-                <div class="fase" id="quinta">&nbsp;&nbsp;Quinta Fase
+        <div class="fase" id="quinta">&nbsp;&nbsp;Quinta Fase
 
 					<div class="select_all"> <!--Marcar/Desmarcar todas-->
 					  <label class="checkbox">
@@ -454,7 +454,7 @@
 				</div>
 			</label>
 		</div>
-            </div>
+    </div>
 			<div class="second_fases">
 				<div class="fase" id="segunda">&nbsp;&nbsp;Segunda Fase
 				  <div class="select_all"> <!--Marcar/Desmarcar todas-->
@@ -641,7 +641,7 @@
 					</div>
 				</label>
 			</div>
-			<div class="fase" id="sexta">&nbsp;&nbsp;Sexta Fase
+		   	<div class="fase" id="sexta">&nbsp;&nbsp;Sexta Fase
 					<div class="select_all"> <!--Marcar/Desmarcar todas-->
 					  <label class="checkbox">
 						<div class="pretty p-switch">
@@ -729,7 +729,7 @@
 						</div>
 				</div>
 			</label>
-		</div>
+		  </div>
 			</div>
         
 			<div class="third_fases">
@@ -917,7 +917,7 @@
 					</div>
 					</label>
 			</div>
-                <div class="fase" id="setima">&nbsp;&nbsp;Sétima Fase
+        <div class="fase" id="setima">&nbsp;&nbsp;Sétima Fase
 
 					<div class="select_all"> <!--Marcar/Desmarcar todas-->
 					  <label class="checkbox">
@@ -1355,36 +1355,51 @@
 		</div>
             </div>
 	</section>
-
-	<section class="fases_curso">
-
-		
-		<section class="fases_curso">
-
-
-	</section>
-	</div>
-
-	<!--Disciplinas optativas-->
+		<!--Disciplinas optativas-->
 	<div class="optativas_curso">CONTAGEM DE OPTATIVAS</div>
 
 	<!--Atividades complementares-->
 	<div class="atividades_curso">CONTAGEM DE ATIVIDADES</div>
+
 </div>
+
+
+
 
 
 <!--Licenciatura-->
 <div class="tab_content" id="Licenciatura">
-  <div class="horas">Total de Horas obrigatórias:
-	  <input value="0" readonly="readonly" type="text" name="total_lic"/>
-  </div>
-  <section>
-			<fieldset class="fases_curso">
-					<fieldset class="fase" id="primeira">Primeira Fase
+  <!--Contagem de horas-->
+  <fieldset class="total_board_count">
+    <section class="local_board">
+    <p class="local_count">
+		  Total de Horas Obrigatórias:
+		  <span value="0" readonly="readonly" type="text" id="mandatory_total_lic"></span>
+		</p>
+		<p class="local_count">
+		  Total de Horas Optativas:
+		  <span value="0" readonly="readonly" type="text" id="op_total_lic"></span>
+		</p>
+		</section>
 
+		<section class="local_board">
+		<p class="local_count">
+		  Total de Atividades de Extensão (AE):
+		  <span value="0" readonly="readonly" type="text" name="ae_total_lic"></span>
+		</p>
+		<p class="local_count">
+		  Total de Atividades Científico-Culturais (ACC):
+		  <span value="0" readonly="readonly" type="text" name="total_lic"></span>
+		</p>
+		</section>
+  </fieldset>
+
+			<section class="fases_curso">
+			  <div class="first_fases_lic">
+					<div class="fase" id="primeira">&nbsp;&nbsp;Primeira Fase
     				<div class="select_all"> <!--Marcar/Desmarcar todas-->
     			  	  <label class="checkbox">
-    			  	    <div class="pretty p-default">
+    			  	    <div class="pretty p-switch">
     			  	      	<input name="all_lic_1" class="styled-checkbox" type="checkbox" id="all_lic_1" onchange="selectAll(id,'LBIO7003','LBIO7240','LCFS7001','LECZ7011','LECZ7021','LMIP7011','LMOR7001','LQMC5235');"/>
       			  	    <div class="state">
       								<label></label>
@@ -1410,7 +1425,8 @@
 									"LBIO7016",
 									"LBIO7012"
 									);
-									totalIt_lic(); checkboxStorage(id)'
+									totalIt_lic(); 
+									checkboxStorage(id)'
 									value="36" />
 									<div class="state p-success-o">
 										<label>BIO7003 - Introdução a Ciência - PCC 10 horas</label>
@@ -1437,7 +1453,8 @@
 									"LBIO7016",
 									"LBIO7012"
 									);
-									totalIt_lic(); checkboxStorage(id)'
+									totalIt_lic(); 
+									checkboxStorage(id)'
 									value="54" />
 									<div class="state p-success-o">
 										<label>BIO7240 - Ciências Biológicas: Formação e Profissão</label>
@@ -1467,8 +1484,8 @@
 									"LECZ7036",
 									"LBEG7034",
 									"LMIP7035"
-									); checkboxStorage(id)
-									'
+									);
+									checkboxStorage(id)'
 									value="36"
 									/>
 									<div class="state p-success-o">
@@ -1499,8 +1516,9 @@
 									"LECZ7012",
 									"LECZ7025",
 									"LECZ7013",
-									"LMIP7003",
-									); checkboxStorage(id)'
+									"LMIP7003"
+									); 
+									checkboxStorage(id)'
 									value="90"
 									/>
 									<div class="state p-success-o">
@@ -1549,7 +1567,8 @@
 									"LMOR7001",
 									"LMIP7035"
 									);
-									totalIt_lic(); checkboxStorage(id)'
+									totalIt_lic(); 
+									checkboxStorage(id)'
 									value="72"
 									/>
 									<div class="state p-success-o">
@@ -1582,7 +1601,8 @@
 									"LMIP7035",
 									"LBOT7015",
 									"LBOT7017"
-									); checkboxStorage(id)'
+									); 
+									checkboxStorage(id)'
 									value="72"
 									/>
 									<div class="state p-success-o">
@@ -1593,12 +1613,163 @@
 									</div>
 							</div>
 						</label>
-					</fieldset>
-					<fieldset class="fase">Segunda Fase
+					</div>
+				<div class="fase">&nbsp;&nbsp;Quinta Fase
+
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox">
+      			  	    <div class="pretty p-switch">
+      			  	      	<input name="all_lic_5" class="styled-checkbox" type="checkbox" id="all_lic_5"
+    						    onchange="selectAll(id,'PSI5137','LMIP7035','LBIO7012','LBOT7015','LECZ7015','LECZ7025','EED5331');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+
+							<label class="checkbox">   <!-- BIO7012 - Vivência em Pesquisa II -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7012" disabled onchange=
+										'determined_list(
+										"LBIO7012",
+										"LBIO7013",
+										"LBIO7004");
+										off_other(
+										"LBIO7012",
+										"LBIO7013",
+										"LBIO7004",
+										"LBIO7015",
+										"LBIO7016"
+										);
+										totalIt_lic(); checkboxStorage(id)'
+										value="36"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7012 - Vivência em Pesquisa II</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7012 - Vivência em Pesquisa II</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- BOT7015 - Anatomia e Embriologia Vegetal  - PCC 10 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBOT7015" disabled onchange=
+										'determined_list(
+										"LBOT7015",
+										"LBOT7017"
+										);
+										off_other(
+										"LBOT7015",
+										"LBOT7017"
+										);
+										totalIt_lic(); checkboxStorage(id)'
+										value="90"
+										/>
+										<div class="state p-success-o">
+											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7015" onchange=
+										'triple_determined_list(
+										"LBOT7014",
+										"LECZ7015",
+										"LDGL7006",
+										"LDGL7007");
+										determined_list(
+										"LECZ7015",
+										"LECZ7016");
+										off_other(
+										"LBOT7014",
+										"LDGL7007"
+										);
+										totalIt_lic(); checkboxStorage(id)'
+										value="72" disabled
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- ECZ7025 - Ecologia de Comunidades  - PCC 18 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7025" onchange='totalIt_lic(); checkboxStorage(id)'
+										value="90" disabled
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- EED5331 Teorias da Educação -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="EED5331" onchange='totalIt_lic(); checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>EED5331 Teorias da Educação</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>EED5331 Teorias da Educação</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- MIP7035 - Imunologia - PCC 04 horas  -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LMIP7035" disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>MIP7035 - Imunologia - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>MIP7035 - Imunologia - PCC 04 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem (PCC 12h-a)  -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="PSI5137" onchange='totalIt_lic()
+										triple_determined_list(
+										"EED5186",
+										"MEN7008",
+										"PSI5137",
+										"MEN7009");
+										off_other(
+										"PSI5137",
+										"MEN7010"); checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem - PCC 12h</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem - PCC 12h</label>
+										</div>
+								</div>
+							</label>
+				</div><!--Quinta fase-->
+				</div>
+				<div class="second_fases_lic">
+					<div class="fase">&nbsp;&nbsp;Segunda Fase
 
     				<div class="select_all"> <!--Marcar/Desmarcar todas-->
     			  	  <label class="checkbox">
-    			  	    <div class="pretty p-default">
+    			  	    <div class="pretty p-switch">
     			  	      	<input name="all_lic_2" class="styled-checkbox" type="checkbox" id="all_lic_2" onchange="selectAll(id,'LBEG7012','LBQA7002','LCFS7002','LECZ7012','LMTM3100');"/>
       			  	    <div class="state">
       								<label></label>
@@ -1768,12 +1939,135 @@
 									</div>
 							</div>
 						</label>
-					</fieldset>
-					<fieldset class="fase">Terceira Fase
+					</div>
+					<div class="fase">&nbsp;&nbsp;Sexta Fase
+
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox">
+      			  	    <div class="pretty p-switch">
+      			  	      	<input name="all_lic_6" class="styled-checkbox" type="checkbox" id="all_lic_6"
+    						    onchange="selectAll(id,'LBEG7025','LBEG7227','LCFS7006','LECZ7016', 'LDGL7006', 'LDGL7006', 'MEN5601');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+
+							<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBEG7025" disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- BEG7227 - Genética Clássica  (PCC 12 horas) -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBEG7227" disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- CFS7006 - Fisiologia Humana - PCC 20 horas -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LCFS7006" disabled onchange=
+										'double_determined_list(
+										"LCFS7006",
+										"LBQA7002",
+										);
+										totalIt_lic(); checkboxStorage(id)'
+										value="128"
+										/>
+										<div class="state p-success-o">
+											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- ECZ7016 - Zoologia de Vertebrados II  - PCC 04 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7016"	disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- DGL7006 - Geologia  - PCC 08 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LDGL7006" onchange=
+										'totalIt_lic();
+										triple_determined_list(
+										"LBOT7014",
+										"LECZ7015",
+										"LDGL7006",
+										"LDGL7007");
+										off_other(
+										"LDGL7006",
+										"LDGL7007"
+										); checkboxStorage(id)
+										'
+										value="72"
+										 />
+										<div class="state p-success-o">
+											<label>DGL7006 - Geologia - PCC 08 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1000 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- MEN5601 Didática A - PCC 12 horas-aula -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="MEN5601" onchange='totalIt_lic();
+									determined_list(
+									"MEN5601",
+									"MEN7008");
+									off_other(
+									"MEN5601",
+									"MEN7009",
+									"MEN7010"
+									); checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>MEN5601 Didática A - PCC 12 horas-aula</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1200 horas</label>
+										</div>
+								</div>
+							</label>
+						</div>
+				</div>	
+          
+        <div class="third_fases_lic">				
+					<div class="fase">&nbsp;&nbsp;Terceira Fase
 
     				<div class="select_all"> <!--Marcar/Desmarcar todas-->
     			  	  <label class="checkbox">
-    			  	    <div class="pretty p-default">
+    			  	    <div class="pretty p-switch">
     			  	      	<input name="all_lic_3" class="styled-checkbox" type="checkbox" id="all_lic_3"
 							    onchange="selectAll(id,'LBEG7013','LBEG7225','LBOT7013','LECZ7013',
 						    	'LINE7003','LMIP7013','LMOR7003');"/>
@@ -1783,12 +2077,6 @@
     			  	    </div>
     			  	  </label>
     			  </div>
-
-							<div class="pretty p-default p-curve p-has-hover"> <!--Marcar/Desmarcar todas-->
-							    <input name="all_lic_3" class="all_button" type="checkbox" id="all_lic_3"
-							    onchange="selectAll(id,'LBEG7013','LBEG7225','LBOT7013','LECZ7013',
-						    	'LINE7003','LMIP7013','LMOR7003');">Todos
-				    	</div>
 						<label class="checkbox">   <!-- BEG7013 - Biologia Molecular I - PCC 04 horas -->
 							<p><div class="pretty p-default p-curve p-has-hover">
 								<input name="product_lic" type="checkbox" id="LBEG7013" disabled onchange=
@@ -1944,12 +2232,135 @@
 									</div>
 							</div>
 					</label>
-					</fieldset>
-					<fieldset class="fase">Quarta Fase
+					</div>
+						
+						<div class="fase">&nbsp;&nbsp;Sétima Fase
+
+      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+      			  	  <label class="checkbox">
+      			  	    <div class="pretty p-switch">
+      			  	      	<input name="all_lic_7" class="styled-checkbox" type="checkbox" id="all_lic_7"
+    						    onchange="selectAll(id,'LECZ7036','EED5185','LBIO7004','LBIO7013',
+        							'LECZ7050', 'LFIL7007', 'LDGL7007');"/>
+        			  	    <div class="state">
+        								<label></label>
+        							</div>
+      			  	    </div>
+      			  	  </label>
+      			  </div>
+
+							<label class="checkbox">   <!-- BIO7004 - Metodologia de Pesquisa  - PCC 10 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7004" disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
+										value="36" />
+										<div class="state p-success-o">
+											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC) -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LBIO7013" disabled onchange=
+										'determined_list(
+										"LBIO7013",
+										"LBIO7015");
+										off_other(
+										"LBIO7013",
+										"LBIO7016"
+										);
+										totalIt_lic(); checkboxStorage(id)'
+										value="72"
+										/>
+										<div class="state p-success-o">
+											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- ECZ7036 - Fisiologia Animal Comparada -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7036" disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
+										value="90" />
+										<div class="state p-success-o">
+											<label>ECZ7036 - Fisiologia Animal Comparada</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>ECZ7036 - Fisiologia Animal Comparada</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LECZ7050" onchange='totalIt_lic(); checkboxStorage(id)'
+										value="40" />
+										<div class="state p-success-o">
+											<label>ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1400 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- EED5185 Organização Escolar I-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="EED5185" onchange='totalIt_lic();
+										determined_list("EED5185",
+										"EED5186"
+										);
+										off_other(
+										"EED5185",
+										"MEN7009",
+										"EED5186",
+										"MEN7010"); checkboxStorage(id)'
+										value="72" />
+										<div class="state p-success-o">
+											<label>EED5185 Organização Escolar I</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>EED5185 Organização Escolar I</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- FIL7007 - Filosofia da Ciência -->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LFIL7007" onchange='totalIt_lic(); checkboxStorage(id)'
+										value="72" />
+										<div class="state p-success-o">
+											<label>FIL7007 - Filosofia da Ciência</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>Pré-Requisito de 1980 horas</label>
+										</div>
+								</div>
+							</label>
+							<label class="checkbox">   <!-- DGL7007 - Paleontologia - PCC 03 horas-->
+								<p><div class="pretty p-default p-curve p-has-hover">
+									<input name="product_lic" type="checkbox" id="LDGL7007" disabled onchange='totalIt_lic();
+									checkboxStorage(id)'
+										value="54" />
+										<div class="state p-success-o">
+											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
+										</div>
+										<div class="state p-success-o p-is-hover">
+											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
+										</div>
+								</div>
+							</label>
+						</div>
+				</div>
+				<div class="fourth_fases_lic">
+					<div class="fase">&nbsp;&nbsp;Quarta Fase
 
     				<div class="select_all"> <!--Marcar/Desmarcar todas-->
     			  	  <label class="checkbox">
-    			  	    <div class="pretty p-default">
+    			  	    <div class="pretty p-switch">
     			  	      	<input name="all_lic_4" class="styled-checkbox" type="checkbox" id="all_lic_4"
 							    onchange="selectAll(id,'LBEG7024','LBEG7034','LBIO7011','LBOT7014','LECZ7024','LMEN7004','LMIP7003');"/>
       			  	    <div class="state">
@@ -2104,405 +2515,12 @@
 									</div>
 							</div>
 						</label>
-					</fieldset>
-			</fieldset>
-  </section>
-  <section>
-			<fieldset class="fases_curso">
-						<fieldset class="fase">Quinta Fase
+					</div>
+					<div class="fase">&nbsp;&nbsp;Oitava Fase
 
       				<div class="select_all"> <!--Marcar/Desmarcar todas-->
       			  	  <label class="checkbox">
-      			  	    <div class="pretty p-default">
-      			  	      	<input name="all_lic_5" class="styled-checkbox" type="checkbox" id="all_lic_5"
-    						    onchange="selectAll(id,'PSI5137','LMIP7035','LBIO7012','LBOT7015','LECZ7015','LECZ7025','EED5331');"/>
-        			  	    <div class="state">
-        								<label></label>
-        							</div>
-      			  	    </div>
-      			  	  </label>
-      			  </div>
-
-							<label class="checkbox">   <!-- BIO7012 - Vivência em Pesquisa II -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBIO7012" disabled onchange=
-										'determined_list(
-										"LBIO7012",
-										"LBIO7013",
-										"LBIO7004");
-										off_other(
-										"LBIO7012",
-										"LBIO7013",
-										"LBIO7004",
-										"LBIO7015",
-										"LBIO7016"
-										);
-										totalIt_lic(); checkboxStorage(id)'
-										value="36"
-										/>
-										<div class="state p-success-o">
-											<label>BIO7012 - Vivência em Pesquisa II</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>BIO7012 - Vivência em Pesquisa II</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- BOT7015 - Anatomia e Embriologia Vegetal  - PCC 10 horas-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBOT7015" disabled onchange=
-										'determined_list(
-										"LBOT7015",
-										"LBOT7017"
-										);
-										off_other(
-										"LBOT7015",
-										"LBOT7017"
-										);
-										totalIt_lic(); checkboxStorage(id)'
-										value="90"
-										/>
-										<div class="state p-success-o">
-											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>BOT7015 - Anatomia e Embriologia Vegetal - PCC 10 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7015" onchange=
-										'triple_determined_list(
-										"LBOT7014",
-										"LECZ7015",
-										"LDGL7006",
-										"LDGL7007");
-										determined_list(
-										"LECZ7015",
-										"LECZ7016");
-										off_other(
-										"LBOT7014",
-										"LDGL7007"
-										);
-										totalIt_lic(); checkboxStorage(id)'
-										value="72" disabled
-										/>
-										<div class="state p-success-o">
-											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>ECZ7015 - Zoologia de Vertebrados I - PCC 04 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- ECZ7025 - Ecologia de Comunidades  - PCC 18 horas-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7025" onchange='totalIt_lic(); checkboxStorage(id)'
-										value="90" disabled
-										/>
-										<div class="state p-success-o">
-											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>ECZ7025 - Ecologia de Comunidades - PCC 18 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- EED5331 Teorias da Educação -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="EED5331" onchange='totalIt_lic(); checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>EED5331 Teorias da Educação</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>EED5331 Teorias da Educação</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- MIP7035 - Imunologia - PCC 04 horas  -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LMIP7035" disabled onchange='totalIt_lic();
-									checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>MIP7035 - Imunologia - PCC 04 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>MIP7035 - Imunologia - PCC 04 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem (PCC 12h-a)  -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="PSI5137" onchange='totalIt_lic()
-										triple_determined_list(
-										"EED5186",
-										"MEN7008",
-										"PSI5137",
-										"MEN7009");
-										off_other(
-										"PSI5137",
-										"MEN7010"); checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem (PCC 12h-a)</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>PSI5137 Psicologia Educacional: Desenvolvimento e Aprendizagem (PCC 12h-a)</label>
-										</div>
-								</div>
-							</label>
-						</fieldset><!--Quinta fase-->
-						<fieldset class="fase">Sexta Fase
-
-      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
-      			  	  <label class="checkbox">
-      			  	    <div class="pretty p-default">
-      			  	      	<input name="all_lic_6" class="styled-checkbox" type="checkbox" id="all_lic_6"
-    						    onchange="selectAll(id,'LBEG7025','LBEG7227','LCFS7006','LECZ7016', 'LDGL7006', 'LDGL7006', 'MEN5601');"/>
-        			  	    <div class="state">
-        								<label></label>
-        							</div>
-      			  	    </div>
-      			  	  </label>
-      			  </div>
-
-							<label class="checkbox">   <!-- BEG7025 - Desenvolvimento Humano  - PCC 10 horas -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBEG7025" disabled onchange='totalIt_lic();
-									checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>BEG7025 - Desenvolvimento Humano - PCC 10 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- BEG7227 - Genética Clássica  (PCC 12 horas) -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBEG7227" disabled onchange='totalIt_lic();
-									checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>BEG7227 - Genética Clássica (PCC 12 horas)</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- CFS7006 - Fisiologia Humana - PCC 20 horas -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LCFS7006" disabled onchange=
-										'double_determined_list(
-										"LCFS7006",
-										"LBQA7002",
-										);
-										totalIt_lic(); checkboxStorage(id)'
-										value="128"
-										/>
-										<div class="state p-success-o">
-											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>CFS7006 - Fisiologia Humana - PCC 20 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- ECZ7016 - Zoologia de Vertebrados II  - PCC 04 horas-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7016"	disabled onchange='totalIt_lic();
-									checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>ECZ7016 - Zoologia de Vertebrados II - PCC 04 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- DGL7006 - Geologia  - PCC 08 horas-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LDGL7006" onchange=
-										'totalIt_lic();
-										triple_determined_list(
-										"LBOT7014",
-										"LECZ7015",
-										"LDGL7006",
-										"LDGL7007");
-										off_other(
-										"LDGL7006",
-										"LDGL7007"
-										); checkboxStorage(id)
-										'
-										value="72"
-										 />
-										<div class="state p-success-o">
-											<label>DGL7006 - Geologia - PCC 08 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>Pré-Requisito de 1000 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- MEN5601 Didática A - PCC 12 horas-aula -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="MEN5601" onchange='totalIt_lic();
-									determined_list(
-									"MEN5601",
-									"MEN7008");
-									off_other(
-									"MEN5601",
-									"MEN7009",
-									"MEN7010"
-									); checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>MEN5601 Didática A - PCC 12 horas-aula</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>Pré-Requisito de 1200 horas</label>
-										</div>
-								</div>
-							</label>
-						</fieldset>
-						<fieldset class="fase">Sétima Fase
-
-      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
-      			  	  <label class="checkbox">
-      			  	    <div class="pretty p-default">
-      			  	      	<input name="all_lic_7" class="styled-checkbox" type="checkbox" id="all_lic_7"
-    						    onchange="selectAll(id,'LECZ7036','EED5185','LBIO7004','LBIO7013',
-        							'LECZ7050', 'LFIL7007', 'LDGL7007');"/>
-        			  	    <div class="state">
-        								<label></label>
-        							</div>
-      			  	    </div>
-      			  	  </label>
-      			  </div>
-
-							<label class="checkbox">   <!-- BIO7004 - Metodologia de Pesquisa  - PCC 10 horas-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBIO7004" disabled onchange='totalIt_lic();
-									checkboxStorage(id)'
-										value="36" />
-										<div class="state p-success-o">
-											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>BIO7004 - Metodologia de Pesquisa - PCC 10 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC) -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LBIO7013" disabled onchange=
-										'determined_list(
-										"LBIO7013",
-										"LBIO7015");
-										off_other(
-										"LBIO7013",
-										"LBIO7016"
-										);
-										totalIt_lic(); checkboxStorage(id)'
-										value="72"
-										/>
-										<div class="state p-success-o">
-											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>BIO7013 - Projeto de Trabalho de Conclusão de Curso (TCC)</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- ECZ7036 - Fisiologia Animal Comparada -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7036" disabled onchange='totalIt_lic();
-									checkboxStorage(id)'
-										value="90" />
-										<div class="state p-success-o">
-											<label>ECZ7036 - Fisiologia Animal Comparada</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>ECZ7036 - Fisiologia Animal Comparada</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LECZ7050" onchange='totalIt_lic(); checkboxStorage(id)'
-										value="40" />
-										<div class="state p-success-o">
-											<label>ECZ7050 - Educação, Meio Ambiente e Sustentabilidade - PCC 04 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>Pré-Requisito de 1400 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- EED5185 Organização Escolar I-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="EED5185" onchange='totalIt_lic();
-										determined_list("EED5185",
-										"EED5186"
-										);
-										off_other(
-										"EED5185",
-										"MEN7009",
-										"EED5186",
-										"MEN7010"); checkboxStorage(id)'
-										value="72" />
-										<div class="state p-success-o">
-											<label>EED5185 Organização Escolar I</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>EED5185 Organização Escolar I</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- FIL7007 - Filosofia da Ciência -->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LFIL7007" onchange='totalIt_lic(); checkboxStorage(id)'
-										value="72" />
-										<div class="state p-success-o">
-											<label>FIL7007 - Filosofia da Ciência</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>Pré-Requisito de 1980 horas</label>
-										</div>
-								</div>
-							</label>
-							<label class="checkbox">   <!-- DGL7007 - Paleontologia - PCC 03 horas-->
-								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="LDGL7007" disabled onchange='totalIt_lic();
-									checkboxStorage(id)'
-										value="54" />
-										<div class="state p-success-o">
-											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
-										</div>
-										<div class="state p-success-o p-is-hover">
-											<label>DGL7007 - Paleontologia - PCC 03 horas</label>
-										</div>
-								</div>
-							</label>
-						</fieldset>
-						<fieldset class="fase">Oitava Fase
-
-      				<div class="select_all"> <!--Marcar/Desmarcar todas-->
-      			  	  <label class="checkbox">
-      			  	    <div class="pretty p-default">
+      			  	    <div class="pretty p-switch">
       			  	      	<input name="all_lic_8" class="styled-checkbox" type="checkbox" id="all_lic_8"
     						    onchange="selectAll(id,'LBOT7017','LBIO7015', 'EED5186', 'LSB7904', 'MEN7008', 'MEN7341');"/>
         			  	    <div class="state">
@@ -2612,12 +2630,15 @@
 										</div>
 								</div>
 							</label>
-						</fieldset>
-						<fieldset class="fase">Nona Fase
+					</div>
+
+				</div>
+				<div class="fifth_fases_lic">	
+									<div class="fase">&nbsp;&nbsp;Nona Fase
 
       				<div class="select_all"> <!--Marcar/Desmarcar todas-->
       			  	  <label class="checkbox">
-      			  	    <div class="pretty p-default">
+      			  	    <div class="pretty p-switch">
       			  	      	<input name="all_lic_9" class="styled-checkbox" type="checkbox" id="all_lic_9"
     						    onchange="selectAll(id,'LBIO7016','MEN7009');"/>
         			  	    <div class="state">
@@ -2653,12 +2674,12 @@
 										</div>
 								</div>
 							</label>
-						</fieldset>
-						<fieldset class="fase">Décima Fase
+					</div>
+									<div class="fase">&nbsp;&nbsp;Décima Fase
 
       				<div class="select_all"> <!--Marcar/Desmarcar todas-->
       			  	  <label class="checkbox">
-      			  	    <div class="pretty p-default">
+      			  	    <div class="pretty p-switch">
       			  	      	<input name="all_lic_10" class="styled-checkbox" type="checkbox" id="all_lic_10"
     						    onchange="selectAll(id,'LBIO7009','MEN7010');"/>
         			  	    <div class="state">
@@ -2694,19 +2715,24 @@
 										</div>
 								</div>
 							</label>
-						</fieldset>
-			</fieldset>
-		</section>
+					</div>
+				</div>
+			</section>
 </div>
 
 <!--Sobre-->
 <div class="tab_content" id="Sobre">
-  	<section>
-				<label>Powered by Gods</label>
-				<p>Blessed are those who have a bioinformatic friend.
-
-				This tool was created based on: <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_20061.pdf.PDF">Currículo Ciências Biológicas</a>
-	</section>
+  	<div class="sobre_text">
+				<label>Powered by Alisson Corrêa e Vilmar Filho</label>
+				<p>Blessed are those who have a bioinformatician friend.
+        <p>&nbsp;&nbsp;
+				<p>This tool was created based on: <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_20061.pdf.PDF">Currículo Ciências Biológicas</a>
+			
+			<div class="report">
+				<p>Esta é uma ferramenta não oficial
+				<p>Esta é uma versão Beta, qualquer erro favor reportar para: vilmarbenetti_98@hotmail.com
+			</div>
+	</div>
 </div>
 
 <script>

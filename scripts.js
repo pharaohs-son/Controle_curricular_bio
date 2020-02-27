@@ -115,7 +115,7 @@ function totalIt_lic() {
       total_lic += parseFloat(input[i].value);
     }
   }
-  document.getElementsByName("total_lic")[0].value = + total_lic.toFixed(2).toString();
+  document.getElementById("mandatory_total_lic").textContent = + total_lic.toFixed(2);
 }
 
 ////////////////////////////////////////////////
@@ -211,9 +211,9 @@ function openTab(evt, tabName) {
     tabcontent[i].style.display = "none";
   }
 
-  buttons = document.getElementsByClassName("tab_button")
-  for(var i=0; i<buttons.length; i++){
-    buttons[i].style.background = "" //Voltando a cor de todos os botões para o valor padrão
+  buttons = document.getElementsByClassName("tab_button");
+  for(var j=0; j<buttons.length; j++){
+    buttons[j].style.background = ""; //Voltando a cor de todos os botões para o valor padrão
   }
   
   /*//Remover classe "active" dos elementos class="tab_content"

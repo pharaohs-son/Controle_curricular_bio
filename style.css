@@ -832,9 +832,6 @@ nav .tab {
   outline:none;
 }
 
-
-
-
 .local_board {
   width:40%;
   float:left;
@@ -843,10 +840,12 @@ nav .tab {
 
 
 
+
 /*Contagem de horas*/
 .local_count{
   font-weight:bold;
 }
+
 
 /*Checkboxes que selecionam uma fase inteira*/
 .select_all {
@@ -859,10 +858,14 @@ nav .tab {
   display: block;
   font-weight: bold;
   float: left;
-  
 }
 
 .optativas_curso {
+  float:left;
+  width:20%;
+}
+
+.optativas_curso_lic {
   float:left;
   width:20%;
 }
@@ -872,10 +875,85 @@ nav .tab {
   width:20%;
 }
 
+.atividades_curso_lic {
+  float:left;
+  width:20%;
+}
 
 /*4 classes pareadas para fazer o resize de cada uma e alinhar a da direita com a esquerda
  argumento height
 */
+.first_fases_lic {					/*Compreende a primeira fase e a quinta*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 300px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+.second_fases_lic {					/*Compreende a segunda fase e a sexta*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 240px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+.third_fases_lic {					/*Compreende a terceira fase e a sétima*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 280px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+
+.fourth_fases_lic {					/*Compreende a quarta fase, a oitava e a nona*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 280px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+.fifth_fases_lic {					/*Compreende a quarta fase, a oitava e a nona*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 130px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
 
 .first_fases {					/*Compreende a primeira fase e a quinta*/
     margin-top: 10px;
@@ -939,6 +1017,29 @@ nav .tab {
     width: 450px;
     float:left;
 }
+
+
+/*###################################################################
+##########################SOBRE#####################################
+####################################################################*/
+
+.sobre_text{
+  font-size:14px;
+  margin-top: 10px;
+  margin-left:10px;
+	border-left-width:0;
+	border-right-width: 10px;
+	border-top-width: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+.report {
+  display: inline-block;
+  text-shadow: 1px 1px gray;
+}
+
 /*
 *{
 	margin: 0;
