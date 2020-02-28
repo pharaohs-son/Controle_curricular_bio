@@ -177,6 +177,29 @@ function selectAll(id,...materias){
     }
 }
 
+//Atualizar botão de seleção caso todas as matérias estejam ativadas/desativadas
+
+function update_all(id,...materias){
+  var listchecked = [];
+  for (var i=0;i<materias.length;i++){
+	let materia = document.getElementById(materias[i]);
+	listchecked.push(materia.checked);
+  }
+  if (listchecked.every((v,i,a)=>v===a[0])){
+	  if (listchecked[0] === true){ 
+		document.getElementById(id).checked = true;
+	} else {
+		document.getElementById(id).checked = false;
+	}
+  }
+}
+
+/*
+usage:
+passar a id do botao all, e todas as materias q tem q verificar, implementar a mesma em todas as materias de mesma fase
+update_all("all_1", "BIO7003" , "BIO7240", "CFS7001", "ECZ7011", "ECZ7021","MIP7011", "QMC5235")'
+*/
+
 /*
 function unselectAll(course){
   if (course=="bach"){
