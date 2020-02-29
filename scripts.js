@@ -13,8 +13,8 @@ function double_determined_list(requisito1, requisito2, ...materias) {
 		}
 		else {
 		  for (i=0; i<materias.length; i++) {
-				document.getElementById(materias[i]).disabled = true;
 				document.getElementById(materias[i]).checked = false;
+				document.getElementById(materias[i]).disabled = true;
 			}
 		}
 	};
@@ -33,7 +33,7 @@ function off_other(...materias) {
 		if(determine.checked === false || determine.disabled === true) {
 		  for (i=1; i<materias.length; i++){
 		  		document.getElementById(materias[i]).checked = false;
-				document.getElementById(materias[i]).disabled = true;
+				  document.getElementById(materias[i]).disabled = true;
 			}
 		}
 	};
@@ -57,8 +57,8 @@ function triple_determined_list(requisito1, requisito2, requisito3, ...materias)
 		}
 		else {
 		  for (i=0; i<materias.length; i++) {
+		    document.getElementById(materias[i]).checked = false;
 				document.getElementById(materias[i]).disabled = true;
-				document.getElementById(materias[i]).checked = false;
 			}
 		}
 	};
@@ -69,7 +69,7 @@ disableCheckboxConditioned();
 
 
 
-//Liberar checkbox com 1 argumentos
+//Liberar checkbox com 1 argumento
 function determined_list(...materias) { 
 	// Get your checkbox who determine the condition
 	var determine = document.getElementById(materias[0]);
@@ -77,8 +77,8 @@ function determined_list(...materias) {
 	var disableCheckboxConditioned = function () {
 		if(determine.checked === false) {
 		  for (i=1; i<materias.length; i++){
-				document.getElementById(materias[i]).disabled = true;
 				document.getElementById(materias[i]).checked = false;
+				document.getElementById(materias[i]).disabled = true;
 			}
 		}
 		else {
@@ -128,20 +128,62 @@ const bach_disciplinas = ["BIO7003","BIO7240","CFS7001","ECZ7011","ECZ7021","MIP
 
 const lic_disciplinas = ["LBIO7003","LBIO7240","LCFS7001","LECZ7011","LECZ7021","LMIP7011","LMOR7001","LQMC5235","LBEG7012","LBQA7002","LCFS7002","LECZ7012","LMTM3100","LBEG7013","LBEG7225","LBOT7013", "LECZ7013","LINE7003","LMIP7013","LMOR7003","LBEG7024","LBEG7034","LBIO7011","LBOT7014","LECZ7024","LMEN7004","LMIP7003", "LBEG7025","LBEG7227","LBIO7012","LBOT7015","LECZ7015","LECZ7025","EED5331","LMIP7035","PSI5137","LCFS7006","LECZ7016","MEN5601","LECZ7036","LDGL7006","LBIO7004","LBIO7013","LBOT7017","LECZ7050","LFIL7007","LDGL7007","LBIO7015","LBIO7016", "MEN7009", "MEN7341", "MEN7008", "LSB7904", "EED5186", "EED5185", "LBIO7009", "MEN7010"];
 
+const all =["all_1", "all_2", "all_3", "all_4", "all_5", "all_6", "all_7", "all_8", "all_9",
+            "all_lic_1", "all_lic_2", "all_lic_3", "all_lic_4", "all_lic_5", "all_lic_6", "all_lic_7", "all_lic_8", "all_lic_9", "all_lic_10"];
+
 const disciplinas = bach_disciplinas.concat(lic_disciplinas);
 
+document.addEventListener('DOMContentLoaded', function() {
+  for (var i = 0; i < disciplinas.length; i++){
+		if (localStorage.getItem(disciplinas[i]) == "checked"){
+		  document.getElementById(disciplinas[i]).disabled = false;
+		  document.getElementById(disciplinas[i]).checked = true;
+		} else if (localStorage.getItem(disciplinas[i]) == "checked_enabled") {
+		  document.getElementById(disciplinas[i]).disabled = false;
+		  document.getElementById(disciplinas[i]).checked = false;
+		}else if (localStorage.getItem(disciplinas[i]) == "disabled"){
+		  document.getElementById(disciplinas[i]).checked = false;
+		  document.getElementById(disciplinas[i]).disabled = true;
+		}
+	}
+	totalIt();
+	totalIt_lic();
+	
+}, false);
 
+
+
+function checkboxStorage(){
+  localStorage.clear();
+  for (var i = 0; i < disciplinas.length; i++){
+    if (document.getElementById(disciplinas[i]).disabled === false && document.getElementById(disciplinas[i]).checked === true){
+       localStorage.setItem(disciplinas[i], "checked");
+    } else if (document.getElementById(disciplinas[i]).disabled === false) {
+      localStorage.setItem(disciplinas[i],"checked_enabled");
+    }else{
+       localStorage.setItem(disciplinas[i],"disabled");
+      }
+  }
+  totalIt();
+	totalIt_lic();
+}
+
+
+
+////////////////////////////////////////////////
+////////////ARMAZENAMENTO EM BROWSER////////////
+////////////////////////////////////////////////
+/*
 document.addEventListener('DOMContentLoaded', function() {
 	for (var i = 0; i < disciplinas.length; i++){
 		if (localStorage.getItem(disciplinas[i]) == "true"){
+		  document.getElementById(disciplinas[i]).click();
 			document.getElementById(disciplinas[i]).disabled = false;
-			document.getElementById(disciplinas[i]).click();
 		}
 	}
 	totalIt();
 	totalIt_lic();
 }, false);
-
 
 function checkboxStorage(item_id, force_uncheck = false){
 	if (force_uncheck){
@@ -152,13 +194,7 @@ function checkboxStorage(item_id, force_uncheck = false){
 	else{
 		localStorage.setItem(item_id,"false");
 	}
-}
-
-////////////////////////////////////////////////
-////////////ARMAZENAMENTO EM BROWSER////////////
-////////////////////////////////////////////////
-
-
+}*/
 ////////////////////////////////////////////////
 ////////////////BOT?ES DE SELE??O///////////////
 ////////////////////////////////////////////////
