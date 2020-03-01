@@ -1,3 +1,32 @@
+/////////////////////////////////////////////////////////////////////
+///////////////////////// PRE-REQUISITOS////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+
+//Liberar checkbox com 1 argumento
+
+function determined_list(...materias) { 
+	// Get your checkbox who determine the condition
+	var determine = document.getElementById(materias[0]);
+	// Make a function who disabled or enabled your conditioned checkbox
+	var disableCheckboxConditioned = function () {
+		if(determine.checked === false) {
+		  for (i=1; i<materias.length; i++){
+				document.getElementById(materias[i]).checked = false;
+				document.getElementById(materias[i]).disabled = true;
+			}
+		}
+		else {
+		  for (i=1; i<materias.length; i++) {
+			document.getElementById(materias[i]).disabled = false;
+			}
+		}
+	};
+determine.onclick = disableCheckboxConditioned;
+disableCheckboxConditioned();
+}
+
+///////////////////////////////////////////////////////////////
 
 //Liberar checkbox com 2 argumentos
 function double_determined_list(requisito1, requisito2, ...materias) {
@@ -23,23 +52,7 @@ disableCheckboxConditioned();
 }
 
 
-
-//Desativas checkboxes
-function off_other(...materias) {
-	// Get your checkbox who determine the condition
-	var determine = document.getElementById(materias[0]);
-	// Make a function who disabled or enabled your conditioned checkbox
-	var disableCheckboxConditioned = function () {
-		if(determine.checked === false || determine.disabled === true) {
-		  for (i=1; i<materias.length; i++){
-		  		document.getElementById(materias[i]).checked = false;
-				  document.getElementById(materias[i]).disabled = true;
-			}
-		}
-	};
-determine.onclick = disableCheckboxConditioned;
-disableCheckboxConditioned();
-}
+///////////////////////////////////////////////////////////////////////////
 
 
 //Liberar checkbox com 3 argumentos
@@ -66,24 +79,23 @@ determine.onclick = disableCheckboxConditioned;
 disableCheckboxConditioned();
 }
 
+//////////////////////////////////////////////////////////////////////////
+////////////////////////END PRE-REQUISITOS ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////
+//////////////////////// DESATIVAR CECKBOX///////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
-
-//Liberar checkbox com 1 argumento
-function determined_list(...materias) { 
+function off_other(...materias) {
 	// Get your checkbox who determine the condition
 	var determine = document.getElementById(materias[0]);
 	// Make a function who disabled or enabled your conditioned checkbox
 	var disableCheckboxConditioned = function () {
-		if(determine.checked === false) {
+		if(determine.checked === false || determine.disabled === true) {
 		  for (i=1; i<materias.length; i++){
-				document.getElementById(materias[i]).checked = false;
-				document.getElementById(materias[i]).disabled = true;
-			}
-		}
-		else {
-		  for (i=1; i<materias.length; i++) {
-			document.getElementById(materias[i]).disabled = false;
+		  		document.getElementById(materias[i]).checked = false;
+				  document.getElementById(materias[i]).disabled = true;
 			}
 		}
 	};
@@ -92,6 +104,14 @@ disableCheckboxConditioned();
 }
 
 
+//////////////////////////////////////////////////////////////////////////
+////////////////////////  END   CECKBOX   ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////
+//////////////////////// CONTROLE DE HORAS ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
 //Somar checkbox do bacharel
 function totalIt() {
@@ -118,6 +138,12 @@ function totalIt_lic() {
   document.getElementById("mandatory_total_lic").textContent = + total_lic.toFixed(2);
 }
 
+
+//////////////////////////////////////////////////////////////////////////
+//////////////////////// END DE HORAS ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+
 ////////////////////////////////////////////////
 ////////////ARMAZENAMENTO EM BROWSER////////////
 ////////////////////////////////////////////////
@@ -127,9 +153,6 @@ const bach_disciplinas = ["BIO7003","BIO7240","CFS7001","ECZ7011","ECZ7021","MIP
 
 
 const lic_disciplinas = ["LBIO7003","LBIO7240","LCFS7001","LECZ7011","LECZ7021","LMIP7011","LMOR7001","LQMC5235","LBEG7012","LBQA7002","LCFS7002","LECZ7012","LMTM3100","LBEG7013","LBEG7225","LBOT7013", "LECZ7013","LINE7003","LMIP7013","LMOR7003","LBEG7024","LBEG7034","LBIO7011","LBOT7014","LECZ7024","LMEN7004","LMIP7003", "LBEG7025","LBEG7227","LBIO7012","LBOT7015","LECZ7015","LECZ7025","EED5331","LMIP7035","PSI5137","LCFS7006","LECZ7016","MEN5601","LECZ7036","LDGL7006","LBIO7004","LBIO7013","LBOT7017","LECZ7050","LFIL7007","LDGL7007","LBIO7015","LBIO7016", "MEN7009", "MEN7341", "MEN7008", "LSB7904", "EED5186", "EED5185", "LBIO7009", "MEN7010"];
-
-const all =["all_1", "all_2", "all_3", "all_4", "all_5", "all_6", "all_7", "all_8", "all_9",
-            "all_lic_1", "all_lic_2", "all_lic_3", "all_lic_4", "all_lic_5", "all_lic_6", "all_lic_7", "all_lic_8", "all_lic_9", "all_lic_10"];
 
 const disciplinas = bach_disciplinas.concat(lic_disciplinas);
 
@@ -165,38 +188,18 @@ function checkboxStorage(){
       }
   }
   totalIt();
-	totalIt_lic();
+  totalIt_lic();
 }
 
 
 
-////////////////////////////////////////////////
-////////////ARMAZENAMENTO EM BROWSER////////////
-////////////////////////////////////////////////
-/*
-document.addEventListener('DOMContentLoaded', function() {
-	for (var i = 0; i < disciplinas.length; i++){
-		if (localStorage.getItem(disciplinas[i]) == "true"){
-		  document.getElementById(disciplinas[i]).click();
-			document.getElementById(disciplinas[i]).disabled = false;
-		}
-	}
-	totalIt();
-	totalIt_lic();
-}, false);
+/////////////////////////////////////////////////////
+////////////END ARMAZENAMENTO EM BROWSER////////////
+//////////////////////////////////////////////////////
 
-function checkboxStorage(item_id, force_uncheck = false){
-	if (force_uncheck){
-		localStorage.setItem(item_id, "false");}
-	else if (document.getElementById(item_id).checked){
-		localStorage.setItem(item_id, "true");
-	}
-	else{
-		localStorage.setItem(item_id,"false");
-	}
-}*/
+
 ////////////////////////////////////////////////
-////////////////BOT?ES DE SELE??O///////////////
+////////////////BOTOES DE SELECAO///////////////
 ////////////////////////////////////////////////
 
 //Controle dos botões de seleção
@@ -232,18 +235,6 @@ function update_all(id,...materias){
   }
 }
 
-/*
-usage:
-passar a id do botao all, e todas as materias q tem q verificar, implementar a mesma em todas as materias de mesma fase
-*/
-
-/*
-###############################################
-##############Desativar all com outro all#####
-##############################################
-
-*/
-
 function off_all_button(allkey, alloff){
   if (document.getElementById(allkey).checked === false){
     document.getElementById(alloff).checked = false;
@@ -251,27 +242,9 @@ function off_all_button(allkey, alloff){
 }
 
 
-
-/*
-function unselectAll(course){
-  if (course=="bach"){
-  	for (i = 0; i < bach_disciplinas.length; i++){
-  		document.getElementById(bach_disciplinas[i]).checked = false;
-  		localStorage.setItem(bach_disciplinas[i], "false");
-  	}
-  	totalIt();
-  }else{
-      	for (i = 0; i < lic_disciplinas.length; i++){
-  		document.getElementById(lic_disciplinas[i]).checked = false;
-  		localStorage.setItem(lic_disciplinas[i], "false");
-  	}
-  	totalIt_lic();
-  }}
-*/
-////////////////////////////////////////////////
-////////////////BOT?ES DE SELE??O///////////////
-////////////////////////////////////////////////
-
+////////////////////////////////////////////////////
+////////////////END BOTOES DE SELECAO///////////////
+////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////
 ////////////////GERENCIAMENTO DE TABS///////////
