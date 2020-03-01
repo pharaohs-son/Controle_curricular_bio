@@ -20,9 +20,9 @@ As funções estão disponíveis no arquivo scripts.js e caso futuras atualizaç
 
 #### 2.1 Das Funções
 
-As funções estão divididas em seções, com blocos comentados. Os blocos serão tratados a seguir. As funções devem ser implementadas no "onchange"/"onclick" das labels das matérias, passando como argumento, as ids das matérias de interesse no modelo abaixo para cada situação.
+As funções estão divididas em seçõe com blocos comentados. Os blocos serão tratados a seguir. As funções devem ser implementadas no "onchange"/"onclick" das labels das matérias, passando como argumento, as ids das matérias de interesse no modelo abaixo para cada situação.
 
-##### 2.1.1 - PRE-REQUISITOS
+##### 2.1.1 - PRÉ-REQUISITOS
 
 Nesta seção encontram-se as funções: determined_list; double_determined_list; triple_determined_list.
 Todas têm o mesmo objetivo: liberar uma matéria que possui pré-requisito. 
@@ -103,9 +103,7 @@ Qualquer outra alterção de estilo css é de responsabilidade do desenvolvedor 
 
 ## 4 SUPORTE
 
-Este projeto só é possível graças ao apoio do professor Dr. Glauber Wagner, responsável pelo laboratório de Bioinformática da UFSC, que permitiu alocar o site em um dos servidores do laborátorio.
-
-Fica aqui um agradecimento a todos que trabalham para manter esta infraestrurura!
+O projeto recebeu apoio do professor Dr. Glauber Wagner, responsável pelo laboratório de Bioinformática da UFSC, que permitiu alocar o site em um dos servidores do laborátorio.
 
 
 
@@ -115,7 +113,9 @@ Fica aqui um agradecimento a todos que trabalham para manter esta infraestrurura
 
 
 
-##### Bioinformatics is both an engineering art and a science. - N. Goodman, 2002
+
+
+
 
 
 
