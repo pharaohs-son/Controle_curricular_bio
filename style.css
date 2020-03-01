@@ -1,4 +1,6 @@
-/* PRETTY CHECKBOX */
+/*///////////////////////////////////////////////////////
+////////////////////PRETTY CHECKBOX /////////////////////
+/////////////////////////////////////////////////////////*/
 /* ------------------------------------------------ */
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 /* REQUIRED */
@@ -762,7 +764,9 @@
 }
 }
 
-/* PRETTY CHECKBOX END*/
+/*///////////////////////////////////////////////////////
+////////////////////PRETTY CHECKBOX END /////////////////
+/////////////////////////////////////////////////////////*/
 /* ------------------------------------------------ */
 
 select_all{
@@ -783,9 +787,6 @@ body{
     margin-bottom: 20px;
 }
 
-
-
-
 nav .tab {
   overflow: hidden;
   margin-left: 2px;
@@ -793,7 +794,9 @@ nav .tab {
 }
 
 
-/*Botões de navegação*/
+/*/////////////////////////////////////
+///////////Botões de navegação/////////
+///////////////////////////////////////*/
 .tab button{
   float: left;
   display: block;
@@ -838,22 +841,31 @@ nav .tab {
   margin-left:3vw;
 }
 
+/*/////////////////////////////////////
+///////////Botões de navegação END/////////
+///////////////////////////////////////*/
 
 
+/*/////////////////////////////////////
+//////////Contagem de horas////////////
+////////////////////////////////////////*/
 
-/*Contagem de horas*/
 .local_count{
   font-weight:bold;
 }
 
 
-/*Checkboxes que selecionam uma fase inteira*/
+/*/////////////////////////////////////
+Checkboxes que selecionam uma fase inteira
+/////////////////////////////////////*/
 .select_all {
   float:left;
 }
 
 
-/*Todas as fases do curso*/
+/*/////////////////////////////////////
+Todas as fases do curso
+/////////////////////////////////////*/
 .fases_curso {
   display: block;
   font-weight: bold;
@@ -880,9 +892,9 @@ nav .tab {
   width:20%;
 }
 
-/*4 classes pareadas para fazer o resize de cada uma e alinhar a da direita com a esquerda
- argumento height
-*/
+/* /////////////////////////////////////
+classes pareadas licenciatura para organizar o css 
+/////////////////////////////////////*/
 .first_fases_lic {					/*Compreende a primeira fase e a quinta*/
     margin-top: 10px;
     margin-left: 10px;
@@ -954,6 +966,10 @@ nav .tab {
 	border-bottom-color: darkgrey;
 }
 
+/* /////////////////////////////////////
+classes pareadas bacharel para organizar o css 
+/////////////////////////////////////*/
+
 
 .first_fases {					/*Compreende a primeira fase e a quinta*/
     margin-top: 10px;
@@ -1019,9 +1035,10 @@ nav .tab {
 }
 
 
-/*###################################################################
-##########################SOBRE#####################################
-####################################################################*/
+/*/* /////////////////////////////////////
+/////////////////SOBRE//////////////////
+/////////////////////////////////////*/
+*/
 
 .sobre_text{
   font-size:14px;
@@ -1044,204 +1061,3 @@ nav .tab {
 	margin-right: 30px;
 	margin-top: 500px;
 }
-
-
-/*
-*{
-	margin: 0;
-	padding: 00;
-}
-
-body{
-	min-width:800px;
-	background-color: #ddd;
-	font-family: 'Roboto Condensed';
-	margin-bottom: 20px;
-}
-
-h1{
-	font-weight: bold;
-	font-family: 'Franklin Gothic Book';
-	padding: 20px;
-} 
-
-.nav_tabs{
-	width: 100%;
-	height: 100%;
-	background-color: #ddd;
-	position: relative;
-}
-
-.nav_tabs ul{
-	list-style: none;
-	width: 100%;
-	height: 100%;
-}
-
-.tab_button ul li{
-	float: left;
-}
-	
-
-.tab_button{
-	display: block;
-	width: 250px;
-	height: 20px;
-	background-color: #363b48;
-	padding: 5px 10px;
-	font-size: 25;
-	font-weight: bold;
-	border-radius: 10px 10px 0px 0px;
-	color:#fff;
-	cursor: pointer;
-	font-family: Franklin Gothic Book;
-	text-align: center;
-	-webkit-transition-duration: 0.4s; /* Safari
-	transition-duration: 0.4s;
-}
-  
-.tab_button:hover {
-	background-color: white;
-	color: #363b48; 
-	text-shadow: none;
-} 
-
-
-
-.tab_button:active { 
-	background-color: #e54e43;
-	color:#fff;
-	
-	}
-
-.tab-content{
-	border-top: solid 10px #e54e43;
-	display: none;
-	position: absolute;
-	left: 0;
-	font-family: Franklin Gothic Book;
-	width: 80%;
-	height: 80%;
-	background-color: #fff;
-	min-width:800px;
-	
-}
-
-
-.Fases_left{
-	float: left;
-	padding: 0;
-	position: static;
-	border: none;
-	max-width: 48%;
-	min-width: 48%;
-	font-size: 1vw;
-	width: 48%;
-	display: block;
-}
-
-.Fases_right{
-	float: right;
-	padding: 0;
-	position: static;
-	border: none;
-	max-width: 48%;
-	min-width: 48%;
-	width: 48%;
-	font-size: 1vw;
-	display: block;
-	
-}
-		
-
-
-
-.Fases{
-	border: none;
-	padding: 1%;
-	position: relative;
-	font-size: 1vw;
-	display: block;
-}
-
-.Fases2{
-	border: none;
-	padding: 1%;
-	position: relative;
-	font-size: 1vw;
-	display: block;
-}
-
-.pretty p-default p-curve p-has-hover{
-	max-width: 400px;
-  word-break: keep-all;
-
-}
-
-	
-	
-.horas{
-	position: relative;
-	float: inherit;
-	margin-left: 1vw;
-	padding:1;
-	padding-bottom: 1.5vw;
-	text-align: center;
-}
-	
-	
-
-
-
-.tab-content h2{
-	color: #87d3b7;
-}
-
-
-
-.tab-content fieldset{
-	background-color: #fff;
-	border: none;	
-	display: block;
-	margin-bottom: 0.5%;
-}
-
-	
-.no_requisito{
-	background-color: #fff;
-	position: relative;
-	left: 100;
-	border: none;
-	display: inline-block;
-}
-
-.button {
-  background-color: #cc0000; /* vermelho
-  border: none;
-  width: 160px;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  font-family: Franklin Gothic Book;
-  border-radius: 6px;
-  border: 0px solid #4CAF50; /* Verde 
-  margin: 5px 10px;
-  font-weight: bold;
-  text-shadow: 2px 1px black;
-  cursor: pointer;
-  
-  -webkit-transition-duration: 0.05s; /* Safari 
-  transition-duration: 0.05s;
-}
-  
-.button:hover {
-	background-color: #800000; /* vermelho escuro
-	color: white; 
-	text-shadow: none;
-} 
-
-.headbutton {}
-*/
