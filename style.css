@@ -1043,7 +1043,7 @@ classes pareadas bacharel para organizar o css
 .sobre_text{
   font-size:14px;
   margin-top: 10px;
-  margin-left:10px;
+  margin-left: 10px;
 	border-left-width:0;
 	border-right-width: 10px;
 	border-top-width: 0;
@@ -1061,3 +1061,10 @@ classes pareadas bacharel para organizar o css
 	margin-right: 30px;
 	margin-top: 500px;
 }
+
+.logo{
+	  float: right; 
+	  margin-top: -90px;
+    margin-left: 10px;
+}
+
