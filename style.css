@@ -781,7 +781,8 @@ header{
 body{
   margin-left:auto;
   margin-right:auto;
-  min-width:800px;
+  min-width:1280px;
+  position:absolute;
   font-family: 'Roboto Condensed'; /*Definindo a família para toda a página evitando redundância, trocar apenas nas classes específicas*/
   font-size: 0.85em;
     margin-bottom: 20px;
@@ -801,6 +802,8 @@ nav .tab {
   float: left;
   display: block;
 	width: 250px;
+	max-width:250px;
+	min-width: 250px;
 	height: 30px;
 	background-color: #424857;/*Azul escuro*/
 	padding: 5px 10px;
@@ -825,6 +828,7 @@ nav .tab {
 
 .tab_content {
   width:99%;
+  min-width: 99%;
   margin-left: 2px;
   border-top-width: 10px;
   border-top-color: #e54e43; /*vermelho*/
@@ -1038,7 +1042,7 @@ classes pareadas bacharel para organizar o css
 /*/* /////////////////////////////////////
 /////////////////SOBRE//////////////////
 /////////////////////////////////////*/
-*/
+
 
 .sobre_text{
   font-size:14px;
@@ -1057,9 +1061,26 @@ classes pareadas bacharel para organizar o css
   text-shadow: 1px 1px gray;
 }
 
+a{
+  color:   #212f3d;
+  text-shadow: 0.5px 0 black;
+  text-decoration: underline;
+}
+
+a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+
 .logo{
 	  float: right; 
-	  margin-top: -90px;
+	  width: 380px;
+    height: 200px;
+	  max-width: 400px;
+	  margin-top: -200px;
     margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
 }
 
