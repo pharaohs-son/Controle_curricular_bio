@@ -15,15 +15,27 @@
 
 <body>
 <header>
-<h1>Controle curricular do curso de Ciências Biológicas da UFSC - Diurno</h1>
+  <h1><p>Controle curricular do curso de Ciências Biológicas da UFSC - Diurno</h1>
+  
+<!-- LOGOS -->
+<div class="logo">
+    <img src="logo1.png" alt="Laboratório de Bioinformática"  height="200" width="200">
+</div>
+<div class="logo_ufsc">
+  <img src="logo2.png" alt="UFSC"  height="100" width="80">
+</div>
+<h1>&nbsp;&nbsp;</h1>
+
 </header>
+
+
 
 
 <nav>
   <div class="tab">
-    <button class="tab_button" id="defaultOpen" onclick="openTab(event, 'Bacharel')">Bacharel</button>
+    <button class="tab_button"  onclick="openTab(event, 'Bacharel')">Bacharel</button>
     <button class="tab_button" onclick="openTab(event, 'Licenciatura')">Licenciatura</button>
-    <button class="tab_button" onclick="openTab(event, 'Sobre')">Sobre</button>
+    <button class="tab_button" id="defaultOpen" onclick="openTab(event, 'Sobre')">Sobre</button>
   </div>
 </nav> <!--Botões de navegação-->
 
@@ -3750,22 +3762,33 @@
 <!--Sobre-->
 <div class="tab_content" id="Sobre">
   	<div class="sobre_text">
-				<label>Desenvolvido por Alisson Corrêa e Vilmar Filho</label>
+  	    <h3>Criadores</h3>
+			  <p>Desenvolvido por Alisson Corrêa e Vilmar Filho
 				<p><p>&nbsp;&nbsp;
-				<p>Baseado no: <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_20061.pdf.PDF" target="_blank">Currículo de Ciências Biológicas da UFSC</a>
+				<p>Apoio do professor Dr. Glauber Wagner e do laboratório de Bioinformática da UFSC
+				<p>Baseado neste <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_20061.pdf.PDF" target="_blank">Currículo de Ciências Biológicas da UFSC</a>
 				<p><label>Código disponível no <a href="https://github.com/pharaohs-son/Controle_curricular_bio" target="_blank">GitHub</a></label>
-			
+			  <br>
+			  <br> 
+	  </div>
+	  <div class="usage">
+			  <p><h3>Como usar:</h3>
+			  <p>&nbsp;&nbsp;
+			  <p>O site foi pensado para auxiliar na visualização de Pré-Requisitos das matérias. Assim, ao selecionar uma matéria, ela liberará materias de fases a frente, as quais o pré-requisito foi cumprido.
+			  <p>Matérias que necessitam de mais de um pré-requisito só são liberadas quando todos são selecionados.
+			  <p>Matérias que possui pré-requisito de horas/aula possuem um aviso ao passar o mouse sobre o nome da matéria.
+			  <p>Ao mesmo tempo é contabilizado o número de horas obrigatórias ao topo do site. 
+			  <p>
+		</div>	
 			<div class="report">
+			  <h3>Atenção</h3>
+			  <p>&nbsp;&nbsp;
 				<p>Esta é uma ferramenta não oficial
-				<p>Esta é uma versão Beta, qualquer erro favor reportar para: vilmarbenetti_98@hotmail.com
+				<p>Versão Beta para testes, qualquer erro favor reportar para: vilmarbenetti_98@hotmail.com
+				<p>Atualizado em Março de 2020. v2.
 			</div>
-			
-			<div class="logo">
-          <img src="logo1.png" alt="Laboratório de Bioinformática"  height="400" width="400">
-      </div>
       
-      <p>Atualizado em Março de 2020.
-	</div>
+      
 </div>
 
 <script>

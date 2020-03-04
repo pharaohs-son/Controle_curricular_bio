@@ -776,6 +776,7 @@ select_all{
 
 header{
   text-align: center;
+  text-shadow: 1px 1px darkgrey;
 }
 
 body{
@@ -793,6 +794,29 @@ nav .tab {
   margin-left: 2px;
   padding: 0;
 }
+
+
+/*/////////////////////////////////////
+///////////Título e logos//////////////
+///////////////////////////////////////*/
+
+
+.logo{
+	  float: right; 
+	  margin-top: -120px;
+    margin-left: 0px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.logo_ufsc{
+	  float: left; 
+	  margin-top: -70px;
+    margin-left: 80px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
 
 
 /*/////////////////////////////////////
@@ -837,6 +861,13 @@ nav .tab {
   border-left-width:0;
   border-right-width: 0;
   outline:none;
+
+}
+
+div.Sobre {
+    border-bottom-style: solid;
+  border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
 }
 
 .local_board {
@@ -1057,9 +1088,29 @@ classes pareadas bacharel para organizar o css
 }
 
 .report {
+      font-size:14px;
+  margin-top: 10px;
+  margin-left: 10px;
+	border-left-width:0;
+	border-right-width: 10px;
+	border-top-width: 0;
   display: inline-block;
   text-shadow: 1px 1px gray;
 }
+
+
+.usage {
+    font-size:14px;
+  margin-top: 10px;
+  margin-left: 10px;
+	border-left-width:0;
+	border-right-width: 10px;
+	border-top-width: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
 
 a{
   color:   #212f3d;
@@ -1073,14 +1124,5 @@ a:hover{
 }
 
 
-.logo{
-	  float: right; 
-	  width: 380px;
-    height: 200px;
-	  max-width: 400px;
-	  margin-top: -200px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: inline-block;
-}
+
 
