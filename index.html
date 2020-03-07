@@ -63,7 +63,7 @@
 					  <label class="checkbox">
 						<div class="pretty p-switch">
 							<input name="all_1" class="pretty p-switch" type="checkbox" id="all_1"
-							onchange="selectAll(id,'BIO7003','BIO7240','CFS7001','ECZ7011','ECZ7021','MIP7011','MOR7001','QMC5235');"/>
+							onchange="selectAll(id,'BIO7003','BIO7240','CFS7001','ECZ7011','ECZ7021','MIP7011','MOR7001','QMC5235'); checkboxStorage(id)"/>
 						<div class="state">
 									<label> </label>
 								</div>
@@ -206,6 +206,8 @@
 							);
 							off_other(
 							"ECZ7011",
+							"ECZ7015",
+							"ECZ7016",
 							"ECZ7024",
 							"ECZ7012",
 							"ECZ7025",
@@ -757,7 +759,6 @@
 							determined_list(
 							"ECZ7012",
 							"ECZ7013",
-							"ECZ7015",
 							);
 							off_other(
 							"ECZ7012",
@@ -1058,7 +1059,6 @@
 							'determined_list(
 							"ECZ7013",
 							"ECZ7015",
-							"ECZ7016"
 							);
 							off_other(
 							"ECZ7013",
@@ -2010,6 +2010,8 @@
 									off_other(
 									"LECZ7011",
 									"LECZ7024",
+									"LECZ7015",
+									"LECZ7016",
 									"LECZ7012",
 									"LECZ7025",
 									"LECZ7013",
@@ -2548,7 +2550,6 @@
 									determined_list(
 									"LECZ7012",
 									"LECZ7013",
-									"LECZ7015",
 									);
 									off_other(
 									"LECZ7012",
@@ -2901,7 +2902,6 @@
 									'determined_list(
 									"LECZ7013",
 									"LECZ7015",
-									"LECZ7016"
 									);
 									off_other(
 									"LECZ7013",
