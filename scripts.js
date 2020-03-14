@@ -139,9 +139,14 @@ function totalIt_lic() {
 }
 
 
-//////////////////////////////////////////////////////////////////////////
-//////////////////////// END DE HORAS ///////////////////////////////
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////    DARK MODE    ///////////
+////////////////////////////////////////////////
+
+function dark() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+} 
 
 
 ////////////////////////////////////////////////
@@ -157,21 +162,23 @@ const lic_disciplinas = ["LBIO7003","LBIO7240","LCFS7001","LECZ7011","LECZ7021",
 const disciplinas = bach_disciplinas.concat(lic_disciplinas);
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Loading storage")
+    console.log("Loading storage");
     //Contando listas
     var stored = localStorage;
     
     for (let i = 0; i< stored.length; i++){
-        let stored_key = localStorage.getItem(stored.key(i))
+        let stored_key = localStorage.getItem(stored.key(i));
         try {
             let list_item = JSON.parse(stored_key);
             newElement(list_item.itemClass, list_item.itemName,list_item.itemValue,force_new=true);
         } catch (e) {
-            continue
+            continue;
         }
     }
     setCloseBtnFunc();
     
+    
+    /*Set status of each subject gotten from Storage*/
     for (var i = 0; i < disciplinas.length; i++){
         if (localStorage.getItem(disciplinas[i]) == "checked"){
         document.getElementById(disciplinas[i]).disabled = false;
@@ -185,15 +192,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     }
     
+    /*Activate dark mode based on storage*/
+    if (localStorage.getItem("theme") == "dark"){
+      document.getElementById("darkmode").checked = true;
+      dark();
+    }
+    
     totalIt();
-	totalIt_lic();
+	  totalIt_lic();
 	
 }, false);
 
 
 
 function checkboxStorage(){
-    console.log("checkbox")
     //Reiniciando o armazenamento e refazendo tudo
     localStorage.clear();
 
@@ -217,7 +229,7 @@ function checkboxStorage(){
             let json_parse = JSON.stringify({
             itemClass: lists[list],
             itemName: input[item].id,
-            itemValue: input[item].value}) 
+            itemValue: input[item].value}) ;
             localStorage.setItem(input[item].id,json_parse);
     }
     }
@@ -225,11 +237,20 @@ function checkboxStorage(){
     totalIt_lic();
 }
 
+function themeStorage(id){
+  var dark = document.getElementById(id);
+  if (dark.checked === true){
+    localStorage.setItem("theme", "dark");
+  }else {
+    localStorage.setItem("theme", "light");
+  }
+}
 
 
 /////////////////////////////////////////////////////
 ////////////END ARMAZENAMENTO EM BROWSER////////////
 //////////////////////////////////////////////////////
+
 
 
 ////////////////////////////////////////////////
@@ -309,12 +330,3 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
   evt.currentTarget.style.background = " #e54e43";
 }
-
-////////////////////////////////////////////////
-////////////////    DARK MODE    ///////////
-////////////////////////////////////////////////
-
-function dark() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-} 
