@@ -157,19 +157,35 @@ const lic_disciplinas = ["LBIO7003","LBIO7240","LCFS7001","LECZ7011","LECZ7021",
 const disciplinas = bach_disciplinas.concat(lic_disciplinas);
 
 document.addEventListener('DOMContentLoaded', function() {
-  for (var i = 0; i < disciplinas.length; i++){
-		if (localStorage.getItem(disciplinas[i]) == "checked"){
-		  document.getElementById(disciplinas[i]).disabled = false;
-		  document.getElementById(disciplinas[i]).checked = true;
-		} else if (localStorage.getItem(disciplinas[i]) == "checked_enabled") {
-		  document.getElementById(disciplinas[i]).disabled = false;
-		  document.getElementById(disciplinas[i]).checked = false;
-		}else if (localStorage.getItem(disciplinas[i]) == "disabled"){
-		  document.getElementById(disciplinas[i]).checked = false;
-		  document.getElementById(disciplinas[i]).disabled = true;
-		}
-	}
-	totalIt();
+    console.log("Loading storage")
+    //Contando listas
+    var stored = localStorage;
+    
+    for (let i = 0; i< stored.length; i++){
+        let stored_key = localStorage.getItem(stored.key(i))
+        try {
+            let list_item = JSON.parse(stored_key);
+            newElement(list_item.itemClass, list_item.itemName,list_item.itemValue,force_new=true);
+        } catch (e) {
+            continue
+        }
+    }
+    setCloseBtnFunc();
+    
+    for (var i = 0; i < disciplinas.length; i++){
+        if (localStorage.getItem(disciplinas[i]) == "checked"){
+        document.getElementById(disciplinas[i]).disabled = false;
+        document.getElementById(disciplinas[i]).checked = true;
+    } else if (localStorage.getItem(disciplinas[i]) == "checked_enabled") {
+        document.getElementById(disciplinas[i]).disabled = false;
+        document.getElementById(disciplinas[i]).checked = false;
+    }else if (localStorage.getItem(disciplinas[i]) == "disabled"){
+        document.getElementById(disciplinas[i]).checked = false;
+        document.getElementById(disciplinas[i]).disabled = true;
+    }
+    }
+    
+    totalIt();
 	totalIt_lic();
 	
 }, false);
@@ -177,18 +193,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function checkboxStorage(){
-  localStorage.clear();
-  for (var i = 0; i < disciplinas.length; i++){
-    if (document.getElementById(disciplinas[i]).disabled === false && document.getElementById(disciplinas[i]).checked === true){
-       localStorage.setItem(disciplinas[i], "checked");
-    } else if (document.getElementById(disciplinas[i]).disabled === false) {
-      localStorage.setItem(disciplinas[i],"checked_enabled");
-    }else{
-       localStorage.setItem(disciplinas[i],"disabled");
-      }
-  }
-  totalIt();
-  totalIt_lic();
+    console.log("checkbox")
+    //Reiniciando o armazenamento e refazendo tudo
+    localStorage.clear();
+
+    //Computando as checkbox marcadas
+    for (var i = 0; i < disciplinas.length; i++){
+        if (document.getElementById(disciplinas[i]).disabled === false && document.getElementById(disciplinas[i]).checked === true){
+            localStorage.setItem(disciplinas[i], "checked");
+        } else if (document.getElementById(disciplinas[i]).disabled === false) {
+            localStorage.setItem(disciplinas[i],"checked_enabled");
+        }else{
+            localStorage.setItem(disciplinas[i],"disabled");
+        }
+        }
+
+    //Computando as lista de horas complementares
+    const lists = ["op_list","ae_list","acc_list","op_list_lic","ae_list_lic","acc_list_lic"];
+
+    for (let list = 0; list < lists.length;list++){
+        var input = document.getElementsByClassName(lists[list]); //Todos os items da lista
+        for (let item = 0; item < input.length; item++) {
+            let json_parse = JSON.stringify({
+            itemClass: lists[list],
+            itemName: input[item].id,
+            itemValue: input[item].value}) 
+            localStorage.setItem(input[item].id,json_parse);
+    }
+    }
+    totalIt();
+    totalIt_lic();
 }
 
 

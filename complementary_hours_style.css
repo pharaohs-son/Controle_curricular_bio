@@ -1,0 +1,122 @@
+.complementary_hours_container {
+    display: inline-block;
+     width: 350px;
+}
+
+
+/*LISTA DE OPTATIVAS*/
+
+.complementary_hours_container h2{
+    margin-block-end: 0em;
+}
+
+/* Removendo padding, margens e marcadores de lista */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+/*Elementos da lista*/
+ul li {
+  cursor: pointer;
+    position: relative;
+  padding: 5px 8px 5px 20px;
+  font-size: 1em;
+  transition: 0.2s;
+
+  /* Elementos da lista não selecionáveis */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*Escurecer o fundo ao passar o mouse */
+ul li:hover {
+  background: #ddd;
+}
+
+
+/*Input da lista*/
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+input[type=number] {
+    width: 50px;
+}
+
+/* Tirando as setas do input tipo número*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Chrome, Safari, Edge, Opera */
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance:textfield;/* Firefox */
+}
+
+/*Estilo do placeholder*/
+input::placeholder {
+    font-size: 12px;
+}
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 12px;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  font-size: 12px;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  font-size: 12px;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  font-size: 12px;
+}
+
+
+/* Botão de adicionar na lista */
+.addBtn {
+
+    padding: 8px;
+    background: white;
+    color: black;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+/*Botão de excluir item*/
+.list_close_button {
+    position:absolute;
+    padding: 5px;
+    background: white;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    right:0px;
+    top: 0px;
+}
+
+.list_close_button:hover {
+  background-color: #bbb;
+}
+
+
+/*LISTA DE OPTATIVAS*/

@@ -10,7 +10,10 @@
 <meta charset="UTF-8"  http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="initial-scale = 1.0" />
 <link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="complementary_hours_style.css"/>
+<script>console.log(localStorage)</script>
 <script src="scripts.js"></script>
+
 </head>
 
 <body>
@@ -44,14 +47,28 @@
 <div class="tab_content" id="Bacharel">
 
   <!--Contagem de horas-->
-  <fieldset class="total_board_count">
-    <section class="local_board">
-    <p class="local_count">
-		  Total de Horas Obrigatórias:
-		  <span value="0" readonly="readonly" type="text" id="mandatory_total"></span>
-		</p>
-		</section>
-  </fieldset>
+    <fieldset class="total_board_count">
+        <section class="local_board">
+            <p class="local_count">
+              Total de Horas Obrigatórias:
+              <span value="0" readonly="readonly" type="text" id="mandatory_total"></span>
+            </p>
+            <p class="local_count">
+              Total de Horas Optativas:
+              <span value="0" readonly="readonly" type="text" id="op_total"></span>
+            </p>
+        </section>
+        <section class="local_board">
+            <p class="local_count">
+            Total de Atividades de Extensão (AE):
+            <span value="0" readonly="readonly" type="text" id="ae_total"></span>
+            </p>
+            <p class="local_count">
+            Total de Atividades Científico-Culturais (ACC):
+            <span value="0" readonly="readonly" type="text" id="acc_total"></span>
+            </p>
+        </section>
+    </fieldset>
 
   <!--Fases-->
 
@@ -1844,7 +1861,60 @@
 		</div>
             </div>
 	</section>
+    
+    
+    <!--Container com todas as listas de horas complementares-->
+    <div class="complementary_hours_container">
+        <!--Disciplinas optativas-->
+        <div class="optatives_container">
+          <div class="list_header">
+            <h2>Disciplinas Optativas</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="op_input" maxlength="40" placeholder="Disciplina">
+            <input class="number_input" type="number" id="credits_input" placeholder="Créditos">
+            <span id="optative_item" onclick="newElement('op_list', 'op_input','credits_input')" class="addBtn">+</span>
+          </div>
+
+          <ul id="op_list">
+          </ul>
+        </div>
+
+        <!--Atividades de extensão-->
+        <div class="ae_container">
+          <div class="list_header">
+            <h2>Atividades de Extensão</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="ae_input" maxlenght="40" placeholder="Atividade">
+            <input class="number_input" type="number" id="ae_hours_input" placeholder="Horas">
+            <span onclick="newElement('ae_list', 'ae_input','ae_hours_input')" class="addBtn">+</span>
+          </div>
+
+          <ul id="ae_list">
+          </ul>
+        </div>
+        
+        <!--Atividades científico-cultural-->
+        <div class="acc_container">
+          <div class="list_header">
+            <h2>Atividades de Científico-Culturais</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="acc_input" maxlenght="40" placeholder="Atividade">
+            <input class="number_input" type="number" id="acc_hours_input" placeholder="Horas">
+            <span onclick="newElement('acc_list', 'acc_input','acc_hours_input')" class="addBtn">+</span>
+          </div>
+
+          <ul id="acc_list">
+          </ul>
+        </div>
+    </div>
 </div>
+
 
 
 
@@ -1852,7 +1922,7 @@
 
 <!--Licenciatura-->
 <div class="tab_content" id="Licenciatura">
-  <!--Contagem de horas-->
+  <!--Contagem de horas
   <fieldset class="total_board_count">
     <section class="local_board">
     <p class="local_count">
@@ -1860,9 +1930,34 @@
 		  <span value="0" readonly="readonly" type="text" id="mandatory_total_lic"></span>
 		</p>
 		</section>
-  </fieldset>
+  </fieldset>-->
+    
+    
+  <!--Contagem de horas-->
+    <fieldset class="total_board_count">
+        <section class="local_board">
+            <p class="local_count">
+              Total de Horas Obrigatórias:
+              <span value="0" readonly="readonly" type="text" id="mandatory_total_lic"></span>
+            </p>
+            <p class="local_count">
+              Total de Horas Optativas:
+              <span value="0" readonly="readonly" type="text" id="op_total_lic"></span>
+            </p>
+        </section>
+        <section class="local_board">
+            <p class="local_count">
+            Total de Atividades de Extensão (AE):
+            <span value="0" readonly="readonly" type="text" id="ae_total_lic"></span>
+            </p>
+            <p class="local_count">
+            Total de Atividades Científico-Culturais (ACC):
+            <span value="0" readonly="readonly" type="text" id="acc_total_lic"></span>
+            </p>
+        </section>
+    </fieldset>
 
-			<section class="fases_curso">
+    <section class="fases_curso">
 			  <div class="first_fases_lic">
 					<div class="fase" id="primeira">&nbsp;&nbsp;Primeira Fase
     				<div class="select_all"> <!--Marcar/Desmarcar todas-->
@@ -2745,8 +2840,7 @@
   									"LDGL7006",
   									"MEN5601"
   									);
-										checkboxStorage()
-										'
+										checkboxStorage()'
 										value="72"
 										 />
 										<div class="state p-success-o">
@@ -3413,8 +3507,7 @@
     							"LMEN7004",
     							"LMIP7003"
     							);
-									checkboxStorage()
-									'
+									checkboxStorage()'
 									value="108"
 									disabled
 									/>
@@ -3452,7 +3545,7 @@
 						<label class="checkbox">   <!-- MIP7003 - Biologia Parasitária - PCC 10 horas -->
 							<p><div class="pretty p-default p-curve p-has-hover">
 								<input name="product_lic" type="checkbox" id="LMIP7003" disabled onchange='totalIt_lic();
-								update_all(
+				                update_all(
     							"all_lic_4",
     							"LBEG7024",
     							"LBEG7034",
@@ -3628,8 +3721,7 @@
 							</label>
 							<label class="checkbox">   <!-- MEN7341 Física para o Ensino de Ciências Biológiicas-->
 								<p><div class="pretty p-default p-curve p-has-hover">
-									<input name="product_lic" type="checkbox" id="MEN7341" onchange='totalIt_lic();
-									update_all(
+									<input name="product_lic" type="checkbox" id="MEN7341" onchange='totalIt_lic(); update_all(
 										"all_lic_8",
 										"LBIO7015",
 										"LBOT7017",
@@ -3757,6 +3849,58 @@
 					</div>
 				</div>
 			</section>
+    
+
+    <!--Container com todas as listas de horas complementares-->
+    <div class="complementary_hours_container">
+        <!--Disciplinas optativas-->
+        <div class="optatives_container">
+          <div class="list_header">
+            <h2>Disciplinas Optativas</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="op_input_lic" maxlength="40" placeholder="Disciplina">
+            <input class="number_input" type="number" id="credits_input_lic" placeholder="Créditos">
+            <span id="optative_item_lic" onclick="newElement('op_list_lic', 'op_input_lic','credits_input_lic')" class="addBtn">+</span>
+          </div>
+
+          <ul id="op_list_lic">
+          </ul>
+        </div>
+
+        <!--Atividades de extensão-->
+        <div class="ae_container">
+          <div class="list_header">
+            <h2>Atividades de Extensão</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="ae_input_lic" maxlenght="40" placeholder="Atividade">
+            <input class="number_input" type="number" id="ae_hours_input_lic" placeholder="Horas">
+            <span onclick="newElement('ae_list_lic', 'ae_input_lic','ae_hours_input_lic')" class="addBtn">+</span>
+          </div>
+
+          <ul id="ae_list_lic">
+          </ul>
+        </div>
+        
+        <!--Atividades científico-cultural-->
+        <div class="acc_container">
+          <div class="list_header">
+            <h2>Atividades de Científico-Culturais</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="acc_input_lic" maxlenght="40" placeholder="Atividade">
+            <input class="number_input" type="number" id="acc_hours_input_lic" placeholder="Horas">
+            <span onclick="newElement('acc_list_lic', 'acc_input_lic','acc_hours_input_lic')" class="addBtn">+</span>
+          </div>
+
+          <ul id="acc_list_lic">
+          </ul>
+        </div>
+    </div>
 </div>
 
 <!--Sobre-->
@@ -3795,6 +3939,7 @@
 <!-- Scripts que precisam ser carregados depois que toda a página carregar-->
   document.getElementById("defaultOpen").click();
 </script>
+<script src="lists.js"></script>
 </body>
 
 </html>
