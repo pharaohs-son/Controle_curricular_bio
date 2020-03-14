@@ -20,8 +20,8 @@
 	
 <div class="switch"> <!--Dark Mode button-->
   	<label class="checkbox">
-		<div class="pretty p-switch">
-			<input name="dark" class="pretty p-switch" type="checkbox" id="dark" onchange="dark()" />
+		<div class="pretty p-switch p-fill">
+			<input name="dark" class="pretty p-switch p-fill" type="checkbox" id="dark" onchange="dark()" />
 			<div class="state">
 				<label>Dark Mode </label>
 			</div>
@@ -1884,8 +1884,8 @@
               <svg width="170" height="4">
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
-            <input class="text_input" type="text" id="op_input" maxlength="40" placeholder="Disciplina">
-            <input class="number_input" type="number" id="credits_input" placeholder="Créditos">
+            <input class="text_input" type="text" id="op_input" maxlength="30" placeholder="Disciplina">
+            <input class="number_input" type="number" id="credits_input" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
             <span id="optative_item" onclick="newElement('op_list', 'op_input','credits_input')" class="addBtn">+</span>
           </div>
 
@@ -1900,8 +1900,8 @@
               <svg width="170" height="4">
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
-            <input class="text_input" type="text" id="ae_input" maxlenght="40" placeholder="Atividade">
-            <input class="number_input" type="number" id="ae_hours_input" placeholder="Horas">
+            <input class="text_input" type="text" id="ae_input" maxlength="30" placeholder="Atividade">
+            <input class="number_input" type="number" id="ae_hours_input" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('ae_list', 'ae_input','ae_hours_input')" class="addBtn">+</span>
           </div>
 
@@ -1916,8 +1916,8 @@
               <svg width="170" height="4">
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
-            <input class="text_input" type="text" id="acc_input" maxlenght="40" placeholder="Atividade">
-            <input class="number_input" type="number" id="acc_hours_input" placeholder="Horas">
+            <input class="text_input" type="text" id="acc_input" maxlength="30" placeholder="Atividade">
+            <input class="number_input" type="number" id="acc_hours_input" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('acc_list', 'acc_input','acc_hours_input')" class="addBtn">+</span>
           </div>
 
@@ -3872,8 +3872,8 @@
               <svg width="170" height="4">
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
-            <input class="text_input" type="text" id="op_input_lic" maxlength="40" placeholder="Disciplina">
-            <input class="number_input" type="number" id="credits_input_lic" placeholder="Créditos">
+            <input class="text_input" type="text" id="op_input_lic" maxlength="30" placeholder="Disciplina">
+            <input class="number_input" type="number" id="credits_input_lic" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
             <span id="optative_item_lic" onclick="newElement('op_list_lic', 'op_input_lic','credits_input_lic')" class="addBtn">+</span>
           </div>
 
@@ -3888,8 +3888,8 @@
               <svg width="170" height="4">
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
-            <input class="text_input" type="text" id="ae_input_lic" maxlenght="40" placeholder="Atividade">
-            <input class="number_input" type="number" id="ae_hours_input_lic" placeholder="Horas">
+            <input class="text_input" type="text" id="ae_input_lic" maxlength="30" placeholder="Atividade">
+            <input class="number_input" type="number" id="ae_hours_input_lic" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('ae_list_lic', 'ae_input_lic','ae_hours_input_lic')" class="addBtn">+</span>
           </div>
 
@@ -3904,8 +3904,8 @@
               <svg width="170" height="4">
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
-            <input class="text_input" type="text" id="acc_input_lic" maxlenght="40" placeholder="Atividade">
-            <input class="number_input" type="number" id="acc_hours_input_lic" placeholder="Horas">
+            <input class="text_input" type="text" id="acc_input_lic" maxlength="30" placeholder="Atividade">
+            <input class="number_input" type="number" id="acc_hours_input_lic" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('acc_list_lic', 'acc_input_lic','acc_hours_input_lic')" class="addBtn">+</span>
           </div>
 

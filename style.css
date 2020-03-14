@@ -847,8 +847,34 @@ div.switch {
 .dark-mode div.switch {
 	color: #e7e7e7;
 	text-shadow: 1px 0 white; 
-	margin: 10px 10px;
+	
 }
+
+.dark-mode div.complementary_hours_container{
+	color: #e7e7e7;
+}
+
+.dark-mode div.complementary_hours_container ul li:hover {
+  background: #e7e7e7;
+	color: black;
+}
+
+/* Botão de adicionar na lista */
+.dark-mode div.complementary_hours_container .addBtn {
+  background-color: #e7e7e7;
+	color:  #000b18; 
+	
+}
+
+.dark-mode div.complementary_hours_container .addBtn:hover {
+	background: darkgray;
+  color: #000b18;
+}
+
+.dark-mode div.complementary_hours_container input{
+	background: #e7e7e7;
+}
+
 
 
 /*/////////////////////////////////////
