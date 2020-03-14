@@ -796,6 +796,61 @@ nav .tab {
 }
 
 
+div.switch {
+	text-shadow: 1px 0 black; 
+	margin: 10px 10px;
+}
+
+/*/////////////////////////////////////
+///////////   Dark Mode    //////////////
+///////////////////////////////////////*/
+
+
+.dark-mode {
+  background-color: #000b18 ;
+  color: #d3d3d3;
+
+}
+
+.dark-mode img {
+		opacity: 0.80;
+}
+
+.dark-mode a{
+  color:  #ddd7cd;
+  text-shadow: 0.5px 0 #ddd7cd;
+  text-decoration: underline;
+}
+
+.dark-mode a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.dark-mode nav {
+	 color: #e7e7e7;
+	opacity: 0.80;
+}
+
+.dark-mode div.tab_content {
+	 color: #e7e7e7;
+	 border-top-color: #ba423a;
+	 border-bottom-color: black; 
+	 
+}
+
+.dark-mode div.tab_content fieldset.total_board_count {
+	 color: #e7e7e7;
+	 border-color: darkgray; 
+}
+
+.dark-mode div.switch {
+	color: #e7e7e7;
+	text-shadow: 1px 0 white; 
+	margin: 10px 10px;
+}
+
+
 /*/////////////////////////////////////
 ///////////Título e logos//////////////
 ///////////////////////////////////////*/
