@@ -829,6 +829,20 @@ div.switch {
 
 .dark-mode div .tab_button{
 	background-color: #435055;
+	-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
+}
+
+.dark-mode div .tab_button{
+	background-color: #435055;
+	-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
+}
+
+.dark-mode div .tab_button:hover{
+	background-color: #374044;
+	-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
 }
 
 .dark-mode div.tab_content {
