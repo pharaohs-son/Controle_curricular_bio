@@ -196,6 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem("theme") == "dark"){
       document.getElementById("darkmode").checked = true;
       dark();
+    } else {
+      document.getElementById("darkmode").checked = false;
     }
     
     totalIt();
