@@ -11,8 +11,8 @@
 <meta name="viewport" content="initial-scale = 1.0" />
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <link rel="stylesheet" type="text/css" href="complementary_hours_style.css"/>
-<script>console.log(localStorage)</script>
 <script src="scripts.js"></script>
+<script src="storage_management.js"></script>
 
 </head>
 
@@ -23,7 +23,7 @@
 		<div class="pretty p-switch p-fill">
 			<input name="dark" class="pretty p-switch p-fill" type="checkbox" id="darkmode" onclick="dark(); themeStorage('darkmode')" />
 			<div class="state">
-				<label>Dark Mode </label>
+				<label>Modo Noturno </label>
 			</div>
 		</div>
 	</label>
@@ -48,15 +48,15 @@
 
 <nav>
   <div class="tab">
-    <button class="tab_button"  onclick="openTab(event, 'Bacharel')">Bacharel</button>
-    <button class="tab_button" onclick="openTab(event, 'Licenciatura')">Licenciatura</button>
-    <button class="tab_button" id="defaultOpen" onclick="openTab(event, 'Sobre')">Sobre</button>
+    <button class="tab_button"  id="bach_tab_btn" onclick="openTab(event)">Bacharel</button>
+    <button class="tab_button" id= "lic_tab_btn" onclick="openTab(event)">Licenciatura</button>
+    <button class="tab_button" id="about_tab_btn" onclick="openTab(event)">Sobre</button>
   </div>
 </nav> <!--Botões de navegação-->
 
 
 <!--Bacharel-->
-<div class="tab_content" id="Bacharel">
+<div class="tab_content" id="bach_tab">
 
   <!--Contagem de horas-->
     <fieldset class="total_board_count">
@@ -1927,12 +1927,8 @@
 </div>
 
 
-
-
-
-
 <!--Licenciatura-->
-<div class="tab_content" id="Licenciatura">
+<div class="tab_content" id="lic_tab">
   <!--Contagem de horas
   <fieldset class="total_board_count">
     <section class="local_board">
@@ -3915,7 +3911,7 @@
 </div>
 
 <!--Sobre-->
-<div class="tab_content" id="Sobre">
+<div class="tab_content" id="about_tab">
   	<div class="sobre_text">
   	    <h3>Criadores</h3>
 			  <p>Desenvolvido por Alisson Corrêa e Vilmar Filho
@@ -3954,10 +3950,6 @@
       
 </div>
 
-<script>
-<!-- Scripts que precisam ser carregados depois que toda a página carregar-->
-  document.getElementById("defaultOpen").click();
-</script>
 <script src="lists.js"></script>
 </body>
 
