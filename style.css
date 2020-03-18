@@ -782,7 +782,7 @@ header{
 body{
   margin-left:auto;
   margin-right:auto;
-  min-width:1380px;
+  min-width:1280px;
   position:absolute;
   font-family: 'Roboto Condensed'; /*Definindo a família para toda a página evitando redundância, trocar apenas nas classes específicas*/
   font-size: 0.85em;
@@ -1002,7 +1002,7 @@ div.switch {
 
 
 .tab_content {
-  width:99%;
+  width:100%;
   min-width: 99%;
   margin-left: 2px;
   border-top-width: 10px;

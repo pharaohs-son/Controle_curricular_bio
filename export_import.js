@@ -36,7 +36,7 @@ function exportData(){
 
 function importData(){
     
-    var file = document.getElementById("input_content_file").files[0];
+    var file = document.getElementById("upload_button").files[0];
     var reader = new FileReader();
     
     var ready = false;
@@ -50,9 +50,9 @@ function importData(){
         for (var k in new_storage) {
             localStorage.setItem(k,new_storage[k]);
           }    
-        loadData();
+        location.reload();
         }catch (e){
-            alert("A página importa apenas arquivos .json gerados pelas nossas funções.")
+            alert("Erro: Você parece estar carregando um arquivo incompatível. A página importa apenas arquivos .json gerados pelas nossas funções.")
         }
     }else{
         setTimeout(check, 500);

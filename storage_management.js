@@ -9,9 +9,7 @@ const disciplinas = bach_disciplinas.concat(lic_disciplinas);
 const id_all = ["all_1","all_2","all_3","all_4","all_5","all_6","all_7","all_8","all_9", "all_lic_1", "all_lic_2", "all_lic_3", "all_lic_4", "all_lic_5", "all_lic_6", "all_lic_7", "all_lic_8", "all_lic_9", "all_lic_10"]
 
 /*Definindo um event listener para carregar os dados depois que todos os elementos da página foram carregados*/
-document.addEventListener('DOMContentLoaded', loadData, false);
-
-function loadData() {
+document.addEventListener('DOMContentLoaded', function () {
     data = localStorage;
     //Contando listas
     for (let i = 0; i< data.length; i++){
@@ -66,7 +64,7 @@ function loadData() {
     totalIt();
     totalIt_lic();
 	
-}
+}, false);
 
 function checkboxStorage(){
     //Computando as checkbox marcadas
