@@ -54,7 +54,13 @@ input {
 
 input[type=number] {
     width: 50px;
+    margin-left: 9px;
 }
+
+input[type=text] {
+    width: 220px;
+}
+
 
 /* Tirando as setas do input tipo número*/
 input::-webkit-outer-spin-button,
