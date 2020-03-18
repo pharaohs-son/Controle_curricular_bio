@@ -192,6 +192,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     }
     
+     /*Activate all buttons based on storage*/
+     for (var k = 0; k < id_all.length; k++){
+       if (localStorage.getItem(id_all[k]) == "on"){
+         document.getElementById(id_all[k]).checked = true;
+       } else {
+         document.getElementById(id_all[k]).checked = false;
+       }
+     }
+	
+	
     /*Activate dark mode based on storage*/
     if (localStorage.getItem("theme") == "dark"){
       document.getElementById("darkmode").checked = true;
@@ -201,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     totalIt();
-	  totalIt_lic();
+    totalIt_lic();
 	
 }, false);
 
@@ -247,6 +257,19 @@ function themeStorage(id){
     localStorage.setItem("theme", "light");
   }
 }
+
+
+
+function allStorage(){
+  for (var i = 0; i < id_all.length; i++){
+    var nome = document.getElementById(id_all[i]);
+    if (nome.checked === true){
+      localStorage.setItem(id_all[i], "on");
+    } else {
+      localStorage.setItem(id_all[i], "off");
+    }
+  }
+} 
 
 
 /////////////////////////////////////////////////////
