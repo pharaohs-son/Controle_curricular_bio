@@ -782,7 +782,7 @@ header{
 body{
   margin-left:auto;
   margin-right:auto;
-  min-width:1280px;
+  min-width:1380px;
   position:absolute;
   font-family: 'Roboto Condensed'; /*Definindo a família para toda a página evitando redundância, trocar apenas nas classes específicas*/
   font-size: 0.85em;
@@ -917,6 +917,34 @@ div.switch {
 }
 .dark-mode div.complementary_hours_container input:-moz-placeholder { /* Firefox 18- */
   color: white;
+}
+
+.dark-mode div.tab_content fieldset.total_board_count section.download{
+	background: #435055;
+	border: 3px solid #435055;
+			-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
+}
+
+.dark-mode div.tab_content fieldset.total_board_count section.upload{
+	background: #435055;
+	border: 3px solid #435055;
+			-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
+}
+
+.dark-mode div.tab_content fieldset.total_board_count section.upload:hover{
+	background: #e54e43;
+	border: 3px solid #e54e43;
+		-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
+}
+
+.dark-mode div.tab_content fieldset.total_board_count section.download:hover{
+	background: #e54e43;
+	border: 3px solid #e54e43;
+		-webkit-transition-duration: 0.1s; /* Safari*/
+	transition-duration: 0.1s;
 }
 
 /*/////////////////////////////////////
@@ -1247,5 +1275,79 @@ a:hover{
 }
 
 
+/*/* /////////////////////////////////////
+/////////////UPLOAD / DOWNLOAD//////////
+/////////////////////////////////////*/
+
+.upload {
+	  display: block;
+	  background: #424857;
+	  color: white;
+		width: 100px;
+	  text-align: center;
+    float: right;
+	  cursor: pointer;
+    margin-right: 20px;
+	  border: 3px solid #424857;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+	  margin-right: 20px;
+	  font-weight: bold;
+	  font-size: 14;
+	  transition: 0.1s; 
+	  outline:none;
+	  margin-top: 2px;
 
 
+	
+}
+
+.upload:hover{
+	  background: #e54e43;
+	  border: 3px solid #e54e43;
+    display: block;
+    padding: 6px 12px;
+    cursor: pointer;
+	  transition: 0.1s;
+}
+
+.download {
+	  display: block;
+	  background: #424857;
+	  color: white;
+		width: 100px;
+	  text-align: center;
+    float: right;
+	  cursor: pointer;
+    margin-right: 20px;
+	  border: 3px solid #424857;
+    padding: 6px 12px;
+    border-radius: 8px;
+	  margin-right: 20px;
+	  font-weight: bold;
+	  font-size: 14;
+	  transition: 0.1s; 
+	  outline:none;
+	  margin-top: 5px;
+		text-indent:0.3em;
+}
+
+.download:hover{
+	  background: #e54e43;
+	  border: 3px solid #e54e43;
+    display: block;
+    padding: 6px 12px;
+    cursor: pointer;
+	  transition: 0.1s;
+}
+
+/* Esconde o input */
+input[type='file'] {
+  display: none
+}
+
+/* Esconde o botão */
+input[type='button'] {
+  display: none
+}

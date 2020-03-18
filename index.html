@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="complementary_hours_style.css"/>
 <script src="scripts.js"></script>
 <script src="storage_management.js"></script>
+<script src="export_import.js"></script>
 
 </head>
 
@@ -28,6 +29,7 @@
 		</div>
 	</label>
 </div>
+
 
 <header>
   <h1><p>Controle curricular do curso de Ciências Biológicas da UFSC - Diurno</h1>
@@ -80,6 +82,14 @@
             <span value="0" readonly="readonly" type="text" id="acc_total"></span>
             </p>
         </section>
+        <section class="upload"> <!--Upload file button-->
+          <label for="upload_button">Carregar Controle</label>
+    			<input type="file" size="60" name="upload_button" id="upload_button" onchange='importData();' />
+      </section>
+      <section class="download"> <!--Download file button-->
+          <label for="download_button">Baixar Controle</label>
+    			<input type="button" size="60" name="download_button" id="download_button" onclick='exportData();' />
+    </section>
     </fieldset>
 
   <!--Fases-->
@@ -1951,6 +1961,15 @@
             <span value="0" readonly="readonly" type="text" id="acc_total_lic"></span>
             </p>
         </section>
+        <section class="upload"> <!--Upload file button-->
+          <label for="upload_button">Carregar Controle</label>
+    			<input type="file" size="60" name="upload_button" id="upload_button" onchange='importData();' />
+      </section>
+      <section class="download"> <!--Download file button-->
+          <label for="download_button">Baixar Controle</label>
+    			<input type="button" size="60" name="download_button" id="download_button" onclick='exportData();' />
+    </section>
+
     </fieldset>
 
     <section class="fases_curso">

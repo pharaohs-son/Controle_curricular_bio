@@ -1,6 +1,6 @@
 .complementary_hours_container {
     display: inline-block;
-     width: 350px;
+    width: 400px;
     margin-left: 5px;
 }
 
@@ -88,6 +88,8 @@ input:-moz-placeholder { /* Firefox 18- */
 
 /* Botão de adicionar na lista */
 .addBtn {
+    float: right;
+    margin-right:0;
     padding: 8px;
     background: white;
     color: black;
@@ -112,9 +114,10 @@ input:-moz-placeholder { /* Firefox 18- */
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    right:0px;
+    right: 0;
     top: 0px;
     text-indent: 0px;
+    width: 16px;
 }
 
 .list_close_button:hover {
