@@ -43,6 +43,7 @@ function importData(){
 
     var check = function() {
     if (ready === true) {
+        try{
         var new_storage = JSON.parse(result);
         localStorage.clear();
         
@@ -50,6 +51,9 @@ function importData(){
             localStorage.setItem(k,new_storage[k]);
           }    
         loadData();
+        }catch (e){
+            alert("A página importa apenas arquivos .json gerados pelas nossas funções.")
+        }
     }else{
         setTimeout(check, 500);
     }}
