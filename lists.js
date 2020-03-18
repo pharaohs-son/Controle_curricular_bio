@@ -113,8 +113,8 @@ function setCloseBtnFunc(){
             var div = this.parentElement;
             div.style.display = "none";
             div.className = "";
+            localStorage.removeItem(div.id)
             totalLists();
-            checkboxStorage();
         }
     }
     totalLists()

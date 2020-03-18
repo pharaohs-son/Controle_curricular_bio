@@ -11,12 +11,11 @@ const id_all = ["all_1","all_2","all_3","all_4","all_5","all_6","all_7","all_8",
 /*Definindo um event listener para carregar os dados depois que todos os elementos da página foram carregados*/
 document.addEventListener('DOMContentLoaded', loadData, false);
 
-function loadData(stored=localStorage) {
-    console.log("Loading storage");
-    
+function loadData() {
+    data = localStorage;
     //Contando listas
-    for (let i = 0; i< stored.length; i++){
-        let stored_key = localStorage.getItem(stored.key(i));
+    for (let i = 0; i< data.length; i++){
+        let stored_key = localStorage.getItem(data.key(i));
         try {
             let list_item = JSON.parse(stored_key);
             newElement(list_item.itemClass, list_item.itemName,list_item.itemValue,force_new=true);
@@ -70,9 +69,6 @@ function loadData(stored=localStorage) {
 }
 
 function checkboxStorage(){
-    //Reiniciando o armazenamento e refazendo tudo
-    localStorage.clear();
-
     //Computando as checkbox marcadas
     for (var i = 0; i < disciplinas.length; i++){
         if (document.getElementById(disciplinas[i]).disabled === false && document.getElementById(disciplinas[i]).checked === true){
@@ -97,6 +93,7 @@ function checkboxStorage(){
             localStorage.setItem(input[item].id,json_parse);
     }
     }
+    
     totalIt();
     totalIt_lic();
 }
