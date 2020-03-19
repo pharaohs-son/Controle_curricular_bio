@@ -1351,3 +1351,14 @@ input[type='file'] {
 input[type='button'] {
   display: none
 }
+
+
+.progress_bar{
+  width: 50%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+  transition: width 1s;
+}

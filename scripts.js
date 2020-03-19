@@ -1,3 +1,10 @@
+/*Global Variaveis*/
+
+var total_bac;
+var total_lic_var;
+
+
+
 /////////////////////////////////////////////////////////////////////
 ///////////////////////// PRE-REQUISITOS////////////////////////////
 ////////////////////////////////////////////////////////////////////
@@ -123,6 +130,8 @@ function totalIt() {
     }
   }
   document.getElementById("mandatory_total").textContent = + total.toFixed(2) + " H";
+  total_bac = total.toFixed(2);
+  bar_progress('bacharel_bar');
 }
 
 
@@ -135,6 +144,9 @@ function totalIt_lic() {
       total_lic += parseFloat(input[i].value);
     }
   }
+  total_lic_var = total_lic.toFixed(2);
+  bar_progress('licenciatura_bar');
+  
   document.getElementById("mandatory_total_lic").textContent = + total_lic.toFixed(2) + " H";
 }
 
@@ -240,4 +252,24 @@ function openTab(evt) {
   document.getElementById(evt.target.id.replace("_btn","")).style.display = "block";
     localStorage.setItem("active_tab",evt.target.id);
   evt.currentTarget.style.background = " #e54e43";
+}
+
+
+function bar_progress(id){
+    var elem = document.getElementById(id);
+	if (id == 'bacharel_bar'){
+		var obg = parseInt(total_bac);
+		var op = parseInt(op_value_bac);
+		var ae = parseInt(ae_value_bac);
+		var acc = parseInt(acc_value_bac);
+		var width = (((obg + op + ae + acc)/4578)*100).toFixed(2);
+    } else {
+		var obg = parseInt(total_lic_var);
+		var op = parseInt(op_value_lic);
+		var ae = parseInt(ae_value_lic);
+		var acc = parseInt(acc_value_lic);
+		var width = (((obg + op + ae + acc)/5489)*100).toFixed(2);
+	}
+	elem.style.width = width + "%";
+    elem.innerHTML = width + "% Concluído";
 }

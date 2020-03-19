@@ -1,3 +1,12 @@
+/*Variaveis Globais*/
+var op_value_bac;
+var ae_value_bac;
+var acc_value_bac;
+
+var op_value_lic;
+var ae_value_lic;
+var acc_value_lic;
+
 /*Controle das funções de lista da contagem de horas optativas e complementares*/
 
 
@@ -57,6 +66,56 @@ function totalLists() {
             total += parseInt(input[item].getAttribute("value"));
         }
         let content = + total.toFixed(2)+" /"+required_hours[list]
+		
+		/*Bacharel bar*/
+		
+		if (lists[list] == "op_list"){
+			if (total < 17){
+				op_value_bac = (total*18);
+			} else {op_value_bac = 306 }
+			bar_progress('bacharel_bar');
+		}
+
+		if (lists[list] == "ae_list"){
+			if (total < 400){
+				ae_value_bac = total;
+			} else {ae_value_bac = 400 }
+			bar_progress('bacharel_bar');
+		}
+		
+		if (lists[list] == "acc_list"){
+			if (total < 200){
+				acc_value_bac = total;
+			} else {acc_value_bac = 200 }
+			bar_progress('bacharel_bar');
+		}
+		
+		
+		/*Licenciatura bar*/
+		
+		if (lists[list] == "op_list_lic"){
+			if (total < 15){
+				op_value_lic = (total*15);
+			} else {op_value_lic = 270 }
+			bar_progress('licenciatura_bar');
+		}
+
+		if (lists[list] == "ae_list_lic"){
+			if (total < 473){
+				ae_value_lic = total;
+			} else {ae_value_lic = 473 }
+			bar_progress('licenciatura_bar');
+		}
+		
+		if (lists[list] == "acc_list_lic"){
+			if (total < 240){
+				acc_value_lic = total;
+			} else {acc_value_lic = 240 }
+			bar_progress('licenciatura_bar');
+		}
+
+		
+
 
         document.getElementById(lists[list].replace("list","total")).textContent = content;
     }
