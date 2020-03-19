@@ -122,7 +122,7 @@ function totalIt() {
       total += parseFloat(input[i].value);
     }
   }
-  document.getElementById("mandatory_total").textContent = + total.toFixed(2);
+  document.getElementById("mandatory_total").textContent = + total.toFixed(2) + " H";
 }
 
 
@@ -135,7 +135,7 @@ function totalIt_lic() {
       total_lic += parseFloat(input[i].value);
     }
   }
-  document.getElementById("mandatory_total_lic").textContent = + total_lic.toFixed(2);
+  document.getElementById("mandatory_total_lic").textContent = + total_lic.toFixed(2) + " H";
 }
 
 
