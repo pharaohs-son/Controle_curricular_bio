@@ -28,9 +28,10 @@ function newElement(ul_id, ip1, ip2, force_new=false) {
     var t = document.createTextNode(opName+" ("+opCredits+")");
 
     li.appendChild(t);
+    
     if (opName === '' || opCredits === '') {
         console.log("Input fields not filled")
-        alert("Por favor, preencha corretamente os intens.");
+        alert("Por favor, preencha corretamente os itens.");
     } else {
         li.value = opCredits.toString(); //Armazenando os crétidos em 'value'
         li.id = opName; //Armazenando o nome no id
@@ -42,11 +43,10 @@ function newElement(ul_id, ip1, ip2, force_new=false) {
             itemName: opName,
             itemValue: opCredits
         })
-        
-        localStorage.setItem(opName,json_parse); //Salvando no armazenamento
 
-        
+        localStorage.setItem(ul_id+"."+opName,json_parse); //Salvando no armazenamento
     }
+    
     setCloseBtnFunc();
     totalLists();
     }
@@ -119,34 +119,7 @@ function totalLists() {
 
         document.getElementById(lists[list].replace("list","total")).textContent = content;
     }
-    /*
-    //Contando horas de optativas
-    var input = document.getElementsByClassName("op_list"); //Todos os items de classe optativa
-    var total = 0;
-    for (var i = 0; i < input.length; i++) {
-    total += parseFloat(input[i].getAttribute("value"));
-    }
 
-    document.getElementById("op_total").textContent = + total.toFixed(2);
-    
-    //Contando horas de extensão
-    var input = document.getElementsByClassName("ae_list"); //Todos os items de classe extensão
-    var total = 0;
-    for (var i = 0; i < input.length; i++) {
-        total += parseFloat(input[i].getAttribute("value"));
-    }
-
-    document.getElementById("ae_total").textContent = + total.toFixed(2);
-    
-    //Contando horas de acc
-    var input = document.getElementsByClassName("acc_list"); //Todos os items de classe acc
-    var total = 0;
-    for (var i = 0; i < input.length; i++) {
-    total += parseFloat(input[i].getAttribute("value"));
-    }
-
-    document.getElementById("acc_total").textContent = + total.toFixed(2);*/
-    
 }
 
 
@@ -170,9 +143,9 @@ function setCloseBtnFunc(){
     for (var i = 0; i < close.length; i++) {
         close[i].onclick = function() {
             var div = this.parentElement;
+            localStorage.removeItem(div.className+"."+div.id)
             div.style.display = "none";
             div.className = "";
-            localStorage.removeItem(div.id)
             totalLists();
         }
     }

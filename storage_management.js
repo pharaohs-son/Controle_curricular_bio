@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let stored_key = localStorage.getItem(data.key(i));
         try {
             let list_item = JSON.parse(stored_key);
-            newElement(list_item.itemClass, list_item.itemName,list_item.itemValue,force_new=true);
+            if (list_item.itemValue){
+                console.log(list_item)
+                newElement(list_item.itemClass, list_item.itemName,list_item.itemValue,force_new=true);
+            }
         } catch (e) {
             continue;
         }
