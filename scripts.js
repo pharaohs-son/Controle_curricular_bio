@@ -256,6 +256,7 @@ function openTab(evt) {
 
 
 function bar_progress(id){
+	
     var elem = document.getElementById(id);
 	if (id == 'bacharel_bar'){
 		var obg = parseInt(total_bac);
@@ -271,5 +272,10 @@ function bar_progress(id){
 		var width = (((obg + op + ae + acc)/5489)*100).toFixed(2);
 	}
 	elem.style.width = width + "%";
-    elem.innerHTML = width + "% Concluído";
+	if (width > 10){
+		elem.innerHTML = width + "% Concluído";
+	} else { elem.innerHTML = width + "%";}
+	if (width == 100){
+		elem.innerHTML = width + "% Concluído, Parabéns!!!!";
+	}
 }
