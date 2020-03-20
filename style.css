@@ -947,6 +947,13 @@ div.switch {
 	transition-duration: 0.1s;
 }
 
+
+.dark-mode div.progress_bar{
+	opacity: 0.9;
+	color: white;
+	
+}
+
 /*/////////////////////////////////////
 ///////////Título e logos//////////////
 ///////////////////////////////////////*/
@@ -1359,6 +1366,9 @@ input[type='button'] {
   background-color: #4CAF50;
   text-align: center; /* To center it horizontally (if you want) */
   line-height: 30px; /* To center it vertically */
-  color: white;
+  color: black;
+  font-weight: bold;
   transition: width 1s;
+  opacity:1;
 }
+
