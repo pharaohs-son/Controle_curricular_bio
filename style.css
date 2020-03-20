@@ -1289,62 +1289,60 @@ a:hover{
 
 .upload {
 	  display: block;
+		margin-top: 0px;
+	  margin-left: -200px;
+	  margin-right: 20px;
 	  background: #424857;
 	  color: white;
 		width: 100px;
 	  text-align: center;
     float: right;
 	  cursor: pointer;
-    margin-right: 20px;
 	  border: 3px solid #424857;
-    display: inline-block;
     padding: 6px 12px;
     border-radius: 8px;
-	  margin-right: 20px;
 	  font-weight: bold;
 	  font-size: 14;
 	  transition: 0.1s; 
 	  outline:none;
-	  margin-top: 2px;
 
 
-	
 }
 
 .upload:hover{
 	  background: #e54e43;
 	  border: 3px solid #e54e43;
-    display: block;
+    display: inline;
     padding: 6px 12px;
     cursor: pointer;
 	  transition: 0.1s;
 }
 
 .download {
-	  display: block;
+	  display: inline;
+	  margin-top: -36px;
+	  margin-left: 1100px;
+		margin-right: 20px;
 	  background: #424857;
 	  color: white;
 		width: 100px;
 	  text-align: center;
     float: right;
 	  cursor: pointer;
-    margin-right: 20px;
 	  border: 3px solid #424857;
     padding: 6px 12px;
     border-radius: 8px;
-	  margin-right: 20px;
 	  font-weight: bold;
 	  font-size: 14;
 	  transition: 0.1s; 
 	  outline:none;
-	  margin-top: 5px;
 		text-indent:0.3em;
 }
 
 .download:hover{
 	  background: #e54e43;
 	  border: 3px solid #e54e43;
-    display: block;
+    display: inline;
     padding: 6px 12px;
     cursor: pointer;
 	  transition: 0.1s;
