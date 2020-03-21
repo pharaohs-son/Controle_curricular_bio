@@ -263,7 +263,7 @@ function bar_progress(id){
 		var op = parseInt(op_value_bac);
 		var ae = parseInt(ae_value_bac);
 		var acc = parseInt(acc_value_bac);
-		var width = (((obg + op + ae + acc)/4578)*100).toFixed(2);
+		var width = (((obg + op + ae + acc)/4618)*100).toFixed(2);
     } else {
 		var obg = parseInt(total_lic_var);
 		var op = parseInt(op_value_lic);
