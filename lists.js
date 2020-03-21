@@ -57,7 +57,7 @@ function totalLists() {
     //Limpar isso fazendo uma constante com as três classes
     
     const lists = ["op_list","ae_list","acc_list","op_list_lic","ae_list_lic","acc_list_lic"];
-    const required_hours = ["17 H/A","400 H","200 H","15 H/A","473 H","240 H"]
+    const required_hours = ["17 H/A","400 H","240 H","15 H/A","473 H","240 H"]
     
     for (let list = 0; list < lists.length;list++){
         total = 0
@@ -84,9 +84,9 @@ function totalLists() {
 		}
 		
 		if (lists[list] == "acc_list"){
-			if (total < 200){
+			if (total < 240){
 				acc_value_bac = total;
-			} else {acc_value_bac = 200 }
+			} else {acc_value_bac = 240 }
 			bar_progress('bacharel_bar');
 		}
 		
