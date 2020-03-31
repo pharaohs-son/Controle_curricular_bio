@@ -782,8 +782,9 @@ header{
 body{
   margin-left:auto;
   margin-right:auto;
-  min-width:1280px;
-  position:absolute;
+    margin: auto;
+    width: 1280px;
+
   font-family: 'Roboto Condensed'; /*Definindo a família para toda a página evitando redundância, trocar apenas nas classes específicas*/
   font-size: 0.85em;
     margin-bottom: 20px;
@@ -1075,6 +1076,11 @@ Todas as fases do curso
   width:20%;
 }
 
+.optativas_curso_not {
+  float:left;
+  width:20%;
+}
+
 .atividades_curso {
   float:left;
   width:20%;
@@ -1084,6 +1090,86 @@ Todas as fases do curso
   float:left;
   width:20%;
 }
+
+.atividades_curso_not {
+  float:left;
+  width:20%;
+}
+
+/* /////////////////////////////////////
+classes pareadas noturno para organizar o css 
+/////////////////////////////////////*/
+.first_fases_not {					/*Compreende a primeira fase e a quinta*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 230px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+.second_fases_not {					/*Compreende a segunda fase e a sexta*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 230px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+.third_fases_not {					/*Compreende a terceira fase e a sétima*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 255px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+
+.fourth_fases_not {					/*Compreende a quarta fase, a oitava e a nona*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 200px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
+.fifth_fases_not {					/*Compreende a quarta fase, a oitava e a nona*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 900px;
+    height: 160px;
+    align-content: center;
+	border-left-width:0;
+	border-right-width: 0;
+	border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: darkgrey;
+}
+
 
 /* /////////////////////////////////////
 classes pareadas licenciatura para organizar o css 
@@ -1288,62 +1374,60 @@ a:hover{
 
 .upload {
 	  display: block;
+		margin-top: 0px;
+	  margin-left: -200px;
+	  margin-right: 20px;
 	  background: #424857;
 	  color: white;
 		width: 100px;
 	  text-align: center;
     float: right;
 	  cursor: pointer;
-    margin-right: 20px;
 	  border: 3px solid #424857;
-    display: inline-block;
     padding: 6px 12px;
     border-radius: 8px;
-	  margin-right: 20px;
 	  font-weight: bold;
 	  font-size: 14;
 	  transition: 0.1s; 
 	  outline:none;
-	  margin-top: 2px;
 
 
-	
 }
 
 .upload:hover{
 	  background: #e54e43;
 	  border: 3px solid #e54e43;
-    display: block;
+    display: inline;
     padding: 6px 12px;
     cursor: pointer;
 	  transition: 0.1s;
 }
 
 .download {
-	  display: block;
+	  display: inline;
+	  margin-top: -36px;
+	  margin-left: 1100px;
+		margin-right: 20px;
 	  background: #424857;
 	  color: white;
 		width: 100px;
 	  text-align: center;
     float: right;
 	  cursor: pointer;
-    margin-right: 20px;
 	  border: 3px solid #424857;
     padding: 6px 12px;
     border-radius: 8px;
-	  margin-right: 20px;
 	  font-weight: bold;
 	  font-size: 14;
 	  transition: 0.1s; 
 	  outline:none;
-	  margin-top: 5px;
 		text-indent:0.3em;
 }
 
 .download:hover{
 	  background: #e54e43;
 	  border: 3px solid #e54e43;
-    display: block;
+    display: inline;
     padding: 6px 12px;
     cursor: pointer;
 	  transition: 0.1s;

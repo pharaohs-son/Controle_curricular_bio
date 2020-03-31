@@ -2,6 +2,7 @@
 
 var total_bac;
 var total_lic_var;
+var total_not_var;
 
 
 
@@ -150,6 +151,22 @@ function totalIt_lic() {
   document.getElementById("mandatory_total_lic").textContent = + total_lic.toFixed(2) + " H";
 }
 
+//Somar checkboxes da licenciatura noturno
+function totalIt_not() {  
+  var input = document.getElementsByName("product_not");
+  var total_not = 0;
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].checked) {
+      total_not += parseFloat(input[i].value);
+    }
+  }
+  total_not_var = total_not.toFixed(2);
+  bar_progress('not_bar');
+  
+  document.getElementById("mandatory_total_not").textContent = + total_not.toFixed(2) + " H";
+}
+
+
 
 ////////////////////////////////////////////////
 ////////////////    DARK MODE    ///////////
@@ -159,21 +176,6 @@ function dark() {
   var element = document.body;
   element.classList.toggle("dark-mode");
 } 
-
-
-////////////////////////////////////////////////
-////////////ARMAZENAMENTO EM BROWSER////////////
-////////////////////////////////////////////////
-
-
-
-
-
-
-/////////////////////////////////////////////////////
-////////////END ARMAZENAMENTO EM BROWSER////////////
-//////////////////////////////////////////////////////
-
 
 
 ////////////////////////////////////////////////
@@ -264,12 +266,18 @@ function bar_progress(id){
 		var ae = parseInt(ae_value_bac);
 		var acc = parseInt(acc_value_bac);
 		var width = (((obg + op + ae + acc)/4578)*100).toFixed(2);
-    } else {
+    } else if (id == 'licenciatura_bar'){
 		var obg = parseInt(total_lic_var);
 		var op = parseInt(op_value_lic);
 		var ae = parseInt(ae_value_lic);
 		var acc = parseInt(acc_value_lic);
 		var width = (((obg + op + ae + acc)/5489)*100).toFixed(2);
+	}else {
+	  var obg = parseInt(total_not_var);
+		var op = parseInt(op_value_not);
+		var ae = parseInt(ae_value_not);
+		var acc = parseInt(acc_value_not);
+		var width = (((obg + op + ae + acc)/4210)*100).toFixed(2);
 	}
 	elem.style.width = width + "%";
 	if (width > 10){
