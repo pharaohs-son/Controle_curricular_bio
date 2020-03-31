@@ -7,6 +7,10 @@ var op_value_lic;
 var ae_value_lic;
 var acc_value_lic;
 
+var op_value_not;
+var ae_value_not;
+var acc_value_not;
+
 /*Controle das funções de lista da contagem de horas optativas e complementares*/
 
 
@@ -28,9 +32,10 @@ function newElement(ul_id, ip1, ip2, force_new=false) {
     var t = document.createTextNode(opName+" ("+opCredits+")");
 
     li.appendChild(t);
+    
     if (opName === '' || opCredits === '') {
         console.log("Input fields not filled")
-        alert("Por favor, preencha corretamente os intens.");
+        alert("Por favor, preencha corretamente os itens.");
     } else {
         li.value = opCredits.toString(); //Armazenando os crétidos em 'value'
         li.id = opName; //Armazenando o nome no id
@@ -42,11 +47,10 @@ function newElement(ul_id, ip1, ip2, force_new=false) {
             itemName: opName,
             itemValue: opCredits
         })
-        
-        localStorage.setItem(opName,json_parse); //Salvando no armazenamento
 
-        
+        localStorage.setItem(ul_id+"."+opName,json_parse); //Salvando no armazenamento
     }
+    
     setCloseBtnFunc();
     totalLists();
     }
@@ -56,8 +60,8 @@ function newElement(ul_id, ip1, ip2, force_new=false) {
 function totalLists() {
     //Limpar isso fazendo uma constante com as três classes
     
-    const lists = ["op_list","ae_list","acc_list","op_list_lic","ae_list_lic","acc_list_lic"];
-    const required_hours = ["17 H/A","400 H","200 H","15 H/A","473 H","240 H"]
+    const lists = ["op_list","ae_list","acc_list","op_list_lic","ae_list_lic","acc_list_lic", "op_list_not","ae_list_not","acc_list_not"];
+    const required_hours = ["17 H/A","400 H","240 H","15 H/A","473 H","240 H", "8 H/A","280 H","240 H"]
     
     for (let list = 0; list < lists.length;list++){
         total = 0
@@ -84,9 +88,9 @@ function totalLists() {
 		}
 		
 		if (lists[list] == "acc_list"){
-			if (total < 200){
+			if (total < 240){
 				acc_value_bac = total;
-			} else {acc_value_bac = 200 }
+			} else {acc_value_bac = 240 }
 			bar_progress('bacharel_bar');
 		}
 		
@@ -114,39 +118,36 @@ function totalLists() {
 			bar_progress('licenciatura_bar');
 		}
 
+
+		/*NOTURNO bar*/
+		
+		if (lists[list] == "op_list_not"){
+			if (total < 8){
+				op_value_not = (total*8);
+			} else {op_value_not = 144 }
+			bar_progress('not_bar');
+		}
+
+		if (lists[list] == "ae_list_not"){
+			if (total < 280){
+				ae_value_not = total;
+			} else {ae_value_not = 280 }
+			bar_progress('not_bar');
+		}
+		
+		if (lists[list] == "acc_list_not"){
+			if (total < 240){
+				acc_value_not = total;
+			} else {acc_value_not = 240 }
+			bar_progress('not_bar');
+		}
+
 		
 
 
         document.getElementById(lists[list].replace("list","total")).textContent = content;
     }
-    /*
-    //Contando horas de optativas
-    var input = document.getElementsByClassName("op_list"); //Todos os items de classe optativa
-    var total = 0;
-    for (var i = 0; i < input.length; i++) {
-    total += parseFloat(input[i].getAttribute("value"));
-    }
 
-    document.getElementById("op_total").textContent = + total.toFixed(2);
-    
-    //Contando horas de extensão
-    var input = document.getElementsByClassName("ae_list"); //Todos os items de classe extensão
-    var total = 0;
-    for (var i = 0; i < input.length; i++) {
-        total += parseFloat(input[i].getAttribute("value"));
-    }
-
-    document.getElementById("ae_total").textContent = + total.toFixed(2);
-    
-    //Contando horas de acc
-    var input = document.getElementsByClassName("acc_list"); //Todos os items de classe acc
-    var total = 0;
-    for (var i = 0; i < input.length; i++) {
-    total += parseFloat(input[i].getAttribute("value"));
-    }
-
-    document.getElementById("acc_total").textContent = + total.toFixed(2);*/
-    
 }
 
 
@@ -170,9 +171,9 @@ function setCloseBtnFunc(){
     for (var i = 0; i < close.length; i++) {
         close[i].onclick = function() {
             var div = this.parentElement;
+            localStorage.removeItem(div.className+"."+div.id)
             div.style.display = "none";
             div.className = "";
-            localStorage.removeItem(div.id)
             totalLists();
         }
     }

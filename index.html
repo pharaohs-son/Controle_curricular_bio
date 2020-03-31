@@ -33,7 +33,7 @@
 
 
 <header>
-  <h1><p>Controle curricular do curso de Ciências Biológicas da UFSC - Diurno</h1>
+  <h1><p>Controle curricular do curso de Ciências Biológicas da UFSC</h1>
   
 <!-- LOGOS -->
 <div class="logo">
@@ -53,6 +53,7 @@
   <div class="tab">
     <button class="tab_button"  id="bach_tab_btn" onclick="openTab(event)">Bacharel</button>
     <button class="tab_button" id= "lic_tab_btn" onclick="openTab(event)">Licenciatura</button>
+    <button class="tab_button" id= "not_tab_btn" onclick="openTab(event)">Licenciatura Noturno</button>
     <button class="tab_button" id="about_tab_btn" onclick="openTab(event)">Sobre</button>
   </div>
 </nav> <!--Botões de navegação-->
@@ -105,7 +106,7 @@
 							<input name="all_1" class="pretty p-switch" type="checkbox" id="all_1"
 							onchange="selectAll(id,'BIO7003','BIO7240','CFS7001','ECZ7011','ECZ7021','MIP7011','MOR7001','QMC5235'); allStorage();"/>
 						<div class="state">
-									<label> </label>
+									<label></label>
 								</div>
 						</div>
 					  </label>
@@ -652,7 +653,7 @@
 					  </label>
 				  </div>
 
-				<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 horas/aula) -->
+				<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 h/a) -->
 					<p><div class="pretty p-default p-curve p-has-hover">
 						<input name="product" type="checkbox" id="BEG7012" onchange='
 							determined_list("BEG7012", "MOR7003", "BEG7024");
@@ -698,10 +699,10 @@
 							value="108"
 							/>
 							<div class="state p-success-o">
-								<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+								<label>BEG7012 - Biologia Celular (PCC 4 h/a)</label>
 							</div>
 							<div class="state p-success-o p-is-hover">
-								<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+								<label>BEG7012 - Biologia Celular (PCC 4 h/a)</label>
 							</div>
 					</div>
 				</label>
@@ -2518,7 +2519,7 @@
     			  	  </label>
     			  </div>
 
-						<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 horas/aula) -->
+						<label class="checkbox">   <!-- BEG7012 - Biologia Celular (PCC 4 h/a) -->
 							<p><div class="pretty p-default p-curve p-has-hover">
 								<input name="product_lic" type="checkbox" id="LBEG7012" onchange='
 									totalIt_lic();
@@ -2569,10 +2570,10 @@
 									value="108"
 									/>
 									<div class="state p-success-o">
-										<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+										<label>BEG7012 - Biologia Celular (PCC 4 h/a)</label>
 									</div>
 									<div class="state p-success-o p-is-hover">
-										<label>BEG7012 - Biologia Celular (PCC 4 horas/aula)</label>
+										<label>BEG7012 - Biologia Celular (PCC 4 h/a)</label>
 									</div>
 							</div>
 						</label>
@@ -3678,7 +3679,7 @@
 											<label>EED5186 Organização Escolar II - PCC - 18 horas</label>
 										</div>
 										<div class="state p-success-o p-is-hover">
-											<label>EED5186 Organização Escolar II PCC - 18 horas</label>
+											<label>EED5186 Organização Escolar II - PCC - 18 horas</label>
 										</div>
 								</div>
 							</label>
@@ -3697,14 +3698,14 @@
 									checkboxStorage()'
 										value="72" />
 										<div class="state p-success-o">
-											<label>LSB7904 Língua Brasileira de Sinais I (PCC 18 horas-aula)</label>
+											<label>LSB7904 Língua Brasileira de Sinais I (PCC 18 h/a)</label>
 										</div>
 										<div class="state p-success-o p-is-hover">
-											<label>LSB7904 Língua Brasileira de Sinais I (PCC 18 horas-aula)</label>
+											<label>LSB7904 Língua Brasileira de Sinais I (PCC 18 h/a)</label>
 										</div>
 								</div>
 							</label>
-							<label class="checkbox">   <!-- MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 horas/aula-->
+							<label class="checkbox">   <!-- MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 h/a-->
 								<p><div class="pretty p-default p-curve p-has-hover">
 									<input name="product_lic" type="checkbox" id="MEN7008" disabled onchange='totalIt_lic();
 										triple_determined_list(
@@ -3729,10 +3730,10 @@
 										'
 										value="108" />
 										<div class="state p-success-o">
-											<label>MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 horas/aula</label>
+											<label>MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 h/a</label>
 										</div>
 										<div class="state p-success-o p-is-hover">
-											<label>MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 horas/aula</label>
+											<label>MEN7008 Metodologia do Ensino de Ciências e Biologia - PCC 54 h/a</label>
 										</div>
 								</div>
 							</label>
@@ -3920,6 +3921,1281 @@
     </div>
 </div>
 
+
+<!--Noturno-->
+<div class="tab_content" id="not_tab">
+<div class="progress_bar" id="not_bar">0%</div>
+  <!--Contagem de horas-->
+    <fieldset class="total_board_count">
+        <section class="local_board">
+            <p class="local_count">
+              Disciplinas Obrigatórias Cursadas:
+              <span value="0" readonly="readonly" type="text" id="mandatory_total_not"></span>
+            </p>
+            <p class="local_count">
+              Disciplinas Optativas Cursadas:
+              <span value="0" readonly="readonly" type="text" id="op_total_not"></span>
+            </p>
+        </section>
+        <section class="local_board">
+            <p class="local_count">
+            Atividades de Extensão (AE):
+            <span value="0" readonly="readonly" type="text" id="ae_total_not"></span>
+            </p>
+            <p class="local_count">
+            Atividades Científico-Culturais (ACC):
+            <span value="0" readonly="readonly" type="text" id="acc_total_not"></span>
+            </p>
+        </section>
+        <section class="upload"> <!--Upload file button-->
+          <label for="upload_button">Carregar Controle</label>
+    			<input type="file" size="60" name="upload_button" id="upload_button" onchange='importData();' />
+      </section>
+      <section class="download"> <!--Download file button-->
+          <label for="download_button">Baixar Controle</label>
+    			<input type="button" size="60" name="download_button" id="download_button" onclick='exportData();' />
+    </section>
+    
+    </fieldset>
+    <!--Fases-->
+
+  <section class="fases_curso">
+			<div class="first_fases_not">
+				<div class="fase" id="primeira">&nbsp;&nbsp;Primeira Fase
+  				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+  					  <label class="checkbox">
+  						<div class="pretty p-switch">
+  							<input name="not_all_1" class="pretty p-switch" type="checkbox" id="not_all_1" onchange="selectAll(id, 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235'); allStorage();">
+  						<div class="state">
+  									<label></label>
+  								</div>
+  						</div>
+  					  </label>
+  				</div>
+
+				<label class="checkbox">   <!-- BIO7202 - Fauna, Flora e Ambiente (PCC 4h/a) -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" class="styled-checkbox" type="checkbox" id="NOTBIO7202" onchange="
+						determined_list(
+						'NOTBIO7202',
+						'NOTECZ7031'
+						);
+						off_other(
+						'NOTBIO7202',
+						'NOTECZ7032'
+						);
+						update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
+						totalIt_not();
+						checkboxStorage();"
+							value="36" />
+							<div class="state p-success-o">
+								<label>BIO7202 - Fauna, Flora e Ambiente (PCC 4h/a)</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BIO7202 - Fauna, Flora e Ambiente (PCC 4h/a)</label>
+							</div>
+						</div>
+				</label>
+				<label class="checkbox">   <!-- BIO7203 - Princípios de sistemática filogenia e Biogeografia -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" class="styled-checkbox" type="checkbox" id="NOTBIO7203" onchange="
+						double_determined_list(
+						'NOTBIO7203',
+						'NOTBEG7205',
+						'NOTBOT7025'
+						);
+						determined_list(
+						'NOTBIO7203', 
+						'NOTECZ7033',
+						'NOTECZ7201'
+						);
+						off_other(
+						'NOTBIO7203', 
+						'NOTECZ7032',
+						'NOTDGL7067'
+						);
+						update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
+						totalIt_not();
+						checkboxStorage();"
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>BIO7203 - Princípios de sistemática filogenia e Biogeografia</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BIO7203 - Princípios de sistemática filogenia e Biogeografia</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- BIO7245 - Introdução ao Curso de Licenciatura em Ciências Biológicas -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" class="styled-checkbox" type="checkbox" id="NOTBIO7245" onchange="update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
+						totalIt_not();
+						checkboxStorage();"
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>BIO7245 - Introdução ao Curso de Lic. em Ciências Biológicas</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BIO7245 - Introdução ao Curso de Lic. em Ciências Biológicas</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- EED5331 - Teorias da Educação -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" class="styled-checkbox" type="checkbox" id="NOTEED5331" onchange="update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
+						totalIt_not();
+						checkboxStorage();"
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>EED5331 - Teorias da Educação</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>EED5331 - Teorias da Educação</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- MEN7004 - Tópicos em Biologia e Educação - PCC 18h/a -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" class="styled-checkbox" type="checkbox" id="NOTMEN7004"
+						onchange="update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
+						totalIt_not();
+						checkboxStorage();"
+							value="36"
+							/>
+							<div class="state p-success-o">
+								<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18h/a</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>MEN7004 - Tópicos em Biologia e Educação - PCC 18h/a</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- QMC5235 - Fundamentos de Química Geral e Orgânica -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" class="styled-checkbox" type="checkbox" id="NOTQMC5235"
+						onchange="
+						determined_list(
+						'NOTQMC5235', 
+						'NOTBEG7205', 
+						'NOTBQA7008'
+						);
+						off_other(
+						'NOTQMC5235',
+						'NOTBEG7211', 
+						'NOTBEG7211',
+						'NOTBEG7211',
+						'NOTBEG7212',
+						'NOTBEG7229',
+						'NOTBOT7201',
+						'NOTCFS7100',
+						'NOTBIO7236',
+						'NOTMIP7013',
+						'NOTMOR7110',
+						'NOTBEG7220',
+						'NOTBOT7202',
+						'NOTECZ7203'
+						);
+						update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
+						totalIt_not();
+						checkboxStorage();"
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>QMC5235 - Fundamentos de Química Geral e Orgânica</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>QMC5235 - Fundamentos de Química Geral e Orgânica</label>
+							</div>
+					</div>
+				</label>
+			</div>
+        <div class="fase" id="quinta">&nbsp;&nbsp;Quinta Fase
+
+					<div class="select_all"> <!--Marcar/Desmarcar todas-->
+					  <label class="checkbox">
+						<div class="pretty p-switch">
+							<input name="not_all_5" class="styled-checkbox" type="checkbox" id="not_all_5" onchange="selectAll(id, 'NOTBEG7220', 'NOTBIO7230', 'NOTECZ7201', 'NOTMIP7013', 'NOTPSI5137'); allStorage();"/>
+						<div class="state">
+									<label></label>
+								</div>
+						</div>
+					  </label>
+				  </div>
+
+			<label class="checkbox">   <!-- BEG7220 - Embriologia e Desenvolvimento (PCC10h/a) -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBEG7220" disabled onchange="update_all('not_all_5', 'NOTBEG7220', 'NOTBIO7230', 'NOTECZ7201', 'NOTMIP7013', 'NOTPSI5137');
+totalIt_not();
+checkboxStorage();"
+						value="90"
+						/>
+						<div class="state p-success-o">
+							<label>BEG7220 - Embriologia e Desenvolvimento (PCC 10h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BEG7220 - Embriologia e Desenvolvimento (PCC 10h/a)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- BIO7230 - Bioestatística -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBIO7230" onchange="update_all('not_all_5', 'NOTBEG7220', 'NOTBIO7230', 'NOTECZ7201', 'NOTMIP7013', 'NOTPSI5137');
+totalIt_not();
+checkboxStorage();"
+						value="36"
+						/>
+						<div class="state p-success-o">
+							<label>BIO7230 - Bioestatística</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BIO7230 - Bioestatística</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- ECZ7201 - Zoologia de Vertebrados (PCC 06h/a) -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTECZ7201" disabled onchange="
+					double_determined_list(
+						'NOTBOT7026',
+						'NOTECZ7201',
+						'NOTDGL7067'
+						);
+					off_other(
+					'NOTECZ7201',
+					'NOTDGL7067'
+					);
+					update_all('not_all_5', 'NOTBEG7220', 'NOTBIO7230', 'NOTECZ7201', 'NOTMIP7013', 'NOTPSI5137');
+totalIt_not();
+checkboxStorage();"
+						value="90"
+						/>
+						<div class="state p-success-o">
+							<label>ECZ7201 - Zoologia de Vertebrados (PCC 06h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>ECZ7201 - Zoologia de Vertebrados (PCC 06h/a)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- MIP7013 - Microbiologia Geral - PCC 14 horas-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTMIP7013" disabled onchange="
+						triple_determined_list(
+						'NOTCFS7100',
+						'NOTMIP7013',
+						'NOTMOR7110',
+						'NOTMIP7202',
+						'NOTBIO7236'
+						);
+						off_other(
+						'NOTMIP7013',
+						'NOTMIP7202',
+						'NOTBIO7236',
+						'NOTBIO7236'
+						);
+					update_all('not_all_5', 'NOTBEG7220', 'NOTBIO7230', 'NOTECZ7201', 'NOTMIP7013', 'NOTPSI5137');
+totalIt_not();
+checkboxStorage();"
+						value="72"
+						/>
+						<div class="state p-success-o">
+							<label>MIP7013 - Microbiologia Geral - PCC 14 horas</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>MIP7013 - Microbiologia Geral - PCC 14 horas</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- ECZ7015 - Psicologia Educacional: Desenvolvimentoe Aprendizagem (PCC 12h-a) -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTPSI5137" onchange="
+					triple_determined_list(
+					'NOTMEN7016',
+					'NOTEED8007',
+					'NOTPSI5137',
+					'NOTMEN7009'
+					);
+					off_other(
+					'NOTPSI5137',
+					'NOTMEN7009',
+					'NOTMEN7010'
+					);
+update_all('not_all_5', 'NOTBEG7220', 'NOTBIO7230', 'NOTECZ7201', 'NOTMIP7013', 'NOTPSI5137');
+totalIt_not();
+checkboxStorage();"
+						value="72"
+						/>
+						<div class="state p-success-o">
+							<label>PSI5137 - Psicologia Educacional (PCC 12h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>PSI5137 - Psicologia Educacional (PCC 12h-a)</label>
+						</div>
+				</div>
+			</label>
+		</div>
+		  </div>
+			<div class="second_fases_not">
+				<div class="fase" id="segunda">&nbsp;&nbsp;Segunda Fase
+				  <div class="select_all"> <!--Marcar/Desmarcar todas-->
+					  <label class="checkbox">
+						<div class="pretty p-switch">
+							<input name="not_all_2" class="styled-checkbox" type="checkbox" id="not_all_2" onchange="selectAll(id, 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); allStorage();"/>
+						<div class="state">
+									<label></label>
+								</div>
+						</div>
+					  </label>
+				  </div>
+
+				<label class="checkbox">   <!-- BEG7205 - Biologia Celular (PCC 4 h/a) -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTBEG7205" disabled onchange="
+						double_determined_list(
+						'NOTBIO7203',
+						'NOTBEG7205',
+						'NOTBOT7025'
+						);
+						double_determined_list(
+						'NOTBEG7205',
+						'NOTBQA7008',
+						'NOTBEG7211',
+						'NOTCFS7100',
+						'NOTECZ7203',
+						'NOTBEG7228',
+						'NOTMIP7013'
+						);
+						determined_list(
+						'NOTBEG7205',
+						'NOTMOR7110', 
+						'NOTBOT7201'
+						);
+						off_other(
+						'NOTBEG7205',
+						'NOTBEG7212',
+						'NOTBOT7026',
+						'NOTCFS7100',
+						'NOTECZ7203',
+						'NOTBEG7228',
+						'NOTBOT7025',
+						'NOTMIP7013',
+						'NOTBEG7211',
+						'NOTBEG7212',
+						'NOTBEG7229',
+						'NOTBOT7201',
+						'NOTBIO7236',
+						'NOTMOR7110',
+						'NOTBOT7202',
+						'NOTDGL7067'
+						);
+						update_all('not_all_2', 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); 
+totalIt_not();
+checkboxStorage();"
+							value="108"
+							/>
+							<div class="state p-success-o">
+								<label>BEG7205 - Biologia Celular (PCC 4 h/a)</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BEG7205 - Biologia Celular (PCC 4 h/a)</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- BIO7210 - Projeto PPCC Integrado I -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTBIO7210" onchange="
+						determined_list(
+						'NOTBIO7210',
+						'NOTBIO7218'
+						);
+						off_other(
+						'NOTBIO7210',
+						'NOTBIO7218'
+						);
+						update_all('not_all_2', 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); 
+totalIt_not();
+checkboxStorage();"
+							value="36"
+							/>
+							<div class="state p-success-o">
+								<label>BIO7210 - Projeto PPCC Integrado I </label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BIO7210 - Projeto PPCC Integrado I </label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- BQA7008 - -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTBQA7008" disabled onchange="
+						double_determined_list(
+						'NOTBEG7205',
+						'NOTBQA7008',
+						'NOTBEG7211',
+						'NOTCFS7100',
+						'NOTECZ7203',
+						'NOTBEG7228',
+						'NOTMIP7013'
+						);
+						double_determined_list(
+						'NOTBQA7008',
+						'NOTMOR7110',
+						'NOTBEG7220'
+						);
+						off_other(
+						'NOTBQA7008',
+						'NOTBEG7211',
+						'NOTCFS7100',
+						'NOTECZ7203',
+						'NOTBEG7228',
+						'NOTBEG7220',
+						'NOTMIP7013',
+						'NOTBEG7211',
+						'NOTBEG7212',
+						'NOTBEG7229',
+						'NOTBIO7236',
+						'NOTBEG7220'
+						);
+						update_all('not_all_2', 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); 
+totalIt_not();
+checkboxStorage();"
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>BQA7008 - Bioquímica Básica</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BQA7008 - Bioquímica Básica</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- ECZ7031 - Zoologia de Invertebrados I -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTECZ7031" disabled onchange="
+						determined_list(
+						'NOTECZ7031',
+						'NOTECZ7032'
+						);
+						update_all('not_all_2', 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); 
+totalIt_not();
+checkboxStorage();"
+							value="90"
+							/>
+							<div class="state p-success-o">
+								<label>ECZ7031 - Zoologia de Invertebrados I</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>ECZ7031 - Zoologia de Invertebrados I</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- ECZ7033 - Ecologia Básica e de Populações -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTECZ7033" disabled onchange=
+						"determined_list(
+						'NOTECZ7033',
+						'NOTECZ7202'
+						);
+						off_other(
+						'NOTECZ7033',
+						'NOTECZ7202'
+						);
+						update_all('not_all_2', 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); 
+totalIt_not();
+checkboxStorage();"
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>ECZ7033 - Ecologia Básica e de Populações</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>ECZ7033 - Ecologia Básica e de Populações</label>
+							</div>
+					</div>
+				</label>
+			</div>
+		   	<div class="fase" id="sexta">&nbsp;&nbsp;Sexta Fase
+					<div class="select_all"> <!--Marcar/Desmarcar todas-->
+					  <label class="checkbox">
+						<div class="pretty p-switch">
+							<input name="not_all_6" class="styled-checkbox" type="checkbox" id="not_all_6" onchange="selectAll(id,'NOTBEG7229','NOTBOT7201','NOTECZ7202', 'NOTMEN5601', 'NOTMIP7202'); allStorage();"/>
+						<div class="state">
+									<label></label>
+						</div>
+						</div>
+					  </label>
+				  </div>
+			<label class="checkbox">   <!-- BEG7229 - Genética III-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBEG7229" onchange="update_all('not_all_6','NOTBEG7229','NOTBOT7201','NOTECZ7202', 'NOTMEN5601', 'NOTMIP7202');
+totalIt_not();
+checkboxStorage();"
+						value="72"
+						/>
+						<div class="state p-success-o">
+							<label>BEG7229 - Genética III</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BEG7229 - Genética III</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- BOT7201 - Anatomia de Plantas Vasculares (PCC 18h/a) -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBOT7201" disabled onchange="
+					double_determined_list(
+						'NOTBOT7026',
+						'NOTBOT7201',
+						'NOTBOT7202' 
+						);
+						off_other(
+						'NOTBOT7201',
+						'NOTBOT7202'
+						);
+					update_all('not_all_6','NOTBEG7229','NOTBOT7201','NOTECZ7202', 'NOTMEN5601', 'NOTMIP7202');
+totalIt_not();
+checkboxStorage();"
+						value="72"
+						/>
+						<div class="state p-success-o">
+							<label>BOT7201 - Anatomia de Plantas Vasculares (PCC 18h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BOT7201 - Anatomia de Plantas Vasculares (PCC 18h/a)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- ECZ7202 - Ecologia de Comunidade e Conservação(PCC 18/h/a)-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTECZ7202" onchange="update_all('not_all_6','NOTBEG7229','NOTBOT7201','NOTECZ7202', 'NOTMEN5601', 'NOTMIP7202');
+totalIt_not();
+checkboxStorage();"
+						 value="108"
+						 />
+						<div class="state p-success-o">
+							<label>ECZ7202 - Ecologia de Comunidade e Conservação (PCC 18/h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>ECZ7202 - Ecologia de Comunidade e Conservação (PCC 18/h/a)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- MEN5601 - Ecologia de Comunidade e Conservação(PCC 18/h/a)-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTMEN5601" onchange="
+					determined_list(
+					'NOTMEN5601',
+					'NOTMEN7016'
+					);
+					off_other(
+					'NOTMEN5601',
+					'NOTMEN7016',
+					'NOTMEN7009',
+					'NOTMEN7010'
+					);					
+					update_all('not_all_6','NOTBEG7229','NOTBOT7201','NOTECZ7202', 'NOTMEN5601', 'NOTMIP7202');
+totalIt_not();
+checkboxStorage();"
+						 value="72"
+						 />
+						<div class="state p-success-o">
+							<label>MEN5601 - Didática A - PCC 12h/a</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>Pré-Requisito de 1200 horas</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- MIP7202 - Imunologia-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTMIP7202" onchange="
+					update_all('not_all_6','NOTBEG7229','NOTBOT7201','NOTECZ7202', 'NOTMEN5601', 'NOTMIP7202');
+totalIt_not();
+checkboxStorage();"
+						 value="36"
+						 />
+						<div class="state p-success-o">
+							<label>MIP7202 - Imunologia</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>MIP7202 - Imunologia</label>
+						</div>
+				</div>
+			</label>
+		  </div>
+			</div>
+        
+			<div class="third_fases_not">
+				<div class="fase" id="terceira">&nbsp;&nbsp;Terceira Fase
+
+				  <div class="select_all"> <!--Marcar/Desmarcar todas-->
+					  <label class="checkbox">
+						<div class="pretty p-switch">
+							<input name="not_all_3" class="styled-checkbox" type="checkbox" id="not_all_3" onchange="selectAll(id,'NOTBEG7211','NOTBIO7004','NOTBOT7025','NOTECZ7032','NOTEED8007'); allStorage();"/>
+						<div class="state">
+									<label> </label>
+								</div>
+						</div>
+					  </label>
+				  </div>
+
+				<label class="checkbox">   <!-- BEG7211 - Genética I -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTBEG7211" disabled onchange="
+						determined_list(
+						'NOTBEG7211', 
+						'NOTBEG7212'
+						);
+						off_other(
+						'NOTBEG7211',
+						'NOTBEG7212',
+						'NOTBEG7229'
+						);
+						update_all('not_all_3','NOTBEG7211','NOTBIO7004','NOTBOT7025','NOTECZ7032','NOTEED8007');
+totalIt_not();
+checkboxStorage();"
+							value="54"
+							/>
+							<div class="state p-success-o">
+								<label>BEG7211 - Genética I</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BEG7211 - Genética I</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- BIO7004 - Metodologia da Pesquisa - PCC 10 horas  -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTBIO7004" onchange="
+						determined_list(
+						'NOTBIO7004',
+						'NOTBIO7246'
+						);
+						off_other(
+						'NOTBIO7004',
+						'NOTBIO7246',
+  					'NOTBIO7246',
+  					'NOTBIO7015',
+  					'NOTBIO7016'
+						);
+						update_all('not_all_3','NOTBEG7211','NOTBIO7004','NOTBOT7025','NOTECZ7032','NOTEED8007');
+totalIt_not();
+checkboxStorage();"
+							value="36"
+							/>
+							<div class="state p-success-o">
+								<label>BIO7004 - Metodologia da Pesquisa - PCC 10 horas</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BIO7004 - Metodologia da Pesquisa - PCC 10 horas</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox"> <!-- BOT7025 - Biologia e Sistemática de Algas, Fungos e Briófitas - PCC 15 horas-->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTBOT7025" disabled onchange="
+						determined_list(
+						'NOTBOT7025',
+						'NOTBOT7026'
+						);
+						update_all('not_all_3','NOTBEG7211','NOTBIO7004','NOTBOT7025','NOTECZ7032','NOTEED8007');
+totalIt_not();
+checkboxStorage();"
+							value="108"
+							/>
+							<div class="state p-success-o">
+								<label>BOT7025 - Diversidade e Evolução dos Organismos Fotoss. e Fungos</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BOT7025 - Diversidade e Evolução dos Organismos Fotoss. e Fungos</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- ECZ7032 - Zoologia de Invertebrados II (PCC 06h/a)-->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTECZ7032" disabled onchange="update_all('not_all_3','NOTBEG7211','NOTBIO7004','NOTBOT7025','NOTECZ7032','NOTEED8007');
+totalIt_not();
+checkboxStorage();"
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>ECZ7032 - Zoologia de Invertebrados II (PCC 06h/a)</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>ECZ7032 - Zoologia de Invertebrados II (PCC 06h/a)</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- EED8007 - Organização Escolar (PCC 18h-a) -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTEED8007" onchange="
+				  triple_determined_list(
+					'NOTMEN7016',
+					'NOTEED8007',
+					'NOTPSI5137',
+					'NOTMEN7009'
+					);
+					off_other(
+					'NOTEED8007',
+					'NOTMEN7009',
+					'NOTMEN7010'
+					);
+						update_all('not_all_3','NOTBEG7211','NOTBIO7004','NOTBOT7025','NOTECZ7032','NOTEED8007');
+totalIt_not();
+checkboxStorage();"
+							value="90"
+							
+							/>
+							<div class="state p-success-o">
+								<label>EED8007 - Organização Escolar (PCC 18h-a)</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>EED8007 - Organização Escolar (PCC 18h-a)</label>
+							</div>
+					</div>
+				</label>
+			</div>
+        <div class="fase" id="setima">&nbsp;&nbsp;Sétima Fase
+
+					<div class="select_all"> <!--Marcar/Desmarcar todas-->
+					  <label class="checkbox">
+						<div class="pretty p-switch">
+							<input name="not_all_7" class="styled-checkbox" type="checkbox" id="not_all_7" onchange="selectAll(id,'NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016'); allStorage();"/>
+						<div class="state">
+									<label></label>
+								</div>
+						</div>
+					  </label>
+				  </div>
+
+			<label class="checkbox">   <!-- BIO7246 - Projeto de Trabalho de Conclusão de Curso -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBIO7246" disabled onchange="
+					determined_list(
+					'NOTBIO7246',
+					'NOTBIO7015'
+					);
+					off_other(
+					'NOTBIO7246',
+					'NOTBIO7015',
+					'NOTBIO7016'
+					);
+					update_all('not_all_7','NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016');
+totalIt_not();
+checkboxStorage();"
+						value="54"
+						/>
+						<div class="state p-success-o">
+							<label>BIO7246 - Projeto de Trabalho de Conclusão de Curso</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BIO7246 - Projeto de Trabalho de Conclusão de Curso</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- BOT7202 - Genética Evolutiva -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBOT7202" disabled onchange="update_all('not_all_7','NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016');
+totalIt_not();
+checkboxStorage();"
+						value="72" />
+						<div class="state p-success-o">
+							<label>BOT7202 - Fisiologia Vegetal (PCC 10 h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BOT7202 - Fisiologia Vegetal (PCC 10 h/a)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- DGL7066 - Geologia Prática-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTDGL7066" onchange="update_all('not_all_7','NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016');
+totalIt_not();
+checkboxStorage();"
+						value="36"
+						/>
+						<div class="state p-success-o">
+							<label>DGL7066 - Geologia Prática</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>Pré-Requisito de 1000 horas</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- DGL7067 - Paleontologia -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTDGL7067" disabled onchange=
+"update_all('not_all_7','NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016');
+totalIt_not();
+checkboxStorage();"
+						value="36"
+						/>
+						<div class="state p-success-o">
+							<label>DGL7067 - Paleontologia</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>Pré-Requisito de 1000 horas</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- ECZ7203 - Fisiologia Animal Comparada (PCC 6 h/a)-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTECZ7203" disabled onchange="update_all('not_all_7','NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016');
+totalIt_not();
+checkboxStorage();"
+						value="72"
+						/>
+						<div class="state p-success-o">
+							<label>ECZ7203 - Fisiologia Animal Comparada (PCC 6 h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>ECZ7203 - Fisiologia Animal Comparada (PCC 6 h/a)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- LSB7904 - Língua Brasileira de Sinais I (PCC 18horas-aula)-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTLSB7904" onchange="update_all('not_all_7','NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016');
+totalIt_not();
+checkboxStorage();"
+						value="72"
+						/>
+						<div class="state p-success-o">
+							<label>LSB7904 - Língua Brasileira de Sinais I (PCC 18horas-aula)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>LSB7904 - Língua Brasileira de Sinais I (PCC 18horas-aula)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- MEN7016 - Metodologia do Ensino de Ciências e Biologia (PCC 54 horas-aula)-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTMEN7016" disabled onchange="
+					triple_determined_list(
+					'NOTMEN7016',
+					'NOTEED8007',
+					'NOTPSI5137',
+					'NOTMEN7009'
+					);
+					off_other(
+					'NOTMEN7016',
+					'NOTMEN7009',
+					'NOTMEN7010'
+					);
+					update_all('not_all_7','NOTBIO7246','NOTBOT7202','NOTDGL7066','NOTDGL7067', 'NOTECZ7203', 'NOTLSB7904', 'NOTMEN7016');
+totalIt_not();
+checkboxStorage();"
+						value="72"
+						/>
+						<div class="state p-success-o">
+							<label>MEN7016 - Metodologia do Ensino de Ciências e Biologia (PCC 54 h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>MEN7016 - Metodologia do Ensino de Ciências e Biologia (PCC 54 h/a)</label>
+						</div>
+				</div>
+			</label>
+		</div>
+			</div>
+			<div class="fourth_fases_not">
+				<div class="fase" id="quarta">&nbsp;&nbsp;Quarta Fase
+
+					<div class="select_all"> <!--Marcar/Desmarcar todas-->
+					  <label class="checkbox">
+						<div class="pretty p-switch">
+							<input name="not_all_4" class="styled-checkbox" type="checkbox" id="not_all_4" onchange="
+							selectAll(id,'NOTBEG7212','NOTBOT7026', 'NOTCFS7100', 'NOTMOR7110'); allStorage();"/>
+						<div class="state">
+									<label></label>
+								</div>
+						</div>
+					  </label>
+				  </div>
+
+				<label class="checkbox">   <!-- BEG7212 - Genética II (PCC 04h/a)-->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTBEG7212" disabled onchange='
+						determined_list(
+						"NOTBEG7212",
+						"NOTBEG7229"
+						);
+						off_other(
+						"NOTBEG7212",
+						"NOTBEG7229"
+						);
+						update_all("not_all_4", "NOTBEG7212","NOTBOT7026", "NOTCFS7100", "NOTMOR7110"); 
+						totalIt_not();
+						checkboxStorage()'
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>BEG7212 - Genética II (PCC 04h/a)</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BEG7212 - Genética II (PCC 04h/a)</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- BOT7026 - Diversidade e Evolução dos organismos Fotossintetizantes (PCC 15h/a)-->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product" type="checkbox" id="NOTBOT7026" disabled onchange='
+						double_determined_list(
+						"NOTBOT7026",
+						"NOTBOT7201",
+						"NOTBOT7202"
+						);
+						double_determined_list(
+						"NOTBOT7026",
+						"NOTECZ7201",
+						"NOTDGL7067"
+						);
+						off_other(
+						"NOTBOT7026",
+						"NOTBOT7202",
+						"NOTDGL7067"
+						);
+						update_all("not_all_4", "NOTBEG7212","NOTBOT7026", "NOTCFS7100", "NOTMOR7110"); 
+						totalIt_not();
+						checkboxStorage()'
+							value="108"
+							/>
+							<div class="state p-success-o">
+								<label>BOT7026 - Diversidade e Evolução dos organismos Fotossintetizantes</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>BOT7026 - Diversidade e Evolução dos organismos Fotossintetizantes</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- CFS7100 - Fisiologia Humana -->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTCFS7100" disabled onchange='
+						triple_determined_list(
+						"NOTCFS7100",
+						"NOTMIP7013",
+						"NOTMOR7110",
+						"NOTMIP7202",
+						"NOTBIO7236"
+						);
+						off_other(
+						"NOTCFS7100",
+						"NOTMIP7202",
+						"NOTBIO7236"
+						);
+						update_all("not_all_4", "NOTBEG7212","NOTBOT7026", "NOTCFS7100", "NOTMOR7110"); 
+						totalIt_not();
+						checkboxStorage()'
+							value="72"
+							/>
+							<div class="state p-success-o">
+								<label>CFS7100 - Fisiologia Humana</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>CFS7100 - Fisiologia Humana</label>
+							</div>
+					</div>
+				</label>
+				<label class="checkbox">   <!-- MOR7110 - Morfologia de Sistemas-->
+					<p><div class="pretty p-default p-curve p-has-hover">
+						<input name="product_not" type="checkbox" id="NOTMOR7110" disabled onchange="
+						double_determined_list(
+						'NOTBQA7008',
+						'NOTMOR7110',
+						'NOTBEG7220'
+						);
+						triple_determined_list(
+						'NOTCFS7100',
+						'NOTMIP7013',
+						'NOTMOR7110',
+						'NOTMIP7202'
+						);
+						off_other(
+						'NOTMOR7110',
+						'NOTBEG7220',
+						'NOTMIP7202'
+						);
+						update_all('not_all_4', 'NOTBEG7212','NOTBOT7026', 'NOTCFS7100', 'NOTMOR7110'); 
+						totalIt_not();
+						checkboxStorage()"
+							value="108"
+							/>
+							<div class="state p-success-o">
+								<label>MOR7110 - Morfologia de Sistemas</label>
+							</div>
+							<div class="state p-success-o p-is-hover">
+								<label>MOR7110 - Morfologia de Sistemas</label>
+							</div>
+					</div>
+				</label>
+			</div>
+        <div class="fase" id="oitava">&nbsp;&nbsp;Oitava Fase
+
+					<div class="select_all"> <!--Marcar/Desmarcar todas-->
+					  <label class="checkbox">
+						<div class="pretty p-switch">
+							<input name="not_all_8" class="pretty p-switch" type="checkbox" id="not_all_8" onchange="selectAll(id,'NOTBEG7228','NOTBIO7015', 'NOTBIO7218', 'NOTBIO7236', 'NOTFIL7007'); allStorage();"/>
+						<div class="state">
+									<label></label>
+								</div>
+						</div>
+					  </label>
+				  </div>
+
+			<label class="checkbox">   <!-- BEG7228 - Evolução -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBEG7228" disabled onchange="update_all('not_all_8','NOTBEG7228','NOTBIO7015', 'NOTBIO7218', 'NOTBIO7236', 'NOTFIL7007');
+totalIt_not();
+checkboxStorage();"
+						value="36"
+						/>
+						<div class="state p-success-o">
+							<label>BEG7228 - Evolução</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BEG7228 - Evolução</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- BIO7015 - Trabalho de Conclusão de Curso I (TCC) -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBIO7015" disabled onchange=
+					"determined_list(
+					  'NOTBIO7015',
+					  'NOTBIO7016'
+					);
+					off_other(
+					  'NOTBIO7015',
+					  'NOTBIO7016'					
+					);
+update_all('not_all_8','NOTBEG7228','NOTBIO7015', 'NOTBIO7218', 'NOTBIO7236', 'NOTFIL7007');
+totalIt_not();
+checkboxStorage();"
+						value="90"
+						/>
+						<div class="state p-success-o">
+							<label>BIO7015 - Trabalho de Conclusão de Curso I</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BIO7015 - Trabalho de Conclusão de Curso I</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- BIO7218 - Projeto PPCC Integrado II (PCC 18 h/a)-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBIO7218" disabled onchange="update_all('not_all_8','NOTBEG7228','NOTBIO7015', 'NOTBIO7218', 'NOTBIO7236', 'NOTFIL7007');
+totalIt_not();
+checkboxStorage();"
+						value="54"
+						/>
+						<div class="state p-success-o">
+							<label>BIO7218 - Projeto PPCC Integrado II (PCC 18 h/a)</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BIO7218 - Projeto PPCC Integrado II (PCC 18 h/a)</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- BIO7236 - Biologia e Saúde -->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTBIO7236" disabled onchange="update_all('not_all_8','NOTBEG7228','NOTBIO7015', 'NOTBIO7218', 'NOTBIO7236', 'NOTFIL7007');
+totalIt_not();
+checkboxStorage();"
+						value="108"
+						/>
+						<div class="state p-success-o">
+							<label>BIO7236 - Biologia e Saúde</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>BIO7236 - Biologia e Saúde</label>
+						</div>
+				</div>
+			</label>
+			<label class="checkbox">   <!-- FIL7007 - Filosofia da Ciência-->
+				<p><div class="pretty p-default p-curve p-has-hover">
+					<input name="product_not" type="checkbox" id="NOTFIL7007" onchange="update_all('not_all_8','NOTBEG7228','NOTBIO7015', 'NOTBIO7218', 'NOTBIO7236', 'NOTFIL7007');
+totalIt_not();
+checkboxStorage();"
+						value="72">
+						<div class="state p-success-o">
+							<label>FIL7007 - Filosofia da Ciência</label>
+						</div>
+						<div class="state p-success-o p-is-hover">
+							<label>FIL7007 - Filosofia da Ciência</label>
+						</div>
+				</div>
+			</label>
+		</div>
+		  </div>
+		  
+		<div class="fifth_fases_not">
+      <div class="fase" id="nona">&nbsp;&nbsp;Nona Fase
+  
+  				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+  			  	  <label class="checkbox">
+  			  	    <div class="pretty p-switch">
+  			  	      	<input name="not_all_9" class="styled-checkbox" type="checkbox" id="not_all_9" onchange="selectAll(id,'NOTBIO7009','NOTBIO7016', 'NOTMEN7009', 'NOTMEN7341'); allStorage();"/>
+    			  	    <div class="state">
+    								<label></label>
+    							</div>
+  			  	    </div>
+  			  	  </label>
+  			  </div>
+  
+  			<label class="checkbox">   <!-- BIO7009 - Legislação Profissional Aplicada  - PCC 04 horas-->
+  				<p><div class="pretty p-default p-curve p-has-hover">
+  					<input name="product_not" type="checkbox" id="NOTBIO7009" onchange="update_all('not_all_9','NOTBIO7009','NOTBIO7016', 'NOTMEN7009', 'NOTMEN7341');
+totalIt_not();
+checkboxStorage();"
+  						value="36">
+  						<div class="state p-success-o">
+  							<label>BIO7009 - Legislação Profissional Aplicada - PCC 04 horas</label>
+  						</div>
+  						<div class="state p-success-o p-is-hover">
+  							<label>BIO7009 - Legislação Profissional Aplicada - PCC 04 horas</label>
+  						</div>
+  				</div>
+  			</label>
+  			<label class="checkbox">   <!-- BIO7016 - Trabalho de Conclusão de Curso II (TCC) -->
+  				<p><div class="pretty p-default p-curve p-has-hover">
+  					<input name="product_not" type="checkbox" id="NOTBIO7016" disabled onchange="update_all('not_all_9','NOTBIO7009','NOTBIO7016', 'NOTMEN7009', 'NOTMEN7341');
+totalIt_not();
+checkboxStorage();"
+  						value="90">
+  						<div class="state p-success-o">
+  							<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
+  						</div>
+  						<div class="state p-success-o p-is-hover">
+  							<label>BIO7016 - Trabalho de Conclusão de Curso II (TCC)</label>
+  						</div>
+  				</div>
+  			</label>
+  				<label class="checkbox">   <!-- MEN7009 - Estágio Supervisionado no Ensino de Ciências -->
+  				<p><div class="pretty p-default p-curve p-has-hover">
+  					<input name="product_not" type="checkbox" id="NOTMEN7009" disabled onchange="
+  					determined_list(
+  					'NOTMEN7009',
+  					'NOTMEN7010'
+  					);
+  					off_other(
+  					'NOTMEN7009',
+  					'NOTMEN7010'
+  					);  					
+  					update_all('not_all_9','NOTBIO7009','NOTBIO7016', 'NOTMEN7009', 'NOTMEN7341');
+totalIt_not();
+checkboxStorage();"
+  						value="252">
+  						<div class="state p-success-o">
+  							<label>MEN7009 - Estágio Supervisionado no Ensino de Ciências</label>
+  						</div>
+  						<div class="state p-success-o p-is-hover">
+  							<label>MEN7009 - Estágio Supervisionado no Ensino de Ciências</label>
+  						</div>
+  				</div>
+  			</label>
+  			<label class="checkbox">   <!-- MEN7341 - Física para o Ensino de Ciências Biológiicas -->
+  				<p><div class="pretty p-default p-curve p-has-hover">
+  					<input name="product_not" type="checkbox" id="NOTMEN7341" onchange="update_all('not_all_9','NOTBIO7009','NOTBIO7016', 'NOTMEN7009', 'NOTMEN7341');
+totalIt_not();
+checkboxStorage();"
+  						value="72">
+  						<div class="state p-success-o">
+  							<label>MEN7341 - Física para o Ensino de Ciências Biológiicas</label>
+  						</div>
+  						<div class="state p-success-o p-is-hover">
+  							<label>MEN7341 - Física para o Ensino de Ciências Biológiicas</label>
+  						</div>
+  				</div>
+  			</label>
+  		</div>
+  		<div class="fase" id="nona">&nbsp;&nbsp;Décima Fase
+  
+  				<div class="select_all"> <!--Marcar/Desmarcar todas-->
+  			  	  <label class="checkbox">
+  			  	    <div class="pretty p-switch">
+  			  	      	<input name="not_all_10" class="styled-checkbox" type="checkbox" id="not_all_10" onchange="selectAll(id,'NOTMEN7010'); allStorage();"/>
+    			  	    <div class="state">
+    								<label></label>
+    							</div>
+  			  	    </div>
+  			  	  </label>
+  			  </div>
+  
+  			<label class="checkbox">   <!-- MEN7010 - Estágio Supervisionado no Ensino deBiologia-->
+  				<p><div class="pretty p-default p-curve p-has-hover">
+  					<input name="product_not" type="checkbox" id="NOTMEN7010" disabled onchange="update_all('not_all_10','NOTMEN7010');
+totalIt_not();
+checkboxStorage();"
+  						value="252">
+  						<div class="state p-success-o">
+  							<label>MEN7010 - Estágio Supervisionado no Ensino de Biologia</label>
+  						</div>
+  						<div class="state p-success-o p-is-hover">
+  							<label>MEN7010 - Estágio Supervisionado no Ensino de Biologia</label>
+  						</div>
+  				</div>
+  			</label>
+  </div>
+    </div>
+</section>
+    
+    
+    <!--Container com todas as listas de horas complementares-->
+    <div class="complementary_hours_container">
+        <!--Disciplinas optativas-->
+        <div class="optatives_container">
+          <div class="list_header">
+            <h2>Disciplinas Optativas</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="op_input_not" maxlength="30" placeholder="Disciplina">
+            <input class="number_input" type="number" id="credits_input_not" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
+            <span id="optative_item" onclick="newElement('op_list_not', 'op_input_not','credits_input_not')" class="addBtn">+</span>
+          </div>
+
+          <ul id="op_list_not">
+          </ul>
+        </div>
+
+        <!--Atividades de extensão-->
+        <div class="ae_container">
+          <div class="list_header">
+            <h2>Atividades de Extensão</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="ae_input_not" maxlength="30" placeholder="Atividade">
+            <input class="number_input" type="number" id="ae_hours_input_not" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <span onclick="newElement('ae_list_not', 'ae_input_not','ae_hours_input_not')" class="addBtn">+</span>
+          </div>
+
+          <ul id="ae_list_not">
+          </ul>
+        </div>
+        
+        <!--Atividades científico-cultural-->
+        <div class="acc_container">
+          <div class="list_header">
+            <h2>Atividades de Científico-Culturais</h2>
+              <svg width="170" height="4">
+                  <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
+              </svg>
+            <input class="text_input" type="text" id="acc_input_not" maxlength="30" placeholder="Atividade">
+            <input class="number_input" type="number" id="acc_hours_input_not" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <span onclick="newElement('acc_list_not', 'acc_input_not','acc_hours_input_not')" class="addBtn">+</span>
+          </div>
+
+          <ul id="acc_list_not">
+          </ul>
+        </div>
+    </div>
+</div>
+
+
+
 <!--Sobre-->
 <div class="tab_content" id="about_tab">
   	<div class="sobre_text">
@@ -3927,7 +5203,8 @@
 			  <p>Desenvolvido por Alisson Corrêa e Vilmar Filho
 				<p><p>&nbsp;&nbsp;
 				<p>Apoio do professor Dr. Glauber Wagner e do laboratório de Bioinformática da UFSC
-				<p>Baseado neste <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_20061.pdf.PDF" target="_blank">Currículo de Ciências Biológicas da UFSC</a>
+				<p>Baseado neste <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_20061.pdf.PDF" target="_blank">Currículo de Ciências Biológicas da UFSC diurno</a>
+				<p>E neste <a href="CURRICULO_CIÊNCIAS_BIOLÓGICAS_-_LICENCIATURA_(NOTURNO).PDF" target="_blank">Currículo de Ciências Biológicas da UFSC noturno</a>
 				<p><label>Código disponível no <a href="https://github.com/pharaohs-son/Controle_curricular_bio" target="_blank">GitHub</a></label>
 			  <br>
 			  <br> 
@@ -3956,7 +5233,7 @@
                           <p>&nbsp;&nbsp;
                                 <p>Esta é uma ferramenta não oficial
                                 <p>Versão Beta para testes, qualquer erro favor reportar para: vilmarbenetti_98@hotmail.com
-                                <p>Atualizado em Março de 2020. v5.
+                                <p>Atualizado em Março de 2020. v6.
                         </div>      
       
 </div>
