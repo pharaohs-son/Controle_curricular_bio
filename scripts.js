@@ -213,6 +213,7 @@ function update_all(id,...materias){
 		document.getElementById(id).checked = false;
 	}
   }
+  allStorage();
 }
 
 function off_all_button(allkey, alloff){

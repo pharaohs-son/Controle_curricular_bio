@@ -51,9 +51,9 @@
 
 <nav>
   <div class="tab">
-    <button class="tab_button"  id="bach_tab_btn" onclick="openTab(event)">Bacharel</button>
-    <button class="tab_button" id= "lic_tab_btn" onclick="openTab(event)">Licenciatura</button>
-    <button class="tab_button" id= "not_tab_btn" onclick="openTab(event)">Licenciatura Noturno</button>
+    <button class="tab_button" id="bach_tab_btn" onclick="openTab(event)">Bacharel</button>
+    <button class="tab_button" id="lic_tab_btn" onclick="openTab(event)">Licenciatura</button>
+    <button class="tab_button" id="not_tab_btn" onclick="openTab(event)">Licenciatura Noturno</button>
     <button class="tab_button" id="about_tab_btn" onclick="openTab(event)">Sobre</button>
   </div>
 </nav> <!--Botões de navegação-->
@@ -3978,11 +3978,12 @@
 						<input name="product_not" class="styled-checkbox" type="checkbox" id="NOTBIO7202" onchange="
 						determined_list(
 						'NOTBIO7202',
-						'NOTECZ7031'
+						'NOTECZ7033'
 						);
 						off_other(
 						'NOTBIO7202',
-						'NOTECZ7032'
+						'NOTECZ7033',
+						'NOTECZ7202'
 						);
 						update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
 						totalIt_not();
@@ -4006,13 +4007,15 @@
 						);
 						determined_list(
 						'NOTBIO7203', 
-						'NOTECZ7033',
-						'NOTECZ7201'
+						'NOTECZ7201',
+						'NOTECZ7031'
 						);
 						off_other(
 						'NOTBIO7203', 
 						'NOTECZ7032',
-						'NOTDGL7067'
+						'NOTDGL7067',
+						'NOTBOT7026',
+						'NOTBOT7202'
 						);
 						update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
 						totalIt_not();
@@ -4096,7 +4099,8 @@
 						'NOTMOR7110',
 						'NOTBEG7220',
 						'NOTBOT7202',
-						'NOTECZ7203'
+						'NOTECZ7203',
+						'NOTMIP7202'
 						);
 						update_all('not_all_1', 'NOTBIO7202', 'NOTBIO7203', 'NOTBIO7245', 'NOTEED5331', 'NOTMEN7004', 'NOTQMC5235');
 						totalIt_not();
@@ -4289,7 +4293,8 @@ checkboxStorage();"
 						'NOTBIO7236',
 						'NOTMOR7110',
 						'NOTBOT7202',
-						'NOTDGL7067'
+						'NOTDGL7067',
+						'NOTMIP7202'
 						);
 						update_all('not_all_2', 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); 
 totalIt_not();
@@ -4357,7 +4362,10 @@ checkboxStorage();"
 						'NOTBEG7212',
 						'NOTBEG7229',
 						'NOTBIO7236',
-						'NOTBEG7220'
+						'NOTBEG7220',
+						'NOTDGL7067',
+						'NOTBOT7202',
+						'NOTMIP7202'
 						);
 						update_all('not_all_2', 'NOTBEG7205', 'NOTBIO7210', 'NOTBQA7008', 'NOTECZ7031', 'NOTECZ7033'); 
 totalIt_not();
@@ -4511,7 +4519,7 @@ checkboxStorage();"
 			</label>
 			<label class="checkbox">   <!-- MIP7202 - Imunologia-->
 				<p><div class="pretty p-default p-curve p-has-hover">
-					<input name="product_not" type="checkbox" id="NOTMIP7202" onchange="
+					<input name="product_not" type="checkbox" id="NOTMIP7202" disabled onchange="
 					update_all('not_all_6','NOTBEG7229','NOTBOT7201','NOTECZ7202', 'NOTMEN5601', 'NOTMIP7202');
 totalIt_not();
 checkboxStorage();"
@@ -4600,6 +4608,11 @@ checkboxStorage();"
 						determined_list(
 						'NOTBOT7025',
 						'NOTBOT7026'
+						);
+						off_other(
+						'NOTBOT7025',
+						'NOTDGL7067',
+						'NOTBOT7202'
 						);
 						update_all('not_all_3','NOTBEG7211','NOTBIO7004','NOTBOT7025','NOTECZ7032','NOTEED8007');
 totalIt_not();
@@ -4910,12 +4923,14 @@ checkboxStorage();"
 						'NOTCFS7100',
 						'NOTMIP7013',
 						'NOTMOR7110',
-						'NOTMIP7202'
+						'NOTMIP7202',
+						'NOTBIO7236'
 						);
 						off_other(
 						'NOTMOR7110',
 						'NOTBEG7220',
-						'NOTMIP7202'
+						'NOTMIP7202',
+						'NOTBIO7236'
 						);
 						update_all('not_all_4', 'NOTBEG7212','NOTBOT7026', 'NOTCFS7100', 'NOTMOR7110'); 
 						totalIt_not();
@@ -5215,12 +5230,12 @@ checkboxStorage();"
                           <p>O site foi pensado para auxiliar na visualização de Pré-Requisitos das matérias. Assim, ao selecionar uma matéria, ela liberará materias de fases a frente,
 			  <p>as quais o pré-requisitos foram cumpridos.
                           <p>Matérias que necessitam de mais de um pré-requisito só são liberadas quando todos são selecionados.
-                          <p>Matérias que possuem pré-requisito de horas/aula possuem um aviso ao passar o mouse sobre o nome da disciplina.
+                          <p>Matérias que possuem pré-requisito de horas/aula possuem um aviso ao passar o mouse sobre o nome da disciplina e .
                           <p>Ao mesmo tempo é contabilizado o número de horas obrigatórias ao topo do site.
                           <p>&nbsp;&nbsp;
-                          <p>Há um espaço à direita para contabilizar créditos de matérias optativas e horas de atividades complementares cientifico culturais e de extenção.
+                          <p>Há um espaço à direita para contabilizar créditos de matérias optativas e horas de atividades complementares científico culturais e de extenção.
                           <p>As matérias optativas são contabilizadas de acordo com o input do usuário. 
-                          <p> Porém, há limitação do aproveitamento de horas optativas cursadas em outros cursos.
+                          <p>Porém, há limitação do aproveitamento de horas optativas cursadas em outros cursos.
                           <p>Consulte o currículo / coordenadoria do curso para mais informações.
                           <p>&nbsp;&nbsp;
                           <p>As horas cadastradas são contabilizadas abaixo do menu, que exibe o número mínimo necessário para obter a graduação, nas respectivas modalidades.
@@ -5233,7 +5248,7 @@ checkboxStorage();"
                           <p>&nbsp;&nbsp;
                                 <p>Esta é uma ferramenta não oficial
                                 <p>Versão Beta para testes, qualquer erro favor reportar para: vilmarbenetti_98@hotmail.com
-                                <p>Atualizado em Março de 2020. v6.
+                                <p>Atualizado em Abril de 2020. v6.
                         </div>      
       
 </div>
