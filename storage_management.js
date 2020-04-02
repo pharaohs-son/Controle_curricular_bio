@@ -97,7 +97,7 @@ function checkboxStorage(){
             itemClass: lists[list],
             itemName: input[item].id,
             itemValue: input[item].value}) ;
-            localStorage.setItem(input[item].id,json_parse);
+            localStorage.setItem(lists[list]+"."+input[item].id,json_parse);
     }
     }
     
