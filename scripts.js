@@ -278,7 +278,7 @@ function bar_progress(id){
 		var op = parseInt(op_value_not);
 		var ae = parseInt(ae_value_not);
 		var acc = parseInt(acc_value_not);
-		var width = (((obg + op + ae + acc)/4210)*100).toFixed(2);
+		var width = (((obg + op + ae + acc)/4318)*100).toFixed(2);
 	}
 	elem.style.width = width + "%";
 	if (width > 10){
