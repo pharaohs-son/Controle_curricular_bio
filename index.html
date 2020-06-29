@@ -1896,7 +1896,7 @@
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="op_input" maxlength="30" placeholder="Disciplina">
-            <input class="number_input" type="number" id="credits_input" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="credits_input" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
             <span id="optative_item" onclick="newElement('op_list', 'op_input','credits_input')" class="addBtn">+</span>
           </div>
 
@@ -1912,7 +1912,7 @@
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="ae_input" maxlength="30" placeholder="Atividade">
-            <input class="number_input" type="number" id="ae_hours_input" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="ae_hours_input" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('ae_list', 'ae_input','ae_hours_input')" class="addBtn">+</span>
           </div>
 
@@ -1928,7 +1928,7 @@
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="acc_input" maxlength="30" placeholder="Atividade">
-            <input class="number_input" type="number" id="acc_hours_input" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="acc_hours_input" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('acc_list', 'acc_input','acc_hours_input')" class="addBtn">+</span>
           </div>
 
@@ -3879,7 +3879,7 @@
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="op_input_lic" maxlength="30" placeholder="Disciplina">
-            <input class="number_input" type="number" id="credits_input_lic" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="credits_input_lic" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
             <span id="optative_item_lic" onclick="newElement('op_list_lic', 'op_input_lic','credits_input_lic')" class="addBtn">+</span>
           </div>
 
@@ -3895,7 +3895,7 @@
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="ae_input_lic" maxlength="30" placeholder="Atividade">
-            <input class="number_input" type="number" id="ae_hours_input_lic" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="ae_hours_input_lic" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('ae_list_lic', 'ae_input_lic','ae_hours_input_lic')" class="addBtn">+</span>
           </div>
 
@@ -3911,7 +3911,7 @@
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="acc_input_lic" maxlength="30" placeholder="Atividade">
-            <input class="number_input" type="number" id="acc_hours_input_lic" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="acc_hours_input_lic" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('acc_list_lic', 'acc_input_lic','acc_hours_input_lic')" class="addBtn">+</span>
           </div>
 
@@ -5167,7 +5167,7 @@ checkboxStorage();"
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="op_input_not" maxlength="30" placeholder="Disciplina">
-            <input class="number_input" type="number" id="credits_input_not" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="credits_input_not" placeholder="Créditos" onkeypress="if(this.value.length==3) return false;">
             <span id="optative_item" onclick="newElement('op_list_not', 'op_input_not','credits_input_not')" class="addBtn">+</span>
           </div>
 
@@ -5183,7 +5183,7 @@ checkboxStorage();"
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="ae_input_not" maxlength="30" placeholder="Atividade">
-            <input class="number_input" type="number" id="ae_hours_input_not" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="ae_hours_input_not" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('ae_list_not', 'ae_input_not','ae_hours_input_not')" class="addBtn">+</span>
           </div>
 
@@ -5199,7 +5199,7 @@ checkboxStorage();"
                   <rect width="170" height="4" rx=5 ry=10 style="fill:#e54e43;" />
               </svg>
             <input class="text_input" type="text" id="acc_input_not" maxlength="30" placeholder="Atividade">
-            <input class="number_input" type="number" id="acc_hours_input_not" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
+            <input class="number_input" min=0 type="number" id="acc_hours_input_not" placeholder="Horas" onkeypress="if(this.value.length==3) return false;">
             <span onclick="newElement('acc_list_not', 'acc_input_not','acc_hours_input_not')" class="addBtn">+</span>
           </div>
 
